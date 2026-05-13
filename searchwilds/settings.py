@@ -13,7 +13,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,27 +27,59 @@ load_dotenv(BASE_DIR / ".env")
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4t=g!=lw0u1*nsi(@un1ctntrj16gvi1@_rj&_!-wzosw#os-i'
+# SECRET_KEY = 'django-insecure-4t=g!=lw0u1*nsi(@un1ctntrj16gvi1@_rj&_!-wzosw#os-i'
+
+SECRET_KEY = os.environ.get("SECRET_KEY", "temporary-local-secret-key")
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+
+
 
 os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.environ.get("ALLOWED_HOSTS", "").split(",")
+    if host.strip()
+]
 # ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = os.environ.get(
-    "CSRF_TRUSTED_ORIGINS", ""
-).split(",")
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
+]
 
+
+
+# if DEBUG:
+#     ALLOWED_HOSTS += ["127.0.0.1", "localhost"]
+
+cloudinary.config(
+    cloud_name=os.environ.get("dhawl4btj"),
+    api_key=os.environ.get("992719138799245"),
+    api_secret=os.environ.get("YNAu7GihEbsSD0vVpERqrKUuFL8"),
+    secure=True,
+)
+
+# FOR DEPLOYMENT 
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'cloudinary',
+    'cloudinary_storage',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
