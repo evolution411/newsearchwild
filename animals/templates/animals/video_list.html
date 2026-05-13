@@ -1,0 +1,256 @@
+{% extends "animals/base.html" %}
+
+{% block content %}
+<section class="video-page">
+    <div class="video-hero">
+        <span class="video-badge">Animal Videos</span>
+        <h1>Watch Animal Shorts</h1>
+        <p>Discover animal facts, wildlife moments, and short videos from YouTube Shorts and TikTok.</p>
+
+        <div class="video-filters">
+            <a href="{% url 'animals:video_list' %}" class="{% if not platform %}active{% endif %}">
+                All
+            </a>
+            <a href="{% url 'animals:video_list' %}?platform=youtube" class="{% if platform == 'youtube' %}active{% endif %}">
+                YouTube Shorts
+            </a>
+            <a href="{% url 'animals:video_list' %}?platform=tiktok" class="{% if platform == 'tiktok' %}active{% endif %}">
+                TikTok
+            </a>
+        </div>
+    </div>
+
+    <div class="video-grid">
+        {% for video in videos %}
+            <div class="video-card">
+                <div class="video-frame">
+                    {% if video.platform == "youtube" and video.embed_url %}
+                        <iframe
+                            src="{{ video.embed_url }}"
+                            title="{{ video.title }}"
+                            frameborder="0"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    {% elif video.platform == "tiktok" %}
+                        <blockquote
+                            class="tiktok-embed"
+                            cite="{{ video.video_url }}"
+                            data-video-id=""
+                            style="max-width: 325px; min-width: 325px;">
+                            <section>
+                                <a href="{{ video.video_url }}" target="_blank">
+                                    Watch on TikTok
+                                </a>
+                            </section>
+                        </blockquote>
+                    {% else %}
+                        <a href="{{ video.video_url }}" target="_blank" class="video-fallback">
+                            Watch Video
+                        </a>
+                    {% endif %}
+                </div>
+
+                <div class="video-content">
+                    <div class="platform-label {{ video.platform }}">
+                        {% if video.platform == "youtube" %}
+                            YouTube Shorts
+                        {% else %}
+                            TikTok
+                        {% endif %}
+                    </div>
+
+                    <h3>{{ video.title }}</h3>
+
+                    {% if video.animal %}
+                        <p><strong>Animal:</strong> {{ video.animal.name }}</p>
+                    {% endif %}
+
+                    {% if video.description %}
+                        <p>{{ video.description }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <div class="empty-videos">
+                <h2>No videos yet</h2>
+                <p>Add videos from the Django admin.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<style>
+.video-page {
+    padding: 50px 6%;
+    min-height: 90vh;
+    background:
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.16), transparent 30%),
+        #f5faf7;
+}
+
+.video-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.video-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #dcfce7;
+    color: #14532d;
+    border: 1px solid #86efac;
+    border-radius: 999px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.video-hero h1 {
+    font-size: 3rem;
+    color: #123c2a;
+    margin-bottom: 12px;
+}
+
+.video-hero p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.video-filters {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.video-filters a {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: white;
+    color: #14532d;
+    font-weight: 800;
+    border: 1px solid #d1fae5;
+}
+
+.video-filters a.active,
+.video-filters a:hover {
+    background: #16a34a;
+    color: white;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+.video-card {
+    background: white;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.08);
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-frame iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.video-content {
+    padding: 18px;
+}
+
+.platform-label {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.platform-label.youtube {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.platform-label.tiktok {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+.video-content h3 {
+    color: #143d2c;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+.video-content p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.video-fallback {
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    background: #16a34a;
+    padding: 12px 18px;
+    border-radius: 999px;
+}
+
+.empty-videos {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: white;
+    padding: 60px 20px;
+    border-radius: 26px;
+    color: #6b7280;
+}
+
+.empty-videos h2 {
+    color: #143d2c;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-hero h1 {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

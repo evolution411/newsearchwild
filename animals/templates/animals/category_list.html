@@ -1,0 +1,59 @@
+{% extends 'animals/base.html' %}
+
+{% block content %}
+
+<section class="category-page-hero">
+    <div>
+        <p class="hero-kicker">EXPLORE ANIMALS BY TYPE</p>
+        <h1>Animal Categories.</h1>
+        <p>
+            Browse animal groups and discover species by category.
+        </p>
+    </div>
+</section>
+
+<section class="category-page-section">
+    <div class="section-title-row">
+        <h2>All Categories</h2>
+        <a href="{% url 'animals:animal_list' %}">View all animals →</a>
+    </div>
+
+    <div class="category-page-grid">
+        {% for item in category_cards %}
+            <a href="{% url 'animals:animal_list' %}?category={{ item.category.id }}" class="category-page-card">
+
+                <div class="category-page-image">
+                    {% if item.sample_animal and item.sample_animal.image %}
+                        <img src="{{ item.sample_animal.image.url }}" alt="{{ item.category.name }}">
+                    {% elif item.sample_animal and item.sample_animal.wiki_image_url %}
+                        <img src="{{ item.sample_animal.wiki_image_url }}" alt="{{ item.category.name }}">
+                    {% else %}
+                        <div class="category-page-placeholder">🌿</div>
+                    {% endif %}
+                </div>
+
+                <div class="category-page-body">
+                    <h3>{{ item.category.name }}</h3>
+
+                    <p>
+                        {% if item.category.animal_count %}
+                            {{ item.category.animal_count }} animal{{ item.category.animal_count|pluralize }}
+                        {% else %}
+                            No animals yet
+                        {% endif %}
+                    </p>
+
+                    <span>Explore category →</span>
+                </div>
+
+            </a>
+        {% empty %}
+            <div class="empty-clean-state">
+                <h3>No categories yet</h3>
+                <p>Add categories in Django admin.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

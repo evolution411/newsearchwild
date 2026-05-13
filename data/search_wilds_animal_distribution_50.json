@@ -1,0 +1,1812 @@
+[
+  {
+    "id": 1,
+    "slug": "african-lion",
+    "name": "African Lion",
+    "scientific_name": "Panthera leo",
+    "distribution_summary": "Mostly found in sub-Saharan Africa, especially savannas and open woodlands in East and Southern Africa.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Tanzania",
+      "Kenya",
+      "South Africa",
+      "Botswana"
+    ],
+    "habitats": [
+      "Savanna",
+      "Grassland",
+      "Open woodland"
+    ],
+    "map_points": [
+      {
+        "label": "Serengeti, Tanzania",
+        "lat": -2.3333,
+        "lng": 34.8333
+      },
+      {
+        "label": "Maasai Mara, Kenya",
+        "lat": -1.4061,
+        "lng": 35.0195
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 2,
+    "slug": "bengal-tiger",
+    "name": "Bengal Tiger",
+    "scientific_name": "Panthera tigris tigris",
+    "distribution_summary": "Found mainly in the Indian subcontinent, including forest, grassland, and mangrove habitats such as the Sundarbans.",
+    "range_type": "regional",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Bangladesh",
+      "Nepal",
+      "Bhutan"
+    ],
+    "habitats": [
+      "Tropical forest",
+      "Mangrove forest",
+      "Grassland"
+    ],
+    "map_points": [
+      {
+        "label": "Sundarbans, Bangladesh/India",
+        "lat": 21.9497,
+        "lng": 89.1833
+      },
+      {
+        "label": "Ranthambore, India",
+        "lat": 26.0173,
+        "lng": 76.5026
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 3,
+    "slug": "asian-elephant",
+    "name": "Asian Elephant",
+    "scientific_name": "Elephas maximus",
+    "distribution_summary": "Lives in fragmented forest and grassland areas across South and Southeast Asia.",
+    "range_type": "regional",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Sri Lanka",
+      "Thailand",
+      "Indonesia"
+    ],
+    "habitats": [
+      "Forest",
+      "Grassland",
+      "Wetland"
+    ],
+    "map_points": [
+      {
+        "label": "Sri Lanka",
+        "lat": 7.8731,
+        "lng": 80.7718
+      },
+      {
+        "label": "Kaziranga, India",
+        "lat": 26.5775,
+        "lng": 93.1711
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 4,
+    "slug": "african-bush-elephant",
+    "name": "African Bush Elephant",
+    "scientific_name": "Loxodonta africana",
+    "distribution_summary": "Occurs across parts of sub-Saharan Africa, especially savannas, woodlands, and protected reserves.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Botswana",
+      "Kenya",
+      "Tanzania",
+      "South Africa"
+    ],
+    "habitats": [
+      "Savanna",
+      "Woodland",
+      "Desert edge"
+    ],
+    "map_points": [
+      {
+        "label": "Chobe, Botswana",
+        "lat": -18.6657,
+        "lng": 24.4314
+      },
+      {
+        "label": "Amboseli, Kenya",
+        "lat": -2.6451,
+        "lng": 37.2531
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 5,
+    "slug": "giant-panda",
+    "name": "Giant Panda",
+    "scientific_name": "Ailuropoda melanoleuca",
+    "distribution_summary": "Native to mountain forests in central China, especially Sichuan and nearby provinces.",
+    "range_type": "localized",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "China"
+    ],
+    "habitats": [
+      "Mountain bamboo forest"
+    ],
+    "map_points": [
+      {
+        "label": "Sichuan, China",
+        "lat": 30.6517,
+        "lng": 104.0759
+      },
+      {
+        "label": "Qinling Mountains, China",
+        "lat": 33.9,
+        "lng": 107.9
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 6,
+    "slug": "red-panda",
+    "name": "Red Panda",
+    "scientific_name": "Ailurus fulgens",
+    "distribution_summary": "Lives in temperate Himalayan forests across Nepal, India, Bhutan, Myanmar, and southwestern China.",
+    "range_type": "multi-country",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Nepal",
+      "India",
+      "Bhutan",
+      "China",
+      "Myanmar"
+    ],
+    "habitats": [
+      "Temperate forest",
+      "Bamboo forest"
+    ],
+    "map_points": [
+      {
+        "label": "Eastern Himalayas",
+        "lat": 27.9881,
+        "lng": 86.925
+      },
+      {
+        "label": "Sikkim, India",
+        "lat": 27.533,
+        "lng": 88.5122
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 7,
+    "slug": "polar-bear",
+    "name": "Polar Bear",
+    "scientific_name": "Ursus maritimus",
+    "distribution_summary": "Lives around the Arctic Ocean and sea ice regions of Canada, Alaska, Greenland, Norway, and Russia.",
+    "range_type": "multi-country",
+    "continents": [
+      "North America",
+      "Europe",
+      "Asia"
+    ],
+    "countries": [
+      "Canada",
+      "United States",
+      "Greenland",
+      "Norway",
+      "Russia"
+    ],
+    "habitats": [
+      "Sea ice",
+      "Arctic coast"
+    ],
+    "map_points": [
+      {
+        "label": "Churchill, Canada",
+        "lat": 58.7684,
+        "lng": -94.165
+      },
+      {
+        "label": "Svalbard, Norway",
+        "lat": 78.2232,
+        "lng": 15.6267
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 8,
+    "slug": "gray-wolf",
+    "name": "Gray Wolf",
+    "scientific_name": "Canis lupus",
+    "distribution_summary": "Has a wide range across North America, Europe, and Asia in forests, tundra, mountains, and grasslands.",
+    "range_type": "regional",
+    "continents": [
+      "North America",
+      "Europe",
+      "Asia"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Russia",
+      "Mongolia"
+    ],
+    "habitats": [
+      "Forest",
+      "Tundra",
+      "Grassland",
+      "Mountain"
+    ],
+    "map_points": [
+      {
+        "label": "Yellowstone, USA",
+        "lat": 44.428,
+        "lng": -110.5885
+      },
+      {
+        "label": "Mongolia",
+        "lat": 46.8625,
+        "lng": 103.8467
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 9,
+    "slug": "cheetah",
+    "name": "Cheetah",
+    "scientific_name": "Acinonyx jubatus",
+    "distribution_summary": "Mostly found in eastern and southern Africa, with a very small remaining population in Iran.",
+    "range_type": "multi-country",
+    "continents": [
+      "Africa",
+      "Asia"
+    ],
+    "countries": [
+      "Namibia",
+      "Botswana",
+      "Kenya",
+      "Tanzania",
+      "Iran"
+    ],
+    "habitats": [
+      "Savanna",
+      "Dry grassland",
+      "Open plains"
+    ],
+    "map_points": [
+      {
+        "label": "Namibia",
+        "lat": -22.9576,
+        "lng": 18.4904
+      },
+      {
+        "label": "Serengeti, Tanzania",
+        "lat": -2.3333,
+        "lng": 34.8333
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 10,
+    "slug": "snow-leopard",
+    "name": "Snow Leopard",
+    "scientific_name": "Panthera uncia",
+    "distribution_summary": "Lives in high mountain ranges of Central and South Asia, including the Himalayas and Altai.",
+    "range_type": "multi-country",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Mongolia",
+      "China",
+      "Nepal",
+      "India",
+      "Kyrgyzstan"
+    ],
+    "habitats": [
+      "High mountains",
+      "Alpine scrub",
+      "Rocky slopes"
+    ],
+    "map_points": [
+      {
+        "label": "Himalayas, Nepal",
+        "lat": 28.3949,
+        "lng": 84.124
+      },
+      {
+        "label": "Altai Mountains, Mongolia",
+        "lat": 48.0,
+        "lng": 89.0
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 11,
+    "slug": "koala",
+    "name": "Koala",
+    "scientific_name": "Phascolarctos cinereus",
+    "distribution_summary": "Native to eastern and southeastern Australia, especially eucalyptus forests and woodlands.",
+    "range_type": "localized",
+    "continents": [
+      "Oceania"
+    ],
+    "countries": [
+      "Australia"
+    ],
+    "habitats": [
+      "Eucalyptus forest",
+      "Woodland"
+    ],
+    "map_points": [
+      {
+        "label": "Queensland, Australia",
+        "lat": -20.9176,
+        "lng": 142.7028
+      },
+      {
+        "label": "New South Wales, Australia",
+        "lat": -31.2532,
+        "lng": 146.9211
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 12,
+    "slug": "kangaroo",
+    "name": "Kangaroo",
+    "scientific_name": "Macropus",
+    "distribution_summary": "Native to Australia, especially grasslands, scrublands, forests, and open plains.",
+    "range_type": "localized",
+    "continents": [
+      "Oceania"
+    ],
+    "countries": [
+      "Australia"
+    ],
+    "habitats": [
+      "Grassland",
+      "Woodland",
+      "Scrubland"
+    ],
+    "map_points": [
+      {
+        "label": "Australia",
+        "lat": -25.2744,
+        "lng": 133.7751
+      },
+      {
+        "label": "Outback Australia",
+        "lat": -23.698,
+        "lng": 133.8807
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 13,
+    "slug": "platypus",
+    "name": "Platypus",
+    "scientific_name": "Ornithorhynchus anatinus",
+    "distribution_summary": "Native to eastern Australia and Tasmania, living in freshwater streams, rivers, and lakes.",
+    "range_type": "localized",
+    "continents": [
+      "Oceania"
+    ],
+    "countries": [
+      "Australia"
+    ],
+    "habitats": [
+      "River",
+      "Stream",
+      "Freshwater wetland"
+    ],
+    "map_points": [
+      {
+        "label": "Tasmania, Australia",
+        "lat": -42.0409,
+        "lng": 146.8087
+      },
+      {
+        "label": "Eastern Australia",
+        "lat": -33.8688,
+        "lng": 151.2093
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 14,
+    "slug": "sloth",
+    "name": "Sloth",
+    "scientific_name": "Folivora",
+    "distribution_summary": "Found in tropical forests of Central and South America.",
+    "range_type": "regional",
+    "continents": [
+      "South America",
+      "North America"
+    ],
+    "countries": [
+      "Costa Rica",
+      "Panama",
+      "Brazil",
+      "Peru"
+    ],
+    "habitats": [
+      "Tropical rainforest",
+      "Cloud forest"
+    ],
+    "map_points": [
+      {
+        "label": "Costa Rica",
+        "lat": 9.7489,
+        "lng": -83.7534
+      },
+      {
+        "label": "Amazon Rainforest, Brazil",
+        "lat": -3.4653,
+        "lng": -62.2159
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 15,
+    "slug": "orangutan",
+    "name": "Orangutan",
+    "scientific_name": "Pongo",
+    "distribution_summary": "Native to the rainforests of Borneo and Sumatra.",
+    "range_type": "regional",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Indonesia",
+      "Malaysia"
+    ],
+    "habitats": [
+      "Tropical rainforest",
+      "Peat swamp forest"
+    ],
+    "map_points": [
+      {
+        "label": "Borneo",
+        "lat": 0.9619,
+        "lng": 114.5548
+      },
+      {
+        "label": "Sumatra, Indonesia",
+        "lat": -0.5897,
+        "lng": 101.3431
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 16,
+    "slug": "gorilla",
+    "name": "Gorilla",
+    "scientific_name": "Gorilla",
+    "distribution_summary": "Found in tropical and mountain forests of central Africa.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Democratic Republic of the Congo",
+      "Rwanda",
+      "Uganda",
+      "Cameroon"
+    ],
+    "habitats": [
+      "Tropical forest",
+      "Montane forest"
+    ],
+    "map_points": [
+      {
+        "label": "Virunga Mountains",
+        "lat": -1.5,
+        "lng": 29.5
+      },
+      {
+        "label": "Congo Basin",
+        "lat": -0.228,
+        "lng": 15.8277
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 17,
+    "slug": "giraffe",
+    "name": "Giraffe",
+    "scientific_name": "Giraffa camelopardalis",
+    "distribution_summary": "Lives in African savannas, woodlands, and open forests.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Kenya",
+      "Tanzania",
+      "Namibia",
+      "South Africa"
+    ],
+    "habitats": [
+      "Savanna",
+      "Woodland"
+    ],
+    "map_points": [
+      {
+        "label": "Kenya",
+        "lat": 0.0236,
+        "lng": 37.9062
+      },
+      {
+        "label": "Etosha, Namibia",
+        "lat": -18.8556,
+        "lng": 16.3293
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 18,
+    "slug": "hippopotamus",
+    "name": "Hippopotamus",
+    "scientific_name": "Hippopotamus amphibius",
+    "distribution_summary": "Found in rivers, lakes, and wetlands across parts of sub-Saharan Africa.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Zambia",
+      "Tanzania",
+      "Uganda",
+      "Botswana"
+    ],
+    "habitats": [
+      "River",
+      "Lake",
+      "Wetland",
+      "Grassland"
+    ],
+    "map_points": [
+      {
+        "label": "Zambezi River",
+        "lat": -15.6,
+        "lng": 30.4
+      },
+      {
+        "label": "Okavango Delta, Botswana",
+        "lat": -19.6515,
+        "lng": 22.9056
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 19,
+    "slug": "black-rhinoceros",
+    "name": "Black Rhinoceros",
+    "scientific_name": "Diceros bicornis",
+    "distribution_summary": "Lives in savannas, shrublands, and deserts in eastern and southern Africa.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Namibia",
+      "Kenya",
+      "South Africa",
+      "Tanzania"
+    ],
+    "habitats": [
+      "Savanna",
+      "Shrubland",
+      "Desert edge"
+    ],
+    "map_points": [
+      {
+        "label": "Namibia",
+        "lat": -22.9576,
+        "lng": 18.4904
+      },
+      {
+        "label": "Kenya",
+        "lat": 0.0236,
+        "lng": 37.9062
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 20,
+    "slug": "meerkat",
+    "name": "Meerkat",
+    "scientific_name": "Suricata suricatta",
+    "distribution_summary": "Native to dry open areas of southern Africa, especially the Kalahari region.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Botswana",
+      "Namibia",
+      "South Africa"
+    ],
+    "habitats": [
+      "Desert",
+      "Dry grassland",
+      "Savanna"
+    ],
+    "map_points": [
+      {
+        "label": "Kalahari Desert",
+        "lat": -23.695,
+        "lng": 22.759
+      },
+      {
+        "label": "South Africa",
+        "lat": -30.5595,
+        "lng": 22.9375
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 21,
+    "slug": "emperor-penguin",
+    "name": "Emperor Penguin",
+    "scientific_name": "Aptenodytes forsteri",
+    "distribution_summary": "Breeds on Antarctic sea ice and forages in the surrounding Southern Ocean.",
+    "range_type": "localized",
+    "continents": [
+      "Antarctica"
+    ],
+    "countries": [
+      "Antarctica"
+    ],
+    "habitats": [
+      "Antarctic ice",
+      "Southern Ocean"
+    ],
+    "map_points": [
+      {
+        "label": "Antarctica",
+        "lat": -75.25,
+        "lng": 0.0
+      },
+      {
+        "label": "Ross Sea",
+        "lat": -75.0,
+        "lng": 175.0
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 22,
+    "slug": "bald-eagle",
+    "name": "Bald Eagle",
+    "scientific_name": "Haliaeetus leucocephalus",
+    "distribution_summary": "Found across North America, especially near coasts, lakes, rivers, and wetlands.",
+    "range_type": "regional",
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Mexico"
+    ],
+    "habitats": [
+      "Coast",
+      "Lake",
+      "River",
+      "Forest"
+    ],
+    "map_points": [
+      {
+        "label": "Alaska, USA",
+        "lat": 64.2008,
+        "lng": -149.4937
+      },
+      {
+        "label": "Great Lakes, North America",
+        "lat": 45.0,
+        "lng": -84.0
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 23,
+    "slug": "harpy-eagle",
+    "name": "Harpy Eagle",
+    "scientific_name": "Harpia harpyja",
+    "distribution_summary": "Lives in tropical rainforests from Central America to South America.",
+    "range_type": "regional",
+    "continents": [
+      "South America",
+      "North America"
+    ],
+    "countries": [
+      "Brazil",
+      "Panama",
+      "Colombia",
+      "Peru"
+    ],
+    "habitats": [
+      "Tropical rainforest"
+    ],
+    "map_points": [
+      {
+        "label": "Amazon Rainforest",
+        "lat": -3.4653,
+        "lng": -62.2159
+      },
+      {
+        "label": "Panama",
+        "lat": 8.538,
+        "lng": -80.7821
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 24,
+    "slug": "snowy-owl",
+    "name": "Snowy Owl",
+    "scientific_name": "Bubo scandiacus",
+    "distribution_summary": "Breeds in Arctic tundra and may migrate south into northern temperate regions in winter.",
+    "range_type": "multi-country",
+    "continents": [
+      "North America",
+      "Europe",
+      "Asia"
+    ],
+    "countries": [
+      "Canada",
+      "United States",
+      "Greenland",
+      "Norway",
+      "Russia"
+    ],
+    "habitats": [
+      "Arctic tundra",
+      "Open fields"
+    ],
+    "map_points": [
+      {
+        "label": "Arctic Canada",
+        "lat": 69.0,
+        "lng": -105.0
+      },
+      {
+        "label": "Greenland",
+        "lat": 71.7069,
+        "lng": -42.6043
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 25,
+    "slug": "scarlet-macaw",
+    "name": "Scarlet Macaw",
+    "scientific_name": "Ara macao",
+    "distribution_summary": "Found in tropical forests from southern Mexico through Central and South America.",
+    "range_type": "regional",
+    "continents": [
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Mexico",
+      "Costa Rica",
+      "Brazil",
+      "Peru"
+    ],
+    "habitats": [
+      "Tropical rainforest",
+      "Woodland"
+    ],
+    "map_points": [
+      {
+        "label": "Costa Rica",
+        "lat": 9.7489,
+        "lng": -83.7534
+      },
+      {
+        "label": "Peruvian Amazon",
+        "lat": -9.19,
+        "lng": -75.0152
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 26,
+    "slug": "flamingo",
+    "name": "Flamingo",
+    "scientific_name": "Phoenicopteridae",
+    "distribution_summary": "Occurs in shallow lakes, lagoons, and wetlands in Africa, Asia, Europe, and the Americas depending on species.",
+    "range_type": "widespread",
+    "continents": [
+      "Africa",
+      "Europe",
+      "Asia",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Kenya",
+      "Tanzania",
+      "Spain",
+      "India",
+      "Chile"
+    ],
+    "habitats": [
+      "Lake",
+      "Lagoon",
+      "Wetland",
+      "Salt flat"
+    ],
+    "map_points": [
+      {
+        "label": "Lake Nakuru, Kenya",
+        "lat": -0.3667,
+        "lng": 36.0833
+      },
+      {
+        "label": "Andes wetlands, Chile",
+        "lat": -23.0,
+        "lng": -67.0
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 27,
+    "slug": "ostrich",
+    "name": "Ostrich",
+    "scientific_name": "Struthio camelus",
+    "distribution_summary": "Native to open savannas and semi-deserts of Africa.",
+    "range_type": "regional",
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "South Africa",
+      "Namibia",
+      "Kenya",
+      "Tanzania"
+    ],
+    "habitats": [
+      "Savanna",
+      "Desert",
+      "Open grassland"
+    ],
+    "map_points": [
+      {
+        "label": "Namib Desert",
+        "lat": -24.5,
+        "lng": 15.0
+      },
+      {
+        "label": "Serengeti, Tanzania",
+        "lat": -2.3333,
+        "lng": 34.8333
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 28,
+    "slug": "great-hornbill",
+    "name": "Great Hornbill",
+    "scientific_name": "Buceros bicornis",
+    "distribution_summary": "Found in forests of South and Southeast Asia.",
+    "range_type": "regional",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Thailand",
+      "Malaysia",
+      "Indonesia"
+    ],
+    "habitats": [
+      "Tropical forest",
+      "Evergreen forest"
+    ],
+    "map_points": [
+      {
+        "label": "Western Ghats, India",
+        "lat": 10.8505,
+        "lng": 76.2711
+      },
+      {
+        "label": "Thailand forests",
+        "lat": 15.87,
+        "lng": 100.9925
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 29,
+    "slug": "komodo-dragon",
+    "name": "Komodo Dragon",
+    "scientific_name": "Varanus komodoensis",
+    "distribution_summary": "Native to several Indonesian islands, including Komodo, Rinca, Flores, and Gili Motang.",
+    "range_type": "localized",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Indonesia"
+    ],
+    "habitats": [
+      "Dry forest",
+      "Savanna",
+      "Tropical island"
+    ],
+    "map_points": [
+      {
+        "label": "Komodo Island, Indonesia",
+        "lat": -8.55,
+        "lng": 119.45
+      },
+      {
+        "label": "Flores, Indonesia",
+        "lat": -8.6574,
+        "lng": 121.0794
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 30,
+    "slug": "green-sea-turtle",
+    "name": "Green Sea Turtle",
+    "scientific_name": "Chelonia mydas",
+    "distribution_summary": "Found in tropical and subtropical oceans worldwide, with important nesting beaches in many regions.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Australia",
+      "United States",
+      "Costa Rica",
+      "Indonesia"
+    ],
+    "habitats": [
+      "Ocean",
+      "Coral reef",
+      "Seagrass meadow"
+    ],
+    "map_points": [
+      {
+        "label": "Great Barrier Reef, Australia",
+        "lat": -18.2871,
+        "lng": 147.6992
+      },
+      {
+        "label": "Tortuguero, Costa Rica",
+        "lat": 10.541,
+        "lng": -83.502
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 31,
+    "slug": "leatherback-sea-turtle",
+    "name": "Leatherback Sea Turtle",
+    "scientific_name": "Dermochelys coriacea",
+    "distribution_summary": "A widely distributed sea turtle found in tropical to temperate oceans worldwide.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "United States",
+      "Costa Rica",
+      "Indonesia",
+      "Gabon"
+    ],
+    "habitats": [
+      "Open ocean",
+      "Tropical beach"
+    ],
+    "map_points": [
+      {
+        "label": "Gabon nesting beaches",
+        "lat": -0.8037,
+        "lng": 11.6094
+      },
+      {
+        "label": "Pacific Ocean migration routes",
+        "lat": 0.0,
+        "lng": -140.0
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 32,
+    "slug": "king-cobra",
+    "name": "King Cobra",
+    "scientific_name": "Ophiophagus hannah",
+    "distribution_summary": "Lives in forests and wetlands of South and Southeast Asia.",
+    "range_type": "regional",
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Thailand",
+      "Indonesia",
+      "Malaysia"
+    ],
+    "habitats": [
+      "Forest",
+      "Mangrove",
+      "Agricultural edge"
+    ],
+    "map_points": [
+      {
+        "label": "Western Ghats, India",
+        "lat": 10.8505,
+        "lng": 76.2711
+      },
+      {
+        "label": "Southeast Asia",
+        "lat": 13.7563,
+        "lng": 100.5018
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 33,
+    "slug": "american-alligator",
+    "name": "American Alligator",
+    "scientific_name": "Alligator mississippiensis",
+    "distribution_summary": "Native to the southeastern United States, especially freshwater wetlands.",
+    "range_type": "localized",
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "United States"
+    ],
+    "habitats": [
+      "Swamp",
+      "Marsh",
+      "River",
+      "Lake"
+    ],
+    "map_points": [
+      {
+        "label": "Florida Everglades, USA",
+        "lat": 25.2866,
+        "lng": -80.8987
+      },
+      {
+        "label": "Louisiana, USA",
+        "lat": 30.9843,
+        "lng": -91.9623
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 34,
+    "slug": "gal-pagos-tortoise",
+    "name": "Galápagos Tortoise",
+    "scientific_name": "Chelonoidis niger",
+    "distribution_summary": "Native to the Galápagos Islands of Ecuador.",
+    "range_type": "localized",
+    "continents": [
+      "South America"
+    ],
+    "countries": [
+      "Ecuador"
+    ],
+    "habitats": [
+      "Island grassland",
+      "Dry shrubland",
+      "Highland forest"
+    ],
+    "map_points": [
+      {
+        "label": "Galápagos Islands, Ecuador",
+        "lat": -0.9538,
+        "lng": -90.9656
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 35,
+    "slug": "chameleon",
+    "name": "Chameleon",
+    "scientific_name": "Chamaeleonidae",
+    "distribution_summary": "Many species occur in Madagascar and Africa, with some in southern Europe and Asia.",
+    "range_type": "regional",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Europe"
+    ],
+    "countries": [
+      "Madagascar",
+      "Kenya",
+      "Tanzania",
+      "Yemen"
+    ],
+    "habitats": [
+      "Forest",
+      "Savanna",
+      "Shrubland"
+    ],
+    "map_points": [
+      {
+        "label": "Madagascar",
+        "lat": -18.7669,
+        "lng": 46.8691
+      },
+      {
+        "label": "East Africa",
+        "lat": -1.2921,
+        "lng": 36.8219
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 36,
+    "slug": "poison-dart-frog",
+    "name": "Poison Dart Frog",
+    "scientific_name": "Dendrobatidae",
+    "distribution_summary": "Found in humid tropical forests of Central and South America.",
+    "range_type": "regional",
+    "continents": [
+      "South America",
+      "North America"
+    ],
+    "countries": [
+      "Colombia",
+      "Brazil",
+      "Peru",
+      "Costa Rica"
+    ],
+    "habitats": [
+      "Tropical rainforest",
+      "Forest floor"
+    ],
+    "map_points": [
+      {
+        "label": "Colombian rainforest",
+        "lat": 4.5709,
+        "lng": -74.2973
+      },
+      {
+        "label": "Amazon Rainforest",
+        "lat": -3.4653,
+        "lng": -62.2159
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 37,
+    "slug": "axolotl",
+    "name": "Axolotl",
+    "scientific_name": "Ambystoma mexicanum",
+    "distribution_summary": "Native to the Xochimilco lake system near Mexico City.",
+    "range_type": "localized",
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "Mexico"
+    ],
+    "habitats": [
+      "Freshwater lake",
+      "Canal"
+    ],
+    "map_points": [
+      {
+        "label": "Xochimilco, Mexico City",
+        "lat": 19.2575,
+        "lng": -99.103
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 38,
+    "slug": "great-white-shark",
+    "name": "Great White Shark",
+    "scientific_name": "Carcharodon carcharias",
+    "distribution_summary": "Found in coastal and offshore temperate waters around several continents.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe"
+    ],
+    "countries": [
+      "South Africa",
+      "Australia",
+      "United States",
+      "Mexico"
+    ],
+    "habitats": [
+      "Coastal ocean",
+      "Open ocean"
+    ],
+    "map_points": [
+      {
+        "label": "South Africa coast",
+        "lat": -34.3587,
+        "lng": 18.4721
+      },
+      {
+        "label": "California coast, USA",
+        "lat": 36.7783,
+        "lng": -119.4179
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 39,
+    "slug": "whale-shark",
+    "name": "Whale Shark",
+    "scientific_name": "Rhincodon typus",
+    "distribution_summary": "Found in warm tropical and subtropical oceans worldwide.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Mexico",
+      "Philippines",
+      "Australia",
+      "Maldives"
+    ],
+    "habitats": [
+      "Tropical ocean",
+      "Warm coastal water"
+    ],
+    "map_points": [
+      {
+        "label": "Ningaloo Reef, Australia",
+        "lat": -22.6667,
+        "lng": 113.65
+      },
+      {
+        "label": "Yucatán, Mexico",
+        "lat": 21.1619,
+        "lng": -86.8515
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 40,
+    "slug": "clownfish",
+    "name": "Clownfish",
+    "scientific_name": "Amphiprioninae",
+    "distribution_summary": "Found in warm Indo-Pacific coral reefs, usually living with sea anemones.",
+    "range_type": "regional",
+    "continents": [
+      "Asia",
+      "Oceania"
+    ],
+    "countries": [
+      "Australia",
+      "Indonesia",
+      "Philippines",
+      "Papua New Guinea"
+    ],
+    "habitats": [
+      "Coral reef",
+      "Sea anemone"
+    ],
+    "map_points": [
+      {
+        "label": "Great Barrier Reef, Australia",
+        "lat": -18.2871,
+        "lng": 147.6992
+      },
+      {
+        "label": "Coral Triangle",
+        "lat": -1.0,
+        "lng": 125.0
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 41,
+    "slug": "blue-tang",
+    "name": "Blue Tang",
+    "scientific_name": "Paracanthurus hepatus",
+    "distribution_summary": "Lives on tropical Indo-Pacific coral reefs and reef slopes.",
+    "range_type": "regional",
+    "continents": [
+      "Asia",
+      "Oceania",
+      "Africa"
+    ],
+    "countries": [
+      "Indonesia",
+      "Philippines",
+      "Australia",
+      "Maldives"
+    ],
+    "habitats": [
+      "Coral reef"
+    ],
+    "map_points": [
+      {
+        "label": "Indo-Pacific reefs",
+        "lat": -8.3405,
+        "lng": 115.092
+      },
+      {
+        "label": "Great Barrier Reef, Australia",
+        "lat": -18.2871,
+        "lng": 147.6992
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 42,
+    "slug": "manta-ray",
+    "name": "Manta Ray",
+    "scientific_name": "Mobula birostris",
+    "distribution_summary": "Found in tropical and subtropical oceans, often near reefs, islands, and productive coastal waters.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Indonesia",
+      "Mexico",
+      "Maldives",
+      "Australia"
+    ],
+    "habitats": [
+      "Tropical ocean",
+      "Reef",
+      "Open water"
+    ],
+    "map_points": [
+      {
+        "label": "Maldives",
+        "lat": 3.2028,
+        "lng": 73.2207
+      },
+      {
+        "label": "Raja Ampat, Indonesia",
+        "lat": -0.2333,
+        "lng": 130.5167
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 43,
+    "slug": "blue-whale",
+    "name": "Blue Whale",
+    "scientific_name": "Balaenoptera musculus",
+    "distribution_summary": "Occurs in oceans worldwide, migrating between feeding and breeding areas.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe",
+      "Antarctica"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Iceland",
+      "Australia",
+      "Chile"
+    ],
+    "habitats": [
+      "Open ocean",
+      "Polar feeding grounds"
+    ],
+    "map_points": [
+      {
+        "label": "North Pacific Ocean",
+        "lat": 35.0,
+        "lng": -150.0
+      },
+      {
+        "label": "Antarctic Ocean",
+        "lat": -60.0,
+        "lng": 80.0
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 44,
+    "slug": "bottlenose-dolphin",
+    "name": "Bottlenose Dolphin",
+    "scientific_name": "Tursiops truncatus",
+    "distribution_summary": "Found in warm and temperate coastal waters and some offshore habitats worldwide.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe"
+    ],
+    "countries": [
+      "United States",
+      "Australia",
+      "South Africa",
+      "Spain"
+    ],
+    "habitats": [
+      "Coastal ocean",
+      "Bay",
+      "Lagoon"
+    ],
+    "map_points": [
+      {
+        "label": "Florida coast, USA",
+        "lat": 27.6648,
+        "lng": -81.5158
+      },
+      {
+        "label": "Eastern Australia",
+        "lat": -33.8688,
+        "lng": 151.2093
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 45,
+    "slug": "sea-otter",
+    "name": "Sea Otter",
+    "scientific_name": "Enhydra lutris",
+    "distribution_summary": "Lives along northern Pacific coasts, especially kelp forest habitats.",
+    "range_type": "regional",
+    "continents": [
+      "North America",
+      "Asia"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Russia",
+      "Japan"
+    ],
+    "habitats": [
+      "Coastal ocean",
+      "Kelp forest"
+    ],
+    "map_points": [
+      {
+        "label": "California coast, USA",
+        "lat": 36.6002,
+        "lng": -121.8947
+      },
+      {
+        "label": "Alaska, USA",
+        "lat": 64.2008,
+        "lng": -149.4937
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 46,
+    "slug": "octopus",
+    "name": "Octopus",
+    "scientific_name": "Octopoda",
+    "distribution_summary": "Octopus species occur in oceans worldwide, from coral reefs to seafloors and rocky coasts.",
+    "range_type": "marine-wide-range",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe"
+    ],
+    "countries": [
+      "Japan",
+      "Australia",
+      "Greece",
+      "United States"
+    ],
+    "habitats": [
+      "Coral reef",
+      "Rocky coast",
+      "Seafloor"
+    ],
+    "map_points": [
+      {
+        "label": "Mediterranean Sea",
+        "lat": 35.0,
+        "lng": 18.0
+      },
+      {
+        "label": "Pacific reefs",
+        "lat": 10.0,
+        "lng": 140.0
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 47,
+    "slug": "monarch-butterfly",
+    "name": "Monarch Butterfly",
+    "scientific_name": "Danaus plexippus",
+    "distribution_summary": "Found mainly in North America, migrating between Canada/United States and overwintering sites in Mexico.",
+    "range_type": "regional",
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Mexico"
+    ],
+    "habitats": [
+      "Meadow",
+      "Grassland",
+      "Milkweed patches",
+      "Forest overwintering sites"
+    ],
+    "map_points": [
+      {
+        "label": "Mexico overwintering forests",
+        "lat": 19.6069,
+        "lng": -100.2416
+      },
+      {
+        "label": "North American migration route",
+        "lat": 39.8283,
+        "lng": -98.5795
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 48,
+    "slug": "praying-mantis",
+    "name": "Praying Mantis",
+    "scientific_name": "Mantodea",
+    "distribution_summary": "Many mantis species occur worldwide, especially in warm and temperate habitats.",
+    "range_type": "widespread",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Europe",
+      "North America",
+      "South America",
+      "Oceania"
+    ],
+    "countries": [
+      "Worldwide"
+    ],
+    "habitats": [
+      "Garden",
+      "Grassland",
+      "Forest edge"
+    ],
+    "map_points": [
+      {
+        "label": "Temperate gardens worldwide",
+        "lat": 40.0,
+        "lng": -20.0
+      },
+      {
+        "label": "Tropical forests worldwide",
+        "lat": 0.0,
+        "lng": 30.0
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 49,
+    "slug": "tarantula",
+    "name": "Tarantula",
+    "scientific_name": "Theraphosidae",
+    "distribution_summary": "Tarantula species are found in tropical, subtropical, and desert regions on several continents.",
+    "range_type": "widespread",
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "United States",
+      "Mexico",
+      "Brazil",
+      "India"
+    ],
+    "habitats": [
+      "Desert",
+      "Rainforest",
+      "Grassland"
+    ],
+    "map_points": [
+      {
+        "label": "Amazon Basin",
+        "lat": -3.4653,
+        "lng": -62.2159
+      },
+      {
+        "label": "Southwestern United States",
+        "lat": 34.0489,
+        "lng": -111.0937
+      }
+    ],
+    "map_zoom": 2,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  },
+  {
+    "id": 50,
+    "slug": "horseshoe-crab",
+    "name": "Horseshoe Crab",
+    "scientific_name": "Limulidae",
+    "distribution_summary": "Found along the Atlantic coast of North America and in coastal waters of East and Southeast Asia.",
+    "range_type": "regional",
+    "continents": [
+      "Asia",
+      "North America"
+    ],
+    "countries": [
+      "United States",
+      "China",
+      "Japan",
+      "Indonesia"
+    ],
+    "habitats": [
+      "Coastal water",
+      "Sandy beach",
+      "Estuary"
+    ],
+    "map_points": [
+      {
+        "label": "Delaware Bay, USA",
+        "lat": 39.12,
+        "lng": -75.2479
+      },
+      {
+        "label": "East Asia coasts",
+        "lat": 31.2304,
+        "lng": 121.4737
+      }
+    ],
+    "map_zoom": 3,
+    "source_note": "Starter distribution data for Search Wilds. Verify exact ranges before using for scientific or conservation purposes."
+  }
+]

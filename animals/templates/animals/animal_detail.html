@@ -1,0 +1,366 @@
+{% extends 'animals/base.html' %}
+
+{% block content %}
+
+<section class="detail-wrapper">
+
+    <a href="{% url 'animals:animal_list' %}" class="detail-back-link">
+        ← Back to Animal Library
+    </a>
+
+    <section class="animal-detail-hero">
+        <div class="detail-photo-card">
+            {% if animal.image %}
+                <img src="{{ animal.image.url }}" alt="{{ animal.name }}">
+            {% elif animal.wiki_image_url %}
+                <img src="{{ animal.wiki_image_url }}" alt="{{ animal.name }}">
+            {% else %}
+                <div class="detail-image-placeholder">
+                    No Image Available
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="detail-info-card">
+            <span class="detail-status">
+                {{ animal.conservation_status }}
+            </span>
+
+            <h1>{{ animal.name }}</h1>
+
+            {% if animal.scientific_name %}
+                <p class="detail-scientific-name">
+                    {{ animal.scientific_name }}
+                </p>
+            {% endif %}
+
+            <p class="detail-short-description">
+                {% if animal.description %}
+                    {{ animal.description|truncatewords:38 }}
+                {% elif animal.wiki_summary %}
+                    {{ animal.wiki_summary|truncatewords:38 }}
+                {% else %}
+                    Animal information is not available yet.
+                {% endif %}
+            </p>
+
+            <div class="detail-facts-grid">
+                <div>
+                    <span>Category</span>
+                    <strong>{{ animal.category|default:"Unknown" }}</strong>
+                </div>
+
+                <div>
+                    <span>Habitat</span>
+                    <strong>{{ animal.habitat|default:"Unknown" }}</strong>
+                </div>
+
+                <div>
+                    <span>Diet</span>
+                    <strong>{{ animal.diet|default:"Unknown" }}</strong>
+                </div>
+
+                <div>
+                    <span>Lifespan</span>
+                    <strong>{{ animal.lifespan|default:"Unknown" }}</strong>
+                </div>
+
+                <div>
+                    <span>Size</span>
+                    <strong>{{ animal.size|default:"Unknown" }}</strong>
+                </div>
+
+                <div>
+                    <span>Scientific Name</span>
+                    <strong>{{ animal.scientific_name|default:"Unknown" }}</strong>
+                </div>
+            </div>
+
+                <div class="animal-action-links">
+                    {% if animal.wiki_page_url %}
+                        <a href="{{ animal.wiki_page_url }}" target="_blank" class="animal-action-link wiki-link">
+                            🌐 View on Wiki
+                        </a>
+                    {% endif %}
+
+                    {% if locations %}
+                        <button type="button" class="animal-action-link map-link" id="openMapBtn">
+                            📍 Find on map
+                        </button>
+                    {% endif %}
+                </div>
+        </div>
+        <!-- <a href="{% url 'animals:puzzle_game' animal.id %}" class="btn btn-success"> Play Puzzle Game </a> -->
+    </section>
+
+    <section class="detail-content-section">
+        <div class="section-title-row">
+            <h2>About {{ animal.name }}</h2>
+        </div>
+
+        <div class="about-card">
+            {% if animal.description %}
+                <p>{{ animal.description }}</p>
+            {% elif animal.wiki_summary %}
+                <p>{{ animal.wiki_summary }}</p>
+            {% else %}
+                <p>No description available yet.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    {% if animal.fun_fact %}
+        <section class="detail-content-section">
+            <div class="fun-fact-clean">
+                <span>Fun Fact</span>
+                <p>{{ animal.fun_fact }}</p>
+            </div>
+        </section>
+    {% endif %}
+
+
+{% if videos %}
+<section class="animal-videos-section">
+    <h2>Videos about {{ animal.name }}</h2>
+
+    <div class="animal-video-grid">
+        {% for video in videos %}
+            <div class="animal-video-card">
+                {% if video.platform == "youtube" and video.embed_url %}
+                    <iframe
+                            src="{{ video.embed_url }}"
+                            title="{{ video.title }}"
+                            frameborder="0"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                    </iframe>
+                {% elif video.platform == "tiktok" %}
+                    <blockquote
+                        class="tiktok-embed"
+                        cite="{{ video.video_url }}"
+                        style="max-width: 325px; min-width: 325px;">
+                        <section>
+                            <a href="{{ video.video_url }}" target="_blank">
+                                Watch on TikTok
+                            </a>
+                        </section>
+                    </blockquote>
+                {% endif %}
+
+                <h3>{{ video.title }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+{% endif %}
+
+    <section class="detail-content-section">
+        <div class="section-title-row">
+            <h2>Where {{ animal.name }} Lives</h2>
+            <a href="{% url 'animals:animal_list' %}">Search by place →</a>
+        </div>
+
+        <div class="detail-map-card">
+            {% if locations %}
+                <div class="map-modal-overlay" id="mapModalOverlay">
+                    <div class="map-modal">
+                        <div class="map-modal-header">
+                            <div>
+
+                                <h2>{{ animal.name }} Locations</h2>
+                                <p>Explore where this animal can be found.</p>
+
+                            </div>
+
+                            <button type="button" class="close-map-btn" id="closeMapBtn">
+                                ✕
+                            </button>
+                        </div>
+
+                        <div id="animalDetailMap"></div>
+                    </div>
+                </div>
+                {{ location_data|json_script:"animal-locations-data" }}
+            {% endif %}
+        </div>
+
+        <div class="detail-location-list">
+            {% for location in animal.locations.all %}
+                <span>
+                    {{ location.place_name }}
+                    {% if location.country %}
+                        , {{ location.country }}
+                    {% endif %}
+                </span>
+            {% empty %}
+                <p>No map locations added yet. Add locations in Django admin.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+</section>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const openBtn = document.getElementById("openMapBtn");
+    const closeBtn = document.getElementById("closeMapBtn");
+    const overlay = document.getElementById("mapModalOverlay");
+    const mapElement = document.getElementById("animalDetailMap");
+
+    if (!openBtn || !closeBtn || !overlay || !mapElement) {
+        return;
+    }
+
+    let map = null;
+    let mapInitialized = false;
+
+    const locationsElement = document.getElementById("animal-locations-data");
+    const locations = locationsElement ? JSON.parse(locationsElement.textContent) : [];
+
+    function openMapModal() {
+        overlay.classList.add("show");
+        document.body.classList.add("map-modal-open");
+
+        setTimeout(function () {
+            if (!mapInitialized) {
+                initializeMap();
+                mapInitialized = true;
+            } else if (map) {
+                map.invalidateSize();
+            }
+        }, 320);
+    }
+
+    function closeMapModal() {
+        overlay.classList.remove("show");
+        document.body.classList.remove("map-modal-open");
+    }
+
+    function initializeMap() {
+        if (!locations.length || typeof L === "undefined") {
+            mapElement.innerHTML = `
+                <div style="padding: 40px; text-align: center; color: #6b7280;">
+                    No map locations available for this animal.
+                </div>
+            `;
+            return;
+        }
+
+        const firstLocation = locations[0];
+
+        map = L.map("animalDetailMap").setView(
+            [firstLocation.latitude, firstLocation.longitude],
+            4
+        );
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 18,
+            attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(map);
+
+        const bounds = [];
+
+        locations.forEach(function (location) {
+            const lat = parseFloat(location.latitude);
+            const lng = parseFloat(location.longitude);
+
+            if (isNaN(lat) || isNaN(lng)) {
+                return;
+            }
+
+            bounds.push([lat, lng]);
+
+            const popupContent = `
+                <strong>${location.place_name}</strong><br>
+                ${location.country || ""}
+            `;
+
+            L.marker([lat, lng])
+                .addTo(map)
+                .bindPopup(popupContent);
+        });
+
+        if (bounds.length > 1) {
+            map.fitBounds(bounds, {
+                padding: [40, 40]
+            });
+        } else if (bounds.length === 1) {
+            map.setView(bounds[0], 5);
+        }
+
+        setTimeout(function () {
+            map.invalidateSize();
+        }, 200);
+    }
+
+    openBtn.addEventListener("click", openMapModal);
+    closeBtn.addEventListener("click", closeMapModal);
+
+    overlay.addEventListener("click", function (event) {
+        if (event.target === overlay) {
+            closeMapModal();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && overlay.classList.contains("show")) {
+            closeMapModal();
+        }
+    });
+});
+</script>
+
+<script>
+    const animalLocations = JSON.parse('{{ map_locations_json|escapejs }}');
+
+    const map = L.map('animalMap').setView([20, 0], 2);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    if (animalLocations.length > 0) {
+        const markers = [];
+
+        animalLocations.forEach(location => {
+            const marker = L.marker([location.latitude, location.longitude]).addTo(map);
+
+            marker.bindPopup(`
+                <strong>${location.place_name}</strong><br>
+                ${location.country ? location.country : ''}
+            `);
+
+            marker.bindTooltip(
+                `${location.place_name}`,
+                {
+                    permanent: true,
+                    direction: 'top',
+                    offset: [0, -12],
+                    className: 'custom-location-label'
+                }
+            );
+
+            markers.push(marker);
+        });
+
+        const group = L.featureGroup(markers);
+
+        map.fitBounds(group.getBounds().pad(0.35), {
+            maxZoom: 4
+        });
+    }
+</script>
+
+{% endblock %}

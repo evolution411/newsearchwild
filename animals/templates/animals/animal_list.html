@@ -1,0 +1,206 @@
+{% extends 'animals/base.html' %}
+
+{% block content %}
+
+<section class="list-hero">
+    <div>
+        <p class="hero-kicker">EXPLORE THE ANIMAL LIBRARY</p>
+        <h1>Find Animals Around the World</h1>
+        <p>
+            Search by animal name, species, habitat, diet, conservation status,
+            or the places where animals live.
+        </p>
+    </div>
+
+    <form method="get" class="list-hero-search">
+        <input 
+            type="text" 
+            name="q" 
+            placeholder="Search tiger, India, forest, eagle..." 
+            value="{{ query }}"
+        >
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+<section class="animal-library-layout">
+
+    <aside class="clean-filter-panel">
+        <div class="filter-heading">
+            <h2>Filters</h2>
+            <a href="{% url 'animals:animal_list' %}">Reset</a>
+        </div>
+
+        <form method="get" class="clean-filter-form">
+
+            <label>Search</label>
+            <input 
+                type="text" 
+                name="q" 
+                placeholder="Animal, species, place..." 
+                value="{{ query }}"
+            >
+
+            <label>Category</label>
+            <select name="category">
+                <option value="">All Categories</option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}"
+                        {% if selected_category == category.id|stringformat:"s" %}selected{% endif %}>
+                        {{ category.name }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Diet</label>
+            <select name="diet">
+                <option value="">All Diets</option>
+                <option value="Carnivore" {% if selected_diet == "Carnivore" %}selected{% endif %}>Carnivore</option>
+                <option value="Herbivore" {% if selected_diet == "Herbivore" %}selected{% endif %}>Herbivore</option>
+                <option value="Omnivore" {% if selected_diet == "Omnivore" %}selected{% endif %}>Omnivore</option>
+                <option value="Insectivore" {% if selected_diet == "Insectivore" %}selected{% endif %}>Insectivore</option>
+            </select>
+
+            <label>Habitat</label>
+            <select name="habitat">
+                <option value="">All Habitats</option>
+                <option value="Forest" {% if selected_habitat == "Forest" %}selected{% endif %}>Forest</option>
+                <option value="Ocean" {% if selected_habitat == "Ocean" %}selected{% endif %}>Ocean</option>
+                <option value="Desert" {% if selected_habitat == "Desert" %}selected{% endif %}>Desert</option>
+                <option value="Grassland" {% if selected_habitat == "Grassland" %}selected{% endif %}>Grassland</option>
+                <option value="Wetland" {% if selected_habitat == "Wetland" %}selected{% endif %}>Wetland</option>
+                <option value="Mountain" {% if selected_habitat == "Mountain" %}selected{% endif %}>Mountain</option>
+                <option value="Arctic" {% if selected_habitat == "Arctic" %}selected{% endif %}>Arctic</option>
+            </select>
+
+            <label>Place or Country</label>
+            <input 
+                type="text" 
+                name="place" 
+                placeholder="India, Kenya, Amazon..." 
+                value="{{ selected_place }}"
+            >
+
+            <label>Conservation Status</label>
+            <select name="status">
+                <option value="">All Statuses</option>
+                {% for status in conservation_statuses %}
+                    <option value="{{ status }}"
+                        {% if selected_status == status %}selected{% endif %}>
+                        {{ status }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Sort By</label>
+            <select name="sort">
+                <option value="">Default</option>
+                <option value="name_az" {% if selected_sort == "name_az" %}selected{% endif %}>Name A-Z</option>
+                <option value="name_za" {% if selected_sort == "name_za" %}selected{% endif %}>Name Z-A</option>
+                <option value="newest" {% if selected_sort == "newest" %}selected{% endif %}>Newest Added</option>
+                <option value="oldest" {% if selected_sort == "oldest" %}selected{% endif %}>Oldest Added</option>
+            </select>
+
+            <div class="filter-submit-bar">
+                <button type="submit" class="apply-filter-btn">
+                    Search
+                </button>
+            </div>
+        </form>
+    </aside>
+
+    <section class="animal-results-area">
+        <div class="results-top-row">
+            <div>
+                <h2>Animal Results</h2>
+                <p>
+                    {{ animals|length }} animal{{ animals|length|pluralize }} found
+                </p>
+            </div>
+
+            <a href="{% url 'animals:animal_list' %}" class="clear-filter-link">
+                Clear all filters
+            </a>
+        </div>
+
+        <div class="clean-animal-grid">
+            {% for animal in animals %}
+                <a href="{% url 'animals:animal_detail' animal.id %}" class="clean-animal-card">
+
+                    <div class="clean-animal-image">
+                        {% if animal.image %}
+                            <img src="{{ animal.image.url }}" alt="{{ animal.name }}">
+                        {% elif animal.wiki_image_url %}
+                            <img src="{{ animal.wiki_image_url }}" alt="{{ animal.name }}">
+                        {% else %}
+                            <div class="animal-placeholder">No Image</div>
+                        {% endif %}
+
+                        <span class="animal-status-badge">
+                            {{ animal.conservation_status }}
+                        </span>
+                    </div>
+
+                    <div class="clean-animal-body">
+                        <h3>{{ animal.name }}</h3>
+
+                        {% if animal.scientific_name %}
+                            <p class="animal-science-name">
+                                {{ animal.scientific_name }}
+                            </p>
+                        {% endif %}
+
+                        <div class="animal-mini-tags">
+                            {% if animal.category %}
+                                <span>{{ animal.category }}</span>
+                            {% endif %}
+
+                            {% if animal.habitat %}
+                                <span>{{ animal.habitat }}</span>
+                            {% endif %}
+
+                            {% if animal.diet %}
+                                <span>{{ animal.diet }}</span>
+                            {% endif %}
+                        </div>
+
+                        <p class="animal-card-description">
+                            {% if animal.description %}
+                                {{ animal.description|truncatewords:22 }}
+                            {% elif animal.wiki_summary %}
+                                {{ animal.wiki_summary|truncatewords:22 }}
+                            {% else %}
+                                No description available yet.
+                            {% endif %}
+                        </p>
+
+                        <div class="animal-card-bottom">
+                            <div class="animal-places">
+                                {% for location in animal.locations.all|slice:":2" %}
+                                    <span>📍 {{ location.place_name }}</span>
+                                {% empty %}
+                                    <span>📍 Location not added</span>
+                                {% endfor %}
+                            </div>
+
+                            <strong>View Details →</strong>
+                        </div>
+                    </div>
+                </a>
+            {% empty %}
+                <div class="empty-clean-state">
+                    <h3>No animals found</h3>
+                    <p>
+                        Try another search term, remove a filter, or add more animal data in Django admin.
+                    </p>
+                    <a href="{% url 'animals:animal_list' %}">
+                        Reset Search
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</section>
+
+{% endblock %}

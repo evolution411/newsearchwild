@@ -1,0 +1,2062 @@
+[
+  {
+    "id": 1,
+    "slug": "african-lion",
+    "name": "African Lion",
+    "scientific_name": "Panthera leo",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Savanna",
+      "Grassland",
+      "Open woodland"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Tanzania",
+      "Kenya",
+      "South Africa",
+      "Botswana"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A powerful big cat that lives in prides and hunts large herbivores across African grasslands and savannas.",
+    "fun_fact": "Lions are the only big cats that commonly live in social groups called prides.",
+    "wiki_title": "Lion",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Lion",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Lion",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Serengeti, Tanzania",
+        "lat": -2.3333,
+        "lng": 34.8333
+      },
+      {
+        "label": "Maasai Mara, Kenya",
+        "lat": -1.4061,
+        "lng": 35.0195
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "bengal-tiger",
+    "name": "Bengal Tiger",
+    "scientific_name": "Panthera tigris tigris",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Tropical forest",
+      "Mangrove forest",
+      "Grassland"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Bangladesh",
+      "Nepal",
+      "Bhutan"
+    ],
+    "conservation_status": "Endangered",
+    "description": "A large striped cat native to South Asia, known for strength, stealth, and solitary hunting.",
+    "fun_fact": "The Bengal tiger is one of the largest living cat subspecies.",
+    "wiki_title": "Bengal tiger",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bengal_tiger",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Bengal_tiger",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Sundarbans, Bangladesh/India",
+        "lat": 21.9497,
+        "lng": 89.1833
+      },
+      {
+        "label": "Ranthambore, India",
+        "lat": 26.0173,
+        "lng": 76.5026
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "asian-elephant",
+    "name": "Asian Elephant",
+    "scientific_name": "Elephas maximus",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Forest",
+      "Grassland",
+      "Wetland"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Sri Lanka",
+      "Thailand",
+      "Indonesia"
+    ],
+    "conservation_status": "Endangered",
+    "description": "A highly intelligent elephant species found in forests and grasslands across South and Southeast Asia.",
+    "fun_fact": "Asian elephants communicate using low-frequency sounds that can travel long distances.",
+    "wiki_title": "Asian elephant",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Asian_elephant",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Asian_elephant",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Sri Lanka",
+        "lat": 7.8731,
+        "lng": 80.7718
+      },
+      {
+        "label": "Kaziranga, India",
+        "lat": 26.5775,
+        "lng": 93.1711
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "african-bush-elephant",
+    "name": "African Bush Elephant",
+    "scientific_name": "Loxodonta africana",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Savanna",
+      "Woodland",
+      "Desert edge"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Botswana",
+      "Kenya",
+      "Tanzania",
+      "South Africa"
+    ],
+    "conservation_status": "Endangered",
+    "description": "The largest living land animal, recognized by its huge ears, tusks, and social family herds.",
+    "fun_fact": "Elephants can use their trunks like a hand, nose, snorkel, and drinking tool.",
+    "wiki_title": "African bush elephant",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/African_bush_elephant",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/African_bush_elephant",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Chobe, Botswana",
+        "lat": -18.6657,
+        "lng": 24.4314
+      },
+      {
+        "label": "Amboseli, Kenya",
+        "lat": -2.6451,
+        "lng": 37.2531
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "giant-panda",
+    "name": "Giant Panda",
+    "scientific_name": "Ailuropoda melanoleuca",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Mountain bamboo forest"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "China"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A black-and-white bear that mainly eats bamboo and lives in mountain forests of central China.",
+    "fun_fact": "A giant panda may spend more than half the day eating bamboo.",
+    "wiki_title": "Giant panda",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Giant_panda",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Giant_panda",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Sichuan, China",
+        "lat": 30.6517,
+        "lng": 104.0759
+      },
+      {
+        "label": "Qinling Mountains, China",
+        "lat": 33.9,
+        "lng": 107.9
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "red-panda",
+    "name": "Red Panda",
+    "scientific_name": "Ailurus fulgens",
+    "category": "Mammal",
+    "diet": "Omnivore",
+    "habitats": [
+      "Temperate forest",
+      "Bamboo forest"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Nepal",
+      "India",
+      "Bhutan",
+      "China",
+      "Myanmar"
+    ],
+    "conservation_status": "Endangered",
+    "description": "A small tree-dwelling mammal with reddish fur and a long ringed tail, found in Himalayan forests.",
+    "fun_fact": "Red pandas use their bushy tails like blankets in cold mountain weather.",
+    "wiki_title": "Red panda",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Red_panda",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Red_panda",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Eastern Himalayas",
+        "lat": 27.9881,
+        "lng": 86.925
+      },
+      {
+        "label": "Sikkim, India",
+        "lat": 27.533,
+        "lng": 88.5122
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "polar-bear",
+    "name": "Polar Bear",
+    "scientific_name": "Ursus maritimus",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Sea ice",
+      "Arctic coast"
+    ],
+    "continents": [
+      "North America",
+      "Europe",
+      "Asia"
+    ],
+    "countries": [
+      "Canada",
+      "United States",
+      "Greenland",
+      "Norway",
+      "Russia"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A large Arctic bear adapted to hunting seals on sea ice.",
+    "fun_fact": "Polar bear skin is black under its white-looking fur.",
+    "wiki_title": "Polar bear",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Polar_bear",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Polar_bear",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Churchill, Canada",
+        "lat": 58.7684,
+        "lng": -94.165
+      },
+      {
+        "label": "Svalbard, Norway",
+        "lat": 78.2232,
+        "lng": 15.6267
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "gray-wolf",
+    "name": "Gray Wolf",
+    "scientific_name": "Canis lupus",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Forest",
+      "Tundra",
+      "Grassland",
+      "Mountain"
+    ],
+    "continents": [
+      "North America",
+      "Europe",
+      "Asia"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Russia",
+      "Mongolia"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "A social canid that lives and hunts in packs across forests, tundra, and grasslands.",
+    "fun_fact": "Wolf howls help pack members communicate across long distances.",
+    "wiki_title": "Wolf",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wolf",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Wolf",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Yellowstone, USA",
+        "lat": 44.428,
+        "lng": -110.5885
+      },
+      {
+        "label": "Mongolia",
+        "lat": 46.8625,
+        "lng": 103.8467
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "cheetah",
+    "name": "Cheetah",
+    "scientific_name": "Acinonyx jubatus",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Savanna",
+      "Dry grassland",
+      "Open plains"
+    ],
+    "continents": [
+      "Africa",
+      "Asia"
+    ],
+    "countries": [
+      "Namibia",
+      "Botswana",
+      "Kenya",
+      "Tanzania",
+      "Iran"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "The fastest land animal, built for short high-speed chases in open habitats.",
+    "fun_fact": "Cheetahs cannot roar like lions; they chirp, purr, and hiss.",
+    "wiki_title": "Cheetah",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cheetah",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Cheetah",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Namibia",
+        "lat": -22.9576,
+        "lng": 18.4904
+      },
+      {
+        "label": "Serengeti, Tanzania",
+        "lat": -2.3333,
+        "lng": 34.8333
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "snow-leopard",
+    "name": "Snow Leopard",
+    "scientific_name": "Panthera uncia",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "High mountains",
+      "Alpine scrub",
+      "Rocky slopes"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Mongolia",
+      "China",
+      "Nepal",
+      "India",
+      "Kyrgyzstan"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A secretive mountain cat with thick fur and a long tail for balance and warmth.",
+    "fun_fact": "Snow leopards can leap several times their body length across rocky terrain.",
+    "wiki_title": "Snow leopard",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Snow_leopard",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Snow_leopard",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Himalayas, Nepal",
+        "lat": 28.3949,
+        "lng": 84.124
+      },
+      {
+        "label": "Altai Mountains, Mongolia",
+        "lat": 48.0,
+        "lng": 89.0
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "koala",
+    "name": "Koala",
+    "scientific_name": "Phascolarctos cinereus",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Eucalyptus forest",
+      "Woodland"
+    ],
+    "continents": [
+      "Oceania"
+    ],
+    "countries": [
+      "Australia"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A tree-living marsupial that feeds mostly on eucalyptus leaves.",
+    "fun_fact": "Koalas sleep many hours a day because eucalyptus leaves are low in energy.",
+    "wiki_title": "Koala",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Koala",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Koala",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Queensland, Australia",
+        "lat": -20.9176,
+        "lng": 142.7028
+      },
+      {
+        "label": "New South Wales, Australia",
+        "lat": -31.2532,
+        "lng": 146.9211
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "kangaroo",
+    "name": "Kangaroo",
+    "scientific_name": "Macropus",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Grassland",
+      "Woodland",
+      "Scrubland"
+    ],
+    "continents": [
+      "Oceania"
+    ],
+    "countries": [
+      "Australia"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "A hopping marsupial known for powerful hind legs, a balancing tail, and carrying young in a pouch.",
+    "fun_fact": "Kangaroos use their tails like a fifth limb when moving slowly.",
+    "wiki_title": "Kangaroo",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kangaroo",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Kangaroo",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Australia",
+        "lat": -25.2744,
+        "lng": 133.7751
+      },
+      {
+        "label": "Outback Australia",
+        "lat": -23.698,
+        "lng": 133.8807
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "platypus",
+    "name": "Platypus",
+    "scientific_name": "Ornithorhynchus anatinus",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "River",
+      "Stream",
+      "Freshwater wetland"
+    ],
+    "continents": [
+      "Oceania"
+    ],
+    "countries": [
+      "Australia"
+    ],
+    "conservation_status": "Near Threatened",
+    "description": "An egg-laying mammal with a duck-like bill that hunts underwater for small aquatic animals.",
+    "fun_fact": "Male platypuses have venomous spurs on their hind legs.",
+    "wiki_title": "Platypus",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Platypus",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Platypus",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Tasmania, Australia",
+        "lat": -42.0409,
+        "lng": 146.8087
+      },
+      {
+        "label": "Eastern Australia",
+        "lat": -33.8688,
+        "lng": 151.2093
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "sloth",
+    "name": "Sloth",
+    "scientific_name": "Folivora",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Tropical rainforest",
+      "Cloud forest"
+    ],
+    "continents": [
+      "South America",
+      "North America"
+    ],
+    "countries": [
+      "Costa Rica",
+      "Panama",
+      "Brazil",
+      "Peru"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "A slow-moving tree-dwelling mammal found in Central and South American forests.",
+    "fun_fact": "Sloths have algae growing in their fur, which can help camouflage them.",
+    "wiki_title": "Sloth",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sloth",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Sloth",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Costa Rica",
+        "lat": 9.7489,
+        "lng": -83.7534
+      },
+      {
+        "label": "Amazon Rainforest, Brazil",
+        "lat": -3.4653,
+        "lng": -62.2159
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "orangutan",
+    "name": "Orangutan",
+    "scientific_name": "Pongo",
+    "category": "Mammal",
+    "diet": "Omnivore",
+    "habitats": [
+      "Tropical rainforest",
+      "Peat swamp forest"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Indonesia",
+      "Malaysia"
+    ],
+    "conservation_status": "Critically Endangered",
+    "description": "A highly intelligent great ape with long arms, found in the rainforests of Borneo and Sumatra.",
+    "fun_fact": "Orangutans build a new sleeping nest in trees almost every night.",
+    "wiki_title": "Orangutan",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Orangutan",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Orangutan",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Borneo",
+        "lat": 0.9619,
+        "lng": 114.5548
+      },
+      {
+        "label": "Sumatra, Indonesia",
+        "lat": -0.5897,
+        "lng": 101.3431
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "gorilla",
+    "name": "Gorilla",
+    "scientific_name": "Gorilla",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Tropical forest",
+      "Montane forest"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Democratic Republic of the Congo",
+      "Rwanda",
+      "Uganda",
+      "Cameroon"
+    ],
+    "conservation_status": "Critically Endangered",
+    "description": "The largest living primate, known for strong family groups led by a silverback male.",
+    "fun_fact": "Gorillas use many vocalizations, gestures, and facial expressions to communicate.",
+    "wiki_title": "Gorilla",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gorilla",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Gorilla",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Virunga Mountains",
+        "lat": -1.5,
+        "lng": 29.5
+      },
+      {
+        "label": "Congo Basin",
+        "lat": -0.228,
+        "lng": 15.8277
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "giraffe",
+    "name": "Giraffe",
+    "scientific_name": "Giraffa camelopardalis",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Savanna",
+      "Woodland"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Kenya",
+      "Tanzania",
+      "Namibia",
+      "South Africa"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "The tallest living land animal, using its long neck to browse leaves high in trees.",
+    "fun_fact": "A giraffe has the same number of neck vertebrae as a human: seven.",
+    "wiki_title": "Giraffe",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Giraffe",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Giraffe",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Kenya",
+        "lat": 0.0236,
+        "lng": 37.9062
+      },
+      {
+        "label": "Etosha, Namibia",
+        "lat": -18.8556,
+        "lng": 16.3293
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "hippopotamus",
+    "name": "Hippopotamus",
+    "scientific_name": "Hippopotamus amphibius",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "River",
+      "Lake",
+      "Wetland",
+      "Grassland"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Zambia",
+      "Tanzania",
+      "Uganda",
+      "Botswana"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A large semi-aquatic mammal that spends much of the day in water and grazes at night.",
+    "fun_fact": "Hippos secrete a reddish oily fluid that helps protect their skin.",
+    "wiki_title": "Hippopotamus",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hippopotamus",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Hippopotamus",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Zambezi River",
+        "lat": -15.6,
+        "lng": 30.4
+      },
+      {
+        "label": "Okavango Delta, Botswana",
+        "lat": -19.6515,
+        "lng": 22.9056
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "black-rhinoceros",
+    "name": "Black Rhinoceros",
+    "scientific_name": "Diceros bicornis",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": [
+      "Savanna",
+      "Shrubland",
+      "Desert edge"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Namibia",
+      "Kenya",
+      "South Africa",
+      "Tanzania"
+    ],
+    "conservation_status": "Critically Endangered",
+    "description": "A browsing rhinoceros with a hooked upper lip used to feed on shrubs and trees.",
+    "fun_fact": "Black rhinos are browsers, while white rhinos are mostly grazers.",
+    "wiki_title": "Black rhinoceros",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Black_rhinoceros",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Black_rhinoceros",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Namibia",
+        "lat": -22.9576,
+        "lng": 18.4904
+      },
+      {
+        "label": "Kenya",
+        "lat": 0.0236,
+        "lng": 37.9062
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "meerkat",
+    "name": "Meerkat",
+    "scientific_name": "Suricata suricatta",
+    "category": "Mammal",
+    "diet": "Omnivore",
+    "habitats": [
+      "Desert",
+      "Dry grassland",
+      "Savanna"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "Botswana",
+      "Namibia",
+      "South Africa"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "A small mongoose that lives in groups and uses sentinels to watch for predators.",
+    "fun_fact": "Meerkats take turns standing guard while others forage.",
+    "wiki_title": "Meerkat",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Meerkat",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Meerkat",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Kalahari Desert",
+        "lat": -23.695,
+        "lng": 22.759
+      },
+      {
+        "label": "South Africa",
+        "lat": -30.5595,
+        "lng": 22.9375
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "slug": "emperor-penguin",
+    "name": "Emperor Penguin",
+    "scientific_name": "Aptenodytes forsteri",
+    "category": "Bird",
+    "diet": "Carnivore",
+    "habitats": [
+      "Antarctic ice",
+      "Southern Ocean"
+    ],
+    "continents": [
+      "Antarctica"
+    ],
+    "countries": [
+      "Antarctica"
+    ],
+    "conservation_status": "Near Threatened",
+    "description": "The largest penguin species, famous for breeding during the harsh Antarctic winter.",
+    "fun_fact": "Male emperor penguins keep eggs warm on their feet under a brood pouch.",
+    "wiki_title": "Emperor penguin",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Emperor_penguin",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Emperor_penguin",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Antarctica",
+        "lat": -75.25,
+        "lng": 0.0
+      },
+      {
+        "label": "Ross Sea",
+        "lat": -75.0,
+        "lng": 175.0
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "slug": "bald-eagle",
+    "name": "Bald Eagle",
+    "scientific_name": "Haliaeetus leucocephalus",
+    "category": "Bird",
+    "diet": "Carnivore",
+    "habitats": [
+      "Coast",
+      "Lake",
+      "River",
+      "Forest"
+    ],
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Mexico"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "A large sea eagle of North America, recognized by its white head and tail.",
+    "fun_fact": "Bald eagles often steal fish from other birds, a behavior called kleptoparasitism.",
+    "wiki_title": "Bald eagle",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bald_eagle",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Bald_eagle",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Alaska, USA",
+        "lat": 64.2008,
+        "lng": -149.4937
+      },
+      {
+        "label": "Great Lakes, North America",
+        "lat": 45.0,
+        "lng": -84.0
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "slug": "harpy-eagle",
+    "name": "Harpy Eagle",
+    "scientific_name": "Harpia harpyja",
+    "category": "Bird",
+    "diet": "Carnivore",
+    "habitats": [
+      "Tropical rainforest"
+    ],
+    "continents": [
+      "South America",
+      "North America"
+    ],
+    "countries": [
+      "Brazil",
+      "Panama",
+      "Colombia",
+      "Peru"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A powerful rainforest eagle that hunts monkeys, sloths, and other tree-dwelling animals.",
+    "fun_fact": "The harpy eagle has enormous talons that help it catch large prey.",
+    "wiki_title": "Harpy eagle",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Harpy_eagle",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Harpy_eagle",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Amazon Rainforest",
+        "lat": -3.4653,
+        "lng": -62.2159
+      },
+      {
+        "label": "Panama",
+        "lat": 8.538,
+        "lng": -80.7821
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "slug": "snowy-owl",
+    "name": "Snowy Owl",
+    "scientific_name": "Bubo scandiacus",
+    "category": "Bird",
+    "diet": "Carnivore",
+    "habitats": [
+      "Arctic tundra",
+      "Open fields"
+    ],
+    "continents": [
+      "North America",
+      "Europe",
+      "Asia"
+    ],
+    "countries": [
+      "Canada",
+      "United States",
+      "Greenland",
+      "Norway",
+      "Russia"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A pale Arctic owl that hunts lemmings and other small animals in open tundra.",
+    "fun_fact": "Unlike many owls, snowy owls are often active during the day.",
+    "wiki_title": "Snowy owl",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Snowy_owl",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Snowy_owl",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Arctic Canada",
+        "lat": 69.0,
+        "lng": -105.0
+      },
+      {
+        "label": "Greenland",
+        "lat": 71.7069,
+        "lng": -42.6043
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "slug": "scarlet-macaw",
+    "name": "Scarlet Macaw",
+    "scientific_name": "Ara macao",
+    "category": "Bird",
+    "diet": "Omnivore",
+    "habitats": [
+      "Tropical rainforest",
+      "Woodland"
+    ],
+    "continents": [
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Mexico",
+      "Costa Rica",
+      "Brazil",
+      "Peru"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "A bright red, yellow, and blue parrot that lives in tropical forests of Central and South America.",
+    "fun_fact": "Scarlet macaws use strong beaks to crack hard nuts and seeds.",
+    "wiki_title": "Scarlet macaw",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Scarlet_macaw",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Scarlet_macaw",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Costa Rica",
+        "lat": 9.7489,
+        "lng": -83.7534
+      },
+      {
+        "label": "Peruvian Amazon",
+        "lat": -9.19,
+        "lng": -75.0152
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "slug": "flamingo",
+    "name": "Flamingo",
+    "scientific_name": "Phoenicopteridae",
+    "category": "Bird",
+    "diet": "Omnivore",
+    "habitats": [
+      "Lake",
+      "Lagoon",
+      "Wetland",
+      "Salt flat"
+    ],
+    "continents": [
+      "Africa",
+      "Europe",
+      "Asia",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Kenya",
+      "Tanzania",
+      "Spain",
+      "India",
+      "Chile"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "A long-legged wading bird known for pink plumage caused by pigments in its food.",
+    "fun_fact": "Flamingos often feed upside down by filtering tiny organisms from water.",
+    "wiki_title": "Flamingo",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Flamingo",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Flamingo",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Lake Nakuru, Kenya",
+        "lat": -0.3667,
+        "lng": 36.0833
+      },
+      {
+        "label": "Andes wetlands, Chile",
+        "lat": -23.0,
+        "lng": -67.0
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "slug": "ostrich",
+    "name": "Ostrich",
+    "scientific_name": "Struthio camelus",
+    "category": "Bird",
+    "diet": "Omnivore",
+    "habitats": [
+      "Savanna",
+      "Desert",
+      "Open grassland"
+    ],
+    "continents": [
+      "Africa"
+    ],
+    "countries": [
+      "South Africa",
+      "Namibia",
+      "Kenya",
+      "Tanzania"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "The largest living bird, flightless but able to run at high speeds on open land.",
+    "fun_fact": "Ostriches have the largest eggs of any living bird.",
+    "wiki_title": "Common ostrich",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Common_ostrich",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Common_ostrich",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Namib Desert",
+        "lat": -24.5,
+        "lng": 15.0
+      },
+      {
+        "label": "Serengeti, Tanzania",
+        "lat": -2.3333,
+        "lng": 34.8333
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "slug": "great-hornbill",
+    "name": "Great Hornbill",
+    "scientific_name": "Buceros bicornis",
+    "category": "Bird",
+    "diet": "Omnivore",
+    "habitats": [
+      "Tropical forest",
+      "Evergreen forest"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Thailand",
+      "Malaysia",
+      "Indonesia"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A large forest bird with a huge yellow bill and casque, important for spreading fruit seeds.",
+    "fun_fact": "Female hornbills seal themselves inside tree cavities while nesting.",
+    "wiki_title": "Great hornbill",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Great_hornbill",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Great_hornbill",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Western Ghats, India",
+        "lat": 10.8505,
+        "lng": 76.2711
+      },
+      {
+        "label": "Thailand forests",
+        "lat": 15.87,
+        "lng": 100.9925
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "slug": "komodo-dragon",
+    "name": "Komodo Dragon",
+    "scientific_name": "Varanus komodoensis",
+    "category": "Reptile",
+    "diet": "Carnivore",
+    "habitats": [
+      "Dry forest",
+      "Savanna",
+      "Tropical island"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "Indonesia"
+    ],
+    "conservation_status": "Endangered",
+    "description": "The largest living lizard, native to several Indonesian islands.",
+    "fun_fact": "Komodo dragons use a keen sense of smell to locate carrion from far away.",
+    "wiki_title": "Komodo dragon",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Komodo_dragon",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Komodo_dragon",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Komodo Island, Indonesia",
+        "lat": -8.55,
+        "lng": 119.45
+      },
+      {
+        "label": "Flores, Indonesia",
+        "lat": -8.6574,
+        "lng": 121.0794
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "slug": "green-sea-turtle",
+    "name": "Green Sea Turtle",
+    "scientific_name": "Chelonia mydas",
+    "category": "Reptile",
+    "diet": "Herbivore",
+    "habitats": [
+      "Ocean",
+      "Coral reef",
+      "Seagrass meadow"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Australia",
+      "United States",
+      "Costa Rica",
+      "Indonesia"
+    ],
+    "conservation_status": "Endangered",
+    "description": "A marine turtle that migrates long distances between feeding areas and nesting beaches.",
+    "fun_fact": "Adult green sea turtles mostly graze on seagrasses and algae.",
+    "wiki_title": "Green sea turtle",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Green_sea_turtle",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Green_sea_turtle",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Great Barrier Reef, Australia",
+        "lat": -18.2871,
+        "lng": 147.6992
+      },
+      {
+        "label": "Tortuguero, Costa Rica",
+        "lat": 10.541,
+        "lng": -83.502
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "slug": "leatherback-sea-turtle",
+    "name": "Leatherback Sea Turtle",
+    "scientific_name": "Dermochelys coriacea",
+    "category": "Reptile",
+    "diet": "Carnivore",
+    "habitats": [
+      "Open ocean",
+      "Tropical beach"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "United States",
+      "Costa Rica",
+      "Indonesia",
+      "Gabon"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "The largest sea turtle, with a leathery shell and a diet mainly of jellyfish.",
+    "fun_fact": "Leatherbacks can dive deeper than many other marine reptiles.",
+    "wiki_title": "Leatherback sea turtle",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Leatherback_sea_turtle",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Leatherback_sea_turtle",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Gabon nesting beaches",
+        "lat": -0.8037,
+        "lng": 11.6094
+      },
+      {
+        "label": "Pacific Ocean migration routes",
+        "lat": 0.0,
+        "lng": -140.0
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "slug": "king-cobra",
+    "name": "King Cobra",
+    "scientific_name": "Ophiophagus hannah",
+    "category": "Reptile",
+    "diet": "Carnivore",
+    "habitats": [
+      "Forest",
+      "Mangrove",
+      "Agricultural edge"
+    ],
+    "continents": [
+      "Asia"
+    ],
+    "countries": [
+      "India",
+      "Thailand",
+      "Indonesia",
+      "Malaysia"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "The world's longest venomous snake, known for raising its hood when threatened.",
+    "fun_fact": "King cobras mainly eat other snakes.",
+    "wiki_title": "King cobra",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/King_cobra",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/King_cobra",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Western Ghats, India",
+        "lat": 10.8505,
+        "lng": 76.2711
+      },
+      {
+        "label": "Southeast Asia",
+        "lat": 13.7563,
+        "lng": 100.5018
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "slug": "american-alligator",
+    "name": "American Alligator",
+    "scientific_name": "Alligator mississippiensis",
+    "category": "Reptile",
+    "diet": "Carnivore",
+    "habitats": [
+      "Swamp",
+      "Marsh",
+      "River",
+      "Lake"
+    ],
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "United States"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "A large freshwater crocodilian found in wetlands of the southeastern United States.",
+    "fun_fact": "Alligators create wetland holes that help other animals during dry periods.",
+    "wiki_title": "American alligator",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/American_alligator",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/American_alligator",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Florida Everglades, USA",
+        "lat": 25.2866,
+        "lng": -80.8987
+      },
+      {
+        "label": "Louisiana, USA",
+        "lat": 30.9843,
+        "lng": -91.9623
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "slug": "gal-pagos-tortoise",
+    "name": "Galápagos Tortoise",
+    "scientific_name": "Chelonoidis niger",
+    "category": "Reptile",
+    "diet": "Herbivore",
+    "habitats": [
+      "Island grassland",
+      "Dry shrubland",
+      "Highland forest"
+    ],
+    "continents": [
+      "South America"
+    ],
+    "countries": [
+      "Ecuador"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A giant island tortoise native to the Galápagos Islands, famous for long lifespan and large size.",
+    "fun_fact": "Some Galápagos tortoises can live for more than 100 years.",
+    "wiki_title": "Galápagos tortoise",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Galápagos_tortoise",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Galápagos_tortoise",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Galápagos Islands, Ecuador",
+        "lat": -0.9538,
+        "lng": -90.9656
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "slug": "chameleon",
+    "name": "Chameleon",
+    "scientific_name": "Chamaeleonidae",
+    "category": "Reptile",
+    "diet": "Carnivore",
+    "habitats": [
+      "Forest",
+      "Savanna",
+      "Shrubland"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Europe"
+    ],
+    "countries": [
+      "Madagascar",
+      "Kenya",
+      "Tanzania",
+      "Yemen"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "A family of lizards known for independently moving eyes, long tongues, and color-changing ability.",
+    "fun_fact": "Many chameleons change color for communication and temperature control, not just camouflage.",
+    "wiki_title": "Chameleon",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chameleon",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Chameleon",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Madagascar",
+        "lat": -18.7669,
+        "lng": 46.8691
+      },
+      {
+        "label": "East Africa",
+        "lat": -1.2921,
+        "lng": 36.8219
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "slug": "poison-dart-frog",
+    "name": "Poison Dart Frog",
+    "scientific_name": "Dendrobatidae",
+    "category": "Amphibian",
+    "diet": "Carnivore",
+    "habitats": [
+      "Tropical rainforest",
+      "Forest floor"
+    ],
+    "continents": [
+      "South America",
+      "North America"
+    ],
+    "countries": [
+      "Colombia",
+      "Brazil",
+      "Peru",
+      "Costa Rica"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "Small, brightly colored frogs whose skin toxins warn predators to stay away.",
+    "fun_fact": "Some poison dart frogs get toxins from chemicals in the insects they eat.",
+    "wiki_title": "Poison dart frog",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Poison_dart_frog",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Poison_dart_frog",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Colombian rainforest",
+        "lat": 4.5709,
+        "lng": -74.2973
+      },
+      {
+        "label": "Amazon Rainforest",
+        "lat": -3.4653,
+        "lng": -62.2159
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "slug": "axolotl",
+    "name": "Axolotl",
+    "scientific_name": "Ambystoma mexicanum",
+    "category": "Amphibian",
+    "diet": "Carnivore",
+    "habitats": [
+      "Freshwater lake",
+      "Canal"
+    ],
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "Mexico"
+    ],
+    "conservation_status": "Critically Endangered",
+    "description": "A salamander that keeps larval features as an adult and is famous for regeneration.",
+    "fun_fact": "Axolotls can regrow limbs and parts of organs.",
+    "wiki_title": "Axolotl",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Axolotl",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Axolotl",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Xochimilco, Mexico City",
+        "lat": 19.2575,
+        "lng": -99.103
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "slug": "great-white-shark",
+    "name": "Great White Shark",
+    "scientific_name": "Carcharodon carcharias",
+    "category": "Fish",
+    "diet": "Carnivore",
+    "habitats": [
+      "Coastal ocean",
+      "Open ocean"
+    ],
+    "continents": [
+      "Africa",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe"
+    ],
+    "countries": [
+      "South Africa",
+      "Australia",
+      "United States",
+      "Mexico"
+    ],
+    "conservation_status": "Vulnerable",
+    "description": "A large predatory shark found in cool coastal waters around the world.",
+    "fun_fact": "Great white sharks can detect tiny electrical signals produced by other animals.",
+    "wiki_title": "Great white shark",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Great_white_shark",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Great_white_shark",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "South Africa coast",
+        "lat": -34.3587,
+        "lng": 18.4721
+      },
+      {
+        "label": "California coast, USA",
+        "lat": 36.7783,
+        "lng": -119.4179
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "slug": "whale-shark",
+    "name": "Whale Shark",
+    "scientific_name": "Rhincodon typus",
+    "category": "Fish",
+    "diet": "Filter feeder",
+    "habitats": [
+      "Tropical ocean",
+      "Warm coastal water"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Mexico",
+      "Philippines",
+      "Australia",
+      "Maldives"
+    ],
+    "conservation_status": "Endangered",
+    "description": "The largest living fish, a gentle filter feeder that eats plankton and small fish.",
+    "fun_fact": "Whale sharks have spot patterns that are unique to each individual.",
+    "wiki_title": "Whale shark",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Whale_shark",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Whale_shark",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Ningaloo Reef, Australia",
+        "lat": -22.6667,
+        "lng": 113.65
+      },
+      {
+        "label": "Yucatán, Mexico",
+        "lat": 21.1619,
+        "lng": -86.8515
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "slug": "clownfish",
+    "name": "Clownfish",
+    "scientific_name": "Amphiprioninae",
+    "category": "Fish",
+    "diet": "Omnivore",
+    "habitats": [
+      "Coral reef",
+      "Sea anemone"
+    ],
+    "continents": [
+      "Asia",
+      "Oceania"
+    ],
+    "countries": [
+      "Australia",
+      "Indonesia",
+      "Philippines",
+      "Papua New Guinea"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "Small reef fish known for living among the stinging tentacles of sea anemones.",
+    "fun_fact": "Clownfish and sea anemones have a mutual relationship that helps both survive.",
+    "wiki_title": "Amphiprioninae",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Amphiprioninae",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Amphiprioninae",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Great Barrier Reef, Australia",
+        "lat": -18.2871,
+        "lng": 147.6992
+      },
+      {
+        "label": "Coral Triangle",
+        "lat": -1.0,
+        "lng": 125.0
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "slug": "blue-tang",
+    "name": "Blue Tang",
+    "scientific_name": "Paracanthurus hepatus",
+    "category": "Fish",
+    "diet": "Omnivore",
+    "habitats": [
+      "Coral reef"
+    ],
+    "continents": [
+      "Asia",
+      "Oceania",
+      "Africa"
+    ],
+    "countries": [
+      "Indonesia",
+      "Philippines",
+      "Australia",
+      "Maldives"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "A bright blue reef fish with a yellow tail, often found in Indo-Pacific coral reefs.",
+    "fun_fact": "Blue tangs have sharp spines near their tails for defense.",
+    "wiki_title": "Paracanthurus",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Paracanthurus",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Paracanthurus",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Indo-Pacific reefs",
+        "lat": -8.3405,
+        "lng": 115.092
+      },
+      {
+        "label": "Great Barrier Reef, Australia",
+        "lat": -18.2871,
+        "lng": 147.6992
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "slug": "manta-ray",
+    "name": "Manta Ray",
+    "scientific_name": "Mobula birostris",
+    "category": "Fish",
+    "diet": "Filter feeder",
+    "habitats": [
+      "Tropical ocean",
+      "Reef",
+      "Open water"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "Indonesia",
+      "Mexico",
+      "Maldives",
+      "Australia"
+    ],
+    "conservation_status": "Endangered",
+    "description": "A giant ray that glides through warm oceans while filtering plankton from the water.",
+    "fun_fact": "Manta rays have the largest brain-to-body ratio of any fish.",
+    "wiki_title": "Oceanic manta ray",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Oceanic_manta_ray",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Oceanic_manta_ray",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Maldives",
+        "lat": 3.2028,
+        "lng": 73.2207
+      },
+      {
+        "label": "Raja Ampat, Indonesia",
+        "lat": -0.2333,
+        "lng": 130.5167
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "slug": "blue-whale",
+    "name": "Blue Whale",
+    "scientific_name": "Balaenoptera musculus",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Open ocean",
+      "Polar feeding grounds"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe",
+      "Antarctica"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Iceland",
+      "Australia",
+      "Chile"
+    ],
+    "conservation_status": "Endangered",
+    "description": "The largest animal known to have ever lived, feeding mainly on tiny krill.",
+    "fun_fact": "A blue whale's heart can be about the size of a small car.",
+    "wiki_title": "Blue whale",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Blue_whale",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Blue_whale",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "North Pacific Ocean",
+        "lat": 35.0,
+        "lng": -150.0
+      },
+      {
+        "label": "Antarctic Ocean",
+        "lat": -60.0,
+        "lng": 80.0
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "slug": "bottlenose-dolphin",
+    "name": "Bottlenose Dolphin",
+    "scientific_name": "Tursiops truncatus",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Coastal ocean",
+      "Bay",
+      "Lagoon"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe"
+    ],
+    "countries": [
+      "United States",
+      "Australia",
+      "South Africa",
+      "Spain"
+    ],
+    "conservation_status": "Least Concern",
+    "description": "An intelligent marine mammal known for social groups, echolocation, and playful behavior.",
+    "fun_fact": "Dolphins use signature whistles that may function like individual names.",
+    "wiki_title": "Common bottlenose dolphin",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Common_bottlenose_dolphin",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Common_bottlenose_dolphin",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Florida coast, USA",
+        "lat": 27.6648,
+        "lng": -81.5158
+      },
+      {
+        "label": "Eastern Australia",
+        "lat": -33.8688,
+        "lng": 151.2093
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "slug": "sea-otter",
+    "name": "Sea Otter",
+    "scientific_name": "Enhydra lutris",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": [
+      "Coastal ocean",
+      "Kelp forest"
+    ],
+    "continents": [
+      "North America",
+      "Asia"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Russia",
+      "Japan"
+    ],
+    "conservation_status": "Endangered",
+    "description": "A marine mammal that floats on its back and uses tools to open shellfish.",
+    "fun_fact": "Sea otters have extremely dense fur that keeps them warm in cold water.",
+    "wiki_title": "Sea otter",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sea_otter",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Sea_otter",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "California coast, USA",
+        "lat": 36.6002,
+        "lng": -121.8947
+      },
+      {
+        "label": "Alaska, USA",
+        "lat": 64.2008,
+        "lng": -149.4937
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "slug": "octopus",
+    "name": "Octopus",
+    "scientific_name": "Octopoda",
+    "category": "Mollusk",
+    "diet": "Carnivore",
+    "habitats": [
+      "Coral reef",
+      "Rocky coast",
+      "Seafloor"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America",
+      "Europe"
+    ],
+    "countries": [
+      "Japan",
+      "Australia",
+      "Greece",
+      "United States"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "A soft-bodied marine animal with eight arms, high intelligence, and excellent camouflage.",
+    "fun_fact": "Octopuses have three hearts and blue blood.",
+    "wiki_title": "Octopus",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Octopus",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Octopus",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Mediterranean Sea",
+        "lat": 35.0,
+        "lng": 18.0
+      },
+      {
+        "label": "Pacific reefs",
+        "lat": 10.0,
+        "lng": 140.0
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "slug": "monarch-butterfly",
+    "name": "Monarch Butterfly",
+    "scientific_name": "Danaus plexippus",
+    "category": "Insect",
+    "diet": "Herbivore",
+    "habitats": [
+      "Meadow",
+      "Grassland",
+      "Milkweed patches",
+      "Forest overwintering sites"
+    ],
+    "continents": [
+      "North America"
+    ],
+    "countries": [
+      "United States",
+      "Canada",
+      "Mexico"
+    ],
+    "conservation_status": "Endangered",
+    "description": "A famous orange-and-black butterfly known for long-distance migration across North America.",
+    "fun_fact": "Monarch caterpillars feed on milkweed, which helps make them distasteful to predators.",
+    "wiki_title": "Monarch butterfly",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Monarch_butterfly",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Monarch_butterfly",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Mexico overwintering forests",
+        "lat": 19.6069,
+        "lng": -100.2416
+      },
+      {
+        "label": "North American migration route",
+        "lat": 39.8283,
+        "lng": -98.5795
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "slug": "praying-mantis",
+    "name": "Praying Mantis",
+    "scientific_name": "Mantodea",
+    "category": "Insect",
+    "diet": "Carnivore",
+    "habitats": [
+      "Garden",
+      "Grassland",
+      "Forest edge"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Europe",
+      "North America",
+      "South America",
+      "Oceania"
+    ],
+    "countries": [
+      "Worldwide"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "A predatory insect with folded front legs used to grab prey.",
+    "fun_fact": "Praying mantises can rotate their heads more than many other insects.",
+    "wiki_title": "Mantis",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mantis",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Mantis",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Temperate gardens worldwide",
+        "lat": 40.0,
+        "lng": -20.0
+      },
+      {
+        "label": "Tropical forests worldwide",
+        "lat": 0.0,
+        "lng": 30.0
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "slug": "tarantula",
+    "name": "Tarantula",
+    "scientific_name": "Theraphosidae",
+    "category": "Arachnid",
+    "diet": "Carnivore",
+    "habitats": [
+      "Desert",
+      "Rainforest",
+      "Grassland"
+    ],
+    "continents": [
+      "Africa",
+      "Asia",
+      "Oceania",
+      "North America",
+      "South America"
+    ],
+    "countries": [
+      "United States",
+      "Mexico",
+      "Brazil",
+      "India"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "A large hairy spider family found in warm regions around the world.",
+    "fun_fact": "Some tarantulas flick irritating hairs from their abdomen as a defense.",
+    "wiki_title": "Tarantula",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tarantula",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Tarantula",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Amazon Basin",
+        "lat": -3.4653,
+        "lng": -62.2159
+      },
+      {
+        "label": "Southwestern United States",
+        "lat": 34.0489,
+        "lng": -111.0937
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "slug": "horseshoe-crab",
+    "name": "Horseshoe Crab",
+    "scientific_name": "Limulidae",
+    "category": "Arthropod",
+    "diet": "Omnivore",
+    "habitats": [
+      "Coastal water",
+      "Sandy beach",
+      "Estuary"
+    ],
+    "continents": [
+      "Asia",
+      "North America"
+    ],
+    "countries": [
+      "United States",
+      "China",
+      "Japan",
+      "Indonesia"
+    ],
+    "conservation_status": "Varies by species",
+    "description": "An ancient marine arthropod with a hard shell and long tail spine.",
+    "fun_fact": "Horseshoe crabs are more closely related to spiders than to true crabs.",
+    "wiki_title": "Horseshoe crab",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Horseshoe_crab",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Horseshoe_crab",
+    "image_url": "",
+    "map_points": [
+      {
+        "label": "Delaware Bay, USA",
+        "lat": 39.12,
+        "lng": -75.2479
+      },
+      {
+        "label": "East Asia coasts",
+        "lat": 31.2304,
+        "lng": 121.4737
+      }
+    ]
+  }
+]

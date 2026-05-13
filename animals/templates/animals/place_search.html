@@ -1,0 +1,215 @@
+{% extends 'animals/base.html' %}
+
+{% block content %}
+
+<section class="place-page-hero">
+    <div class="place-hero-text">
+        <p class="hero-kicker">EXPLORE WILDLIFE BY LOCATION</p>
+        <h1>Search by Place.</h1>
+        <p>
+            Discover animals by country, region, or protected area.
+            Explore the world's wildlife, one place at a time.
+        </p>
+    </div>
+</section>
+
+<section class="place-filter-bar simple-place-search-bar">
+    <form method="get" action="{% url 'animals:place_search' %}#placeResults" class="simple-place-search-form">
+        <div class="place-search-input">
+            <span>⌕</span>
+            <input 
+                type="text" 
+                name="place" 
+                placeholder="Search places, countries, regions..." 
+                value="{{ place_query }}"
+            >
+        </div>
+
+        <button type="submit" class="place-filter-btn">
+            Search
+        </button>
+    </form>
+</section>
+
+<section class="place-main-layout">
+
+<div class="world-map-card">
+    <div id="placeWorldMap"></div>
+</div>
+
+    <aside class="explore-places-panel">
+        <h2>Explore Places</h2>
+
+        <div class="continent-tabs">
+            {% for continent in continents %}
+                <a href="{% url 'animals:place_search' %}?continent={{ continent|urlencode }}"
+                   class="{% if selected_continent == continent %}active{% endif %}">
+                    {{ continent }}
+                </a>
+            {% endfor %}
+        </div>
+
+        <h3>Countries in {{ selected_continent }}</h3>
+
+        <div class="popular-place-list country-count-list">
+            {% for item in countries_in_continent %}
+                <a href="{% url 'animals:place_search' %}?continent={{ selected_continent|urlencode }}&country={{ item.country|urlencode }}#placeResults" class="{% if selected_country == item.country %}active{% endif %}">
+                    <span>📍</span>
+                    <strong>{{ item.country }}</strong>
+                    <em>{{ item.animal_count }} animal{{ item.animal_count|pluralize }}</em>
+                </a>
+            {% empty %}
+                <p>No countries found for this continent yet.</p>
+            {% endfor %}
+        </div>
+
+<!--         <a href="{% url 'animals:animal_list' %}" class="view-countries-link">
+            View all animals →
+        </a> -->
+    </aside>
+
+</section>
+
+<section class="place-results-section" id="placeResults">
+    <div class="place-results-top">
+        <div>
+            <p>
+                📍 Selected Place:
+                <strong>{{ selected_place_label }}</strong>
+                &nbsp; • &nbsp;
+                🐾 {{ animals|length }} animal{{ animals|length|pluralize }} found
+            </p>
+        </div>
+
+
+    </div>
+
+    <div class="place-animal-grid">
+        {% for animal in animals %}
+            <a href="{% url 'animals:animal_detail' animal.id %}" class="place-animal-card">
+                <div class="place-animal-image">
+                    {% if animal.image %}
+                        <img src="{{ animal.image.url }}" alt="{{ animal.name }}">
+                    {% elif animal.wiki_image_url %}
+                        <img src="{{ animal.wiki_image_url }}" alt="{{ animal.name }}">
+                    {% else %}
+                        <div class="animal-placeholder">No Image</div>
+                    {% endif %}
+                </div>
+
+                <div class="place-animal-body">
+                    <h3>{{ animal.name }}</h3>
+
+                    {% if animal.scientific_name %}
+                        <p>{{ animal.scientific_name }}</p>
+                    {% endif %}
+
+                    {% if selected_country %}
+                        <span>📍 {{ selected_country }}</span>
+                    {% else %}
+                        <span>📍 {{ selected_continent }}</span>
+                    {% endif %}
+                </div>
+            </a>
+        {% empty %}
+            <div class="empty-place-results">
+                <h3>No animals found for {{ selected_place_label }}</h3>
+                <p>
+                    Add animal locations in Django admin or try another place.
+                </p>
+                <a href="{% url 'animals:place_search' %}">
+                    Reset place search
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mapCountries = JSON.parse('{{ map_countries_json|escapejs }}');
+        const selectedCountry = "{{ selected_country|escapejs }}";
+        const selectedContinent = "{{ selected_continent|escapejs }}";
+        const placeQuery = "{{ place_query|escapejs }}";
+
+        const map = L.map("placeWorldMap", {
+            zoomControl: true,
+            scrollWheelZoom: false
+        }).setView([20, 0], 2);
+
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+            attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
+            subdomains: "abcd",
+            maxZoom: 19
+        }).addTo(map);
+
+        const markers = [];
+
+        mapCountries.forEach(function (place) {
+            const latitude = place.latitude;
+            const longitude = place.longitude;
+
+            if (!latitude || !longitude) {
+                return;
+            }
+
+            const placeName = place.name || place.country;
+            const isActive = selectedCountry === place.country || placeQuery !== "";
+
+            const marker = L.circleMarker([latitude, longitude], {
+                radius: isActive ? 12 : 8,
+                weight: 2,
+                color: isActive ? "#174f2d" : "#6e8b72",
+                fillColor: isActive ? "#174f2d" : "#6e8b72",
+                fillOpacity: isActive ? 0.95 : 0.75
+            }).addTo(map);
+
+            marker.bindPopup(`
+                <strong>${placeName}</strong><br>
+                ${place.country ? place.country + "<br>" : ""}
+                ${place.animal_count} animal${place.animal_count === 1 ? "" : "s"} found
+            `);
+
+            marker.bindTooltip(
+                `${placeName} (${place.animal_count})`,
+                {
+                    permanent: isActive,
+                    direction: "top",
+                    offset: [0, -10],
+                    className: "place-map-label"
+                }
+            );
+
+            marker.on("click", function () {
+                window.location.href =
+                    "{% url 'animals:place_search' %}" +
+                    "?place=" + encodeURIComponent(placeName) +
+                    "#placeResults";
+            });
+
+            markers.push(marker);
+        });
+
+        if (markers.length > 0) {
+            const group = L.featureGroup(markers);
+            map.fitBounds(group.getBounds().pad(0.35), {
+                maxZoom: placeQuery ? 6 : 4
+            });
+        } else {
+            map.setView([20, 0], 2);
+        }
+
+        setTimeout(function () {
+            map.invalidateSize();
+        }, 200);
+    });
+</script>
+
+{% endblock %}

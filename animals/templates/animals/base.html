@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Wilds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="header-inner">
+        <a href="{% url 'animals:home' %}" class="brand">
+            <div class="brand-icon"> paw </div>
+            <span>Search Wilds</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="{% url 'animals:home' %}" class="nav-link">
+                <span class="nav-icon">🏠</span>
+                <span>Home</span>
+            </a>
+
+            <a href="{% url 'animals:animal_list' %}" class="nav-link">
+                <span class="nav-icon">🐾</span>
+                <span>Animals</span>
+            </a>
+
+            <a href="{% url 'animals:category_list' %}" class="nav-link">
+                <span class="nav-icon">🗂️</span>
+                <span>Categories</span>
+            </a>
+
+            <a href="{% url 'animals:place_search' %}" class="nav-link">
+                <span class="nav-icon">🌍</span>
+                <span>Regions</span>
+            </a>
+
+            <a href="{% url 'animals:video_list' %}" class="nav-link">
+                <span class="nav-icon">🎬</span>
+                <span>Videos</span>
+            </a>
+
+            <a href="{% url 'animals:puzzle_game_home' %}" class="nav-link">
+                <span class="nav-icon">🎮</span>
+                <span>Game</span>
+            </a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="{% url 'animals:animal_list' %}" class="header-search">Search</a>
+            <!-- <a href="/admin/" class="signin-link">Sign In</a> -->
+        </div>
+    </div>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+    <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-intro">
+            <h2>Search Wilds</h2>
+            <p>
+                Search Wilds is an animal discovery website where users can explore animals,
+                learn about their habitats, view locations on a map, watch animal videos,
+                and discover interesting wildlife facts.
+            </p>
+        </div>
+
+        <div class="footer-subscribe">
+            <h3>Subscribe for Updates</h3>
+            <p>Get new animal facts, videos, and wildlife updates.</p>
+
+            <form class="subscribe-form" method="post" action="#">
+                {% csrf_token %}
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email"
+                    required
+                >
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; {% now "Y" %} Search Wilds. All rights reserved.</p>
+    </div>
+</footer>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>

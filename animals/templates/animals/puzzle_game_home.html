@@ -1,0 +1,200 @@
+{% extends "animals/base.html" %}
+
+{% block content %}
+<section class="puzzle-hero">
+    <div class="puzzle-hero-content">
+        <span class="game-badge">Animal Puzzle Game</span>
+        <h1>Choose an animal and solve the puzzle</h1>
+        <p>
+            Pick one of the animals below. The picture will be broken into puzzle pieces.
+            Match the pieces correctly to win.
+        </p>
+    </div>
+</section>
+
+<section class="puzzle-selection-section">
+    <div class="puzzle-selection-header">
+        <h2>Select an Animal</h2>
+        <p>10 random animals are shown each time.</p>
+    </div>
+
+    <div class="puzzle-animal-grid">
+        {% for animal in animals %}
+            <a href="{% url 'animals:puzzle_game' animal.id %}" class="puzzle-animal-card">
+                <div class="puzzle-animal-image">
+                    {% if animal.image %}
+                        <img src="{{ animal.image.url }}" alt="{{ animal.name }}">
+                    {% elif animal.wiki_image_url %}
+                        <img src="{{ animal.wiki_image_url }}" alt="{{ animal.name }}">
+                    {% else %}
+                        <div class="puzzle-placeholder">🐾</div>
+                    {% endif %}
+                </div>
+
+                <div class="puzzle-animal-info">
+                    <h3>{{ animal.name }}</h3>
+                    <p>{{ animal.scientific_name }}</p>
+                    <span>Play Puzzle</span>
+                </div>
+            </a>
+        {% empty %}
+            <p>No animals available for puzzle game.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+.puzzle-hero {
+    padding: 70px 6%;
+    background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.25), transparent 35%),
+        linear-gradient(135deg, #06281c, #0f5132);
+    color: white;
+    border-radius: 0 0 36px 36px;
+}
+
+.puzzle-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.game-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.puzzle-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.puzzle-hero p {
+    font-size: 1.1rem;
+    color: #d8f5e5;
+}
+
+.puzzle-selection-section {
+    padding: 60px 6%;
+}
+
+.puzzle-selection-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.puzzle-selection-header h2 {
+    font-size: 2.2rem;
+    color: #123c2a;
+    margin-bottom: 8px;
+}
+
+.puzzle-selection-header p {
+    color: #6b7280;
+}
+
+.puzzle-animal-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.puzzle-animal-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.puzzle-animal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14);
+}
+
+.puzzle-animal-image {
+    height: 170px;
+    background: #eef7f0;
+    overflow: hidden;
+}
+
+.puzzle-animal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.puzzle-placeholder {
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.puzzle-animal-info {
+    padding: 18px;
+    text-align: center;
+}
+
+.puzzle-animal-info h3 {
+    font-size: 1.05rem;
+    color: #143d2c;
+    margin-bottom: 5px;
+}
+
+.puzzle-animal-info p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    min-height: 20px;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.puzzle-animal-info span {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #16a34a;
+    color: white;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+    .puzzle-animal-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .puzzle-animal-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .puzzle-animal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .puzzle-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .puzzle-animal-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,335 @@
+{% extends "animals/base.html" %}
+
+{% block content %}
+<section class="game-page">
+    <div class="game-header">
+        <a href="{% url 'animals:puzzle_game_home' %}" class="back-game-link">← Choose another animal</a>
+        <h1>{{ animal.name }} Puzzle</h1>
+        <p>Drag the pieces into the correct places. Match the original image to win.</p>
+    </div>
+
+    <div class="game-layout">
+        <div class="original-panel">
+            <h2>Original Picture</h2>
+
+            {% if animal.image %}
+                <img id="sourceImage" src="{{ animal.image.url }}" alt="{{ animal.name }}">
+            {% elif animal.wiki_image_url %}
+                <img id="sourceImage" src="{{ animal.wiki_image_url }}" alt="{{ animal.name }}">
+            {% else %}
+                <div class="missing-image">No image available</div>
+            {% endif %}
+
+            <div class="game-info-box">
+                <strong>Animal:</strong> {{ animal.name }}<br>
+                <strong>Level:</strong> 3 × 3
+            </div>
+        </div>
+
+        <div class="puzzle-panel">
+            <div class="puzzle-topbar">
+                <h2>Puzzle Board</h2>
+                <button id="resetBtn" type="button">Reset</button>
+            </div>
+
+            <div id="winMessage" class="win-message">
+                🎉 You solved the puzzle!
+            </div>
+
+            <div id="puzzleBoard" class="puzzle-board"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+.game-page {
+    padding: 50px 6%;
+    min-height: 90vh;
+    background:
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.14), transparent 30%),
+        #f5faf7;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.back-game-link {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #15803d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.game-header h1 {
+    font-size: 2.6rem;
+    color: #123c2a;
+    margin-bottom: 8px;
+}
+
+.game-header p {
+    color: #6b7280;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.original-panel,
+.puzzle-panel {
+    background: white;
+    border-radius: 28px;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+}
+
+.original-panel h2,
+.puzzle-panel h2 {
+    color: #143d2c;
+    margin-bottom: 16px;
+}
+
+#sourceImage {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background: #eef7f0;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.game-info-box {
+    padding: 16px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 16px;
+    color: #14532d;
+    line-height: 1.7;
+}
+
+.puzzle-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+#resetBtn {
+    border: none;
+    background: #16a34a;
+    color: white;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#resetBtn:hover {
+    background: #15803d;
+}
+
+.puzzle-board {
+    width: 540px;
+    height: 540px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 4px solid #14532d;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #dcfce7;
+    margin: 0 auto;
+}
+
+.puzzle-piece {
+    border: 1px solid rgba(20, 83, 45, 0.35);
+    background-size: 300% 300%;
+    cursor: grab;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.puzzle-piece:active {
+    cursor: grabbing;
+    transform: scale(0.96);
+}
+
+.puzzle-piece.dragging {
+    opacity: 0.5;
+    filter: brightness(1.1);
+}
+
+.win-message {
+    display: none;
+    margin-bottom: 18px;
+    padding: 16px 20px;
+    background: #dcfce7;
+    color: #14532d;
+    border: 1px solid #86efac;
+    border-radius: 18px;
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.win-message.show {
+    display: block;
+}
+
+.missing-image {
+    height: 300px;
+    background: #f3f4f6;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+}
+
+@media (max-width: 950px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .original-panel {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .puzzle-board {
+        width: 100%;
+    }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const board = document.getElementById("puzzleBoard");
+    const image = document.getElementById("sourceImage");
+    const resetBtn = document.getElementById("resetBtn");
+    const winMessage = document.getElementById("winMessage");
+
+    const rows = 3;
+    const cols = 3;
+    const totalPieces = rows * cols;
+
+    let draggedPiece = null;
+
+    function shuffleArray(array) {
+        const newArray = [...array];
+
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+
+        return newArray;
+    }
+
+    function createPuzzle() {
+        if (!image) return;
+
+        board.innerHTML = "";
+        winMessage.classList.remove("show");
+
+        const imageUrl = image.src;
+        const correctPositions = [];
+
+        for (let i = 0; i < totalPieces; i++) {
+            correctPositions.push(i);
+        }
+
+        const shuffledPositions = shuffleArray(correctPositions);
+
+        shuffledPositions.forEach((piecePosition, currentIndex) => {
+            const piece = document.createElement("div");
+
+            piece.classList.add("puzzle-piece");
+            piece.setAttribute("draggable", "true");
+
+            piece.dataset.correct = piecePosition;
+            piece.dataset.current = currentIndex;
+
+            const row = Math.floor(piecePosition / cols);
+            const col = piecePosition % cols;
+
+            piece.style.backgroundImage = `url("${imageUrl}")`;
+            piece.style.backgroundPosition = `${(col / (cols - 1)) * 100}% ${(row / (rows - 1)) * 100}%`;
+
+            piece.addEventListener("dragstart", handleDragStart);
+            piece.addEventListener("dragover", handleDragOver);
+            piece.addEventListener("drop", handleDrop);
+            piece.addEventListener("dragend", handleDragEnd);
+
+            board.appendChild(piece);
+        });
+    }
+
+    function handleDragStart(e) {
+        draggedPiece = this;
+        this.classList.add("dragging");
+        e.dataTransfer.effectAllowed = "move";
+    }
+
+    function handleDragOver(e) {
+        e.preventDefault();
+    }
+
+    function handleDrop(e) {
+        e.preventDefault();
+
+        if (!draggedPiece || draggedPiece === this) {
+            return;
+        }
+
+        swapPieces(draggedPiece, this);
+        checkWin();
+    }
+
+    function handleDragEnd() {
+        this.classList.remove("dragging");
+        draggedPiece = null;
+    }
+
+    function swapPieces(piece1, piece2) {
+        const tempBackground = piece1.style.backgroundPosition;
+        const tempCorrect = piece1.dataset.correct;
+
+        piece1.style.backgroundPosition = piece2.style.backgroundPosition;
+        piece1.dataset.correct = piece2.dataset.correct;
+
+        piece2.style.backgroundPosition = tempBackground;
+        piece2.dataset.correct = tempCorrect;
+    }
+
+    function checkWin() {
+        const pieces = Array.from(document.querySelectorAll(".puzzle-piece"));
+
+        const solved = pieces.every((piece, index) => {
+            return parseInt(piece.dataset.correct) === index;
+        });
+
+        if (solved) {
+            winMessage.classList.add("show");
+
+            setTimeout(() => {
+                createPuzzle();
+            }, 2200);
+        }
+    }
+
+    resetBtn.addEventListener("click", createPuzzle);
+
+    if (image && image.complete) {
+        createPuzzle();
+    } else if (image) {
+        image.onload = createPuzzle;
+    }
+});
+</script>
+{% endblock %}

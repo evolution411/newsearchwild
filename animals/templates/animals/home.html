@@ -1,0 +1,333 @@
+{% extends 'animals/base.html' %}
+
+{% block content %}
+
+<section class="home-hero">
+    <div class="hero-left">
+        <p class="hero-kicker">THE WORLD'S ANIMAL RESEARCH PLATFORM</p>
+
+        <h1>
+            Discover. Learn.<br>
+            Protect Wildlife.
+        </h1>
+
+        <p class="hero-description">
+            Search Wilds connects you to trusted data and insights on
+            animals, habitats, and conservation around the world.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{% url 'animals:animal_list' %}" class="primary-btn">
+                Explore Animals
+            </a>
+
+            <a href="{% url 'animals:animal_list' %}" class="text-btn">
+                Learn More →
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        {% if featured_animals.0.image %}
+            <img src="{{ featured_animals.0.image.url }}" alt="{{ featured_animals.0.name }}">
+        {% elif featured_animals.0.wiki_image_url %}
+            <img src="{{ featured_animals.0.wiki_image_url }}" alt="{{ featured_animals.0.name }}">
+        {% else %}
+            <div class="hero-placeholder">
+                Search Wilds
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="stats-strip">
+    <div class="stat-item">
+        <div class="stat-icon">🐾</div>
+        <div>
+            <strong>{{ total_animals }}</strong>
+            <span>Animals</span>
+        </div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-icon">▦</div>
+        <div>
+            <strong>{{ total_categories }}</strong>
+            <span>Categories</span>
+        </div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-icon">△</div>
+        <div>
+            <strong>196</strong>
+            <span>Habitats</span>
+        </div>
+    </div>
+
+    <div class="stat-item">
+        <div class="stat-icon">◎</div>
+        <div>
+            <strong>238</strong>
+            <span>Regions</span>
+        </div>
+    </div>
+</section>
+
+<section class="home-section category-section">
+    <div class="section-title-row">
+        <h2>Browse by Category</h2>
+        <a href="{% url 'animals:category_list' %}">View all categories →</a>
+    </div>
+
+    <div class="category-slider-wrap">
+        <button class="category-arrow category-arrow-left" type="button" aria-label="Previous categories">
+            ←
+        </button>
+
+        <div class="category-slider" id="categorySlider">
+            {% for item in category_cards %}
+                <a href="{% url 'animals:animal_list' %}?category={{ item.category.id }}" class="clean-category-card slider-category-card">
+                    <div class="category-thumb">
+                        {% if item.sample_animal and item.sample_animal.image %}
+                            <img src="{{ item.sample_animal.image.url }}" alt="{{ item.category.name }}">
+                        {% elif item.sample_animal and item.sample_animal.wiki_image_url %}
+                            <img src="{{ item.sample_animal.wiki_image_url }}" alt="{{ item.category.name }}">
+                        {% else %}
+                            <span>🌿</span>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <h3>{{ item.category.name }}</h3>
+                        <p>
+                            {% if item.category.animal_count %}
+                                {{ item.category.animal_count }} animals
+                            {% else %}
+                                Explore animals
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+            {% empty %}
+                <p>No categories yet.</p>
+            {% endfor %}
+        </div>
+
+        <button class="category-arrow category-arrow-right" type="button" aria-label="Next categories">
+            →
+        </button>
+    </div>
+</section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById("categorySlider");
+        const leftButton = document.querySelector(".category-arrow-left");
+        const rightButton = document.querySelector(".category-arrow-right");
+
+        if (!slider || !leftButton || !rightButton) {
+            return;
+        }
+
+        function getScrollAmount() {
+            const card = slider.querySelector(".slider-category-card");
+            if (!card) {
+                return 320;
+            }
+
+            return card.offsetWidth + 24;
+        }
+
+        function updateButtons() {
+            leftButton.disabled = slider.scrollLeft <= 5;
+
+            const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+            rightButton.disabled = slider.scrollLeft >= maxScrollLeft - 5;
+        }
+
+        leftButton.addEventListener("click", function () {
+            slider.scrollBy({
+                left: -getScrollAmount(),
+                behavior: "smooth"
+            });
+        });
+
+        rightButton.addEventListener("click", function () {
+            slider.scrollBy({
+                left: getScrollAmount(),
+                behavior: "smooth"
+            });
+        });
+
+        slider.addEventListener("scroll", updateButtons);
+        window.addEventListener("resize", updateButtons);
+
+        updateButtons();
+    });
+</script>
+
+<section class="home-section">
+    <div class="section-title-row">
+        <h2>10 Most Recently Added Animals</h2>
+        <a href="{% url 'animals:animal_list' %}?sort=newest">View all animals →</a>
+    </div>
+
+    <div class="recent-row">
+        {% for animal in recent_animals %}
+            <a href="{% url 'animals:animal_detail' animal.id %}" class="recent-card">
+                <div class="recent-image">
+                    {% if animal.image %}
+                        <img src="{{ animal.image.url }}" alt="{{ animal.name }}">
+                    {% elif animal.wiki_image_url %}
+                        <img src="{{ animal.wiki_image_url }}" alt="{{ animal.name }}">
+                    {% else %}
+                        <div class="mini-placeholder">No Image</div>
+                    {% endif %}
+                </div>
+
+                <div class="recent-body">
+                    <h3>{{ animal.name }}</h3>
+
+                    {% if animal.scientific_name %}
+                        <p>{{ animal.scientific_name }}</p>
+                    {% endif %}
+
+                    <span>{{ animal.created_at|date:"M d, Y" }}</span>
+                </div>
+            </a>
+        {% empty %}
+            <p>No recent animals yet.</p>
+        {% endfor %}
+    </div>
+</section>
+
+
+<section class="home-video-section">
+    <div class="home-section-header">
+        <span class="section-badge">🎬 Animal Shorts</span>
+        <h2>Watch Animal Videos</h2>
+        <p>Discover short wildlife videos, animal facts, and amazing nature moments.</p>
+    </div>
+
+    {% if recent_videos %}
+        <div class="home-video-grid">
+            {% for video in recent_videos %}
+                <div class="home-video-card">
+                    <div class="home-video-frame">
+                        {% if video.platform == "youtube" and video.embed_url %}
+                            {% if video.platform == "youtube" and video.embed_url %}
+                                <iframe
+                                    src="{{ video.embed_url }}"
+                                    title="{{ video.title }}"
+                                    frameborder="0"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                            {% endif %}
+
+                        {% elif video.platform == "tiktok" %}
+                            <blockquote
+                                class="tiktok-embed"
+                                cite="{{ video.video_url }}"
+                                style="max-width: 325px; min-width: 250px;">
+                                <section>
+                                    <a href="{{ video.video_url }}" target="_blank">
+                                        Watch on TikTok
+                                    </a>
+                                </section>
+                            </blockquote>
+
+                        {% else %}
+                            <a href="{{ video.video_url }}" target="_blank" class="video-fallback-link">
+                                Watch Video
+                            </a>
+                        {% endif %}
+                    </div>
+
+                    <div class="home-video-content">
+                        <span class="video-platform {{ video.platform }}">
+                            {% if video.platform == "youtube" %}
+                                YouTube Shorts
+                            {% elif video.platform == "tiktok" %}
+                                TikTok
+                            {% else %}
+                                Video
+                            {% endif %}
+                        </span>
+
+                        <h3>{{ video.title }}</h3>
+
+                        {% if video.animal %}
+                            <p class="video-animal-name">
+                                {{ video.animal.name }}
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="home-video-action">
+            <a href="{% url 'animals:video_list' %}" class="view-all-videos-btn">
+                View All Videos
+            </a>
+        </div>
+    {% else %}
+        <div class="home-video-empty">
+            <h3>No videos yet</h3>
+            <p>Add YouTube Shorts or TikTok videos from the Django admin.</p>
+        </div>
+    {% endif %}
+</section>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+<section class="place-banner">
+    <div class="place-icon">📍</div>
+
+    <div class="place-content">
+        <h2>Search by Place</h2>
+        <p>Explore animals by habitat, region, or specific location around the world.</p>
+    </div>
+
+    <a href="{% url 'animals:place_search' %}" class="place-btn">
+        Explore Places →
+    </a>
+</section>
+<!-- <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-intro">
+            <h2>Search Wilds</h2>
+            <p>
+                Search Wilds is an animal discovery website where users can explore animals,
+                learn about their habitats, view locations on a map, watch animal videos,
+                and discover interesting wildlife facts.
+            </p>
+        </div>
+
+        <div class="footer-subscribe">
+            <h3>Subscribe for Updates</h3>
+            <p>Get new animal facts, videos, and wildlife updates.</p>
+
+            <form class="subscribe-form" method="post" action="#">
+                {% csrf_token %}
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email"
+                    required
+                >
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; {% now "Y" %} Search Wilds. All rights reserved.</p>
+    </div>
+</footer> -->
+
+{% endblock %}
