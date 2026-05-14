@@ -36,7 +36,7 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
 
 
 
-os.environ.get("DEBUG", "False") == "True"
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
     host.strip()
@@ -56,13 +56,19 @@ CSRF_TRUSTED_ORIGINS = [
 # if DEBUG:
 #     ALLOWED_HOSTS += ["127.0.0.1", "localhost"]
 
+# cloudinary.config(
+#     cloud_name=os.environ.get("dhawl4btj"),
+#     api_key=os.environ.get("992719138799245"),
+#     api_secret=os.environ.get("YNAu7GihEbsSD0vVpERqrKUuFL8"),
+#     secure=True,
+# )
+
 cloudinary.config(
-    cloud_name=os.environ.get("dhawl4btj"),
-    api_key=os.environ.get("992719138799245"),
-    api_secret=os.environ.get("YNAu7GihEbsSD0vVpERqrKUuFL8"),
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
     secure=True,
 )
-
 
 # Application definition
 
@@ -167,7 +173,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 WHITENOISE_MANIFEST_STRICT = False
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / 'static',
 ]
 # FOR DEPLOYMENT 
 STORAGES = {
