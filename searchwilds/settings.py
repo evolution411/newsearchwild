@@ -166,7 +166,9 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 WHITENOISE_MANIFEST_STRICT = False
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 # FOR DEPLOYMENT 
 STORAGES = {
     "default": {
