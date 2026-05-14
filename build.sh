@@ -28,3 +28,6 @@ echo "===== COLLECTED CSS ====="
 ls -la staticfiles/css || echo "No staticfiles/css folder found"
 
 python manage.py migrate
+
+echo "===== CREATE SUPERUSER IF CONFIGURED ====="
+python manage.py shell -c "import os; from django.contrib.auth import get_user_model; User = get_user_model(); username = os.environ.get('DJANGO_SUPERUSER_USERNAME'); email = os.environ.get('DJANGO_SUPERUSER_EMAIL'); password = os.environ.get('DJANGO_SUPERUSER_PASSWORD'); username and email and password and (User.objects.filter(username=username).exists() or User.objects.create_superuser(username, email, password))"
