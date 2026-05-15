@@ -92,8 +92,8 @@ class Animal(models.Model):
     # Wikipedia fields
     wiki_title = models.CharField(max_length=200, blank=True)
     wiki_summary = models.TextField(blank=True)
-    wiki_image_url = models.URLField(blank=True)
-    wiki_page_url = models.URLField(blank=True)
+    wiki_image_url = models.URLField(max_length=500, blank=True)
+    wiki_page_url = models.URLField(max_length=500, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
     # countries = models.JSONField(default=list, blank=True)
 	# map_points = models.JSONField(default=list, blank=True)
@@ -160,10 +160,10 @@ class AnimalVideo(models.Model):
         choices=PLATFORM_CHOICES
     )
 
-    video_url = models.URLField()
-    embed_url = models.URLField(blank=True)
+    video_url = models.URLField(max_length=500)
+    embed_url = models.URLField(max_length=500, blank=True)
 
-    thumbnail_url = models.URLField(blank=True)
+    thumbnail_url = models.URLField(max_length=500, blank=True)
 
     is_featured = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
