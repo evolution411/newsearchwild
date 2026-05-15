@@ -17,6 +17,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from dotenv import load_dotenv
+from urllib.parse import urlparse
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -63,10 +64,22 @@ CSRF_TRUSTED_ORIGINS = [
 #     secure=True,
 # )
 
+cloudinary_url = os.environ.get("CLOUDINARY_URL", "")
+parsed_cloudinary = urlparse(cloudinary_url) if cloudinary_url else None
+
+cloudinary_cloud_name = os.environ.get("CLOUDINARY_CLOUD_NAME")
+cloudinary_api_key = os.environ.get("CLOUDINARY_API_KEY")
+cloudinary_api_secret = os.environ.get("CLOUDINARY_API_SECRET")
+
+if parsed_cloudinary and parsed_cloudinary.scheme == "cloudinary":
+    cloudinary_cloud_name = cloudinary_cloud_name or parsed_cloudinary.hostname
+    cloudinary_api_key = cloudinary_api_key or parsed_cloudinary.username
+    cloudinary_api_secret = cloudinary_api_secret or parsed_cloudinary.password
+
 cloudinary.config(
-    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
-    api_key=os.environ.get("CLOUDINARY_API_KEY"),
-    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
+    cloud_name=cloudinary_cloud_name,
+    api_key=cloudinary_api_key,
+    api_secret=cloudinary_api_secret,
     secure=True,
 )
 
