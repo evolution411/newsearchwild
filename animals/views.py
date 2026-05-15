@@ -6,6 +6,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.core.signing import BadSignature, SignatureExpired, TimestampSigner
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.core.paginator import Paginator
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -532,8 +533,13 @@ def video_list(request):
     if platform in ["youtube", "tiktok"]:
         videos = videos.filter(platform=platform)
 
+    paginator = Paginator(videos, 9)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     return render(request, "animals/video_list.html", {
-        "videos": videos,
+        "videos": page_obj,
+        "page_obj": page_obj,
         "platform": platform,
     })
 
