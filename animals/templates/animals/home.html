@@ -28,10 +28,18 @@
     </div>
 
     <div class="hero-image">
-        {% if featured_animals.0.image %}
-            <img src="{{ featured_animals.0.image.url }}" alt="{{ featured_animals.0.name }}">
-        {% elif featured_animals.0.wiki_image_url %}
-            <img src="{{ featured_animals.0.wiki_image_url }}" alt="{{ featured_animals.0.name }}">
+        {% if featured_animals %}
+            {% with hero_animal=featured_animals.0 %}
+        {% if hero_animal.image %}
+            <img src="{{ hero_animal.image.url }}" alt="{{ hero_animal.name }}">
+        {% elif hero_animal.wiki_image_url %}
+            <img src="{{ hero_animal.wiki_image_url }}" alt="{{ hero_animal.name }}">
+        {% else %}
+            <div class="hero-placeholder">
+                Search Wilds
+            </div>
+        {% endif %}
+            {% endwith %}
         {% else %}
             <div class="hero-placeholder">
                 Search Wilds
