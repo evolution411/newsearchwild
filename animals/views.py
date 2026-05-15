@@ -2,9 +2,10 @@ import json
 import random
 import requests
 from django.contrib import messages
+from django.core.mail import EmailMultiAlternatives
+from django.core.signing import BadSignature, SignatureExpired, TimestampSigner
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
-from django.core.mail import send_mail
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
@@ -177,17 +178,88 @@ def send_subscription_welcome_email(email):
     if not settings.EMAIL_HOST and "console.EmailBackend" not in settings.EMAIL_BACKEND:
         return
 
-    send_mail(
-        subject="Welcome to Search Wilds",
-        message=(
-            "Thanks for subscribing to Search Wilds.\n\n"
-            "You'll now receive updates about wildlife facts, animals, and videos.\n\n"
-            "We’re glad to have you with us."
-        ),
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=[email],
-        fail_silently=False,
+    signer = TimestampSigner()
+    unsubscribe_token = signer.sign(email)
+    unsubscribe_url = f"{settings.SITE_URL}/unsubscribe/?token={unsubscribe_token}"
+    animals_url = f"{settings.SITE_URL}/animals/"
+    categories_url = f"{settings.SITE_URL}/categories/"
+    videos_url = f"{settings.SITE_URL}/videos/"
+
+    subject = "Welcome to Search Wilds"
+    text_content = (
+        "Thanks for subscribing to Search Wilds.\n\n"
+        "You'll now receive updates about wildlife facts, animals, and videos.\n\n"
+        f"You're subscribed as: {email}\n\n"
+        f"Explore animals: {animals_url}\n"
+        f"Browse categories: {categories_url}\n"
+        f"Watch videos: {videos_url}\n\n"
+        f"Unsubscribe anytime: {unsubscribe_url}\n\n"
+        "We’re glad to have you with us."
     )
+    html_content = """
+    <html>
+      <body style="margin:0;padding:0;background:#f6f4ec;font-family:Arial,Helvetica,sans-serif;color:#163022;">
+        <div style="max-width:640px;margin:0 auto;padding:32px 16px;">
+          <div style="background:#ffffff;border-radius:24px;overflow:hidden;box-shadow:0 18px 50px rgba(12,32,21,0.12);">
+            <div style="background:linear-gradient(135deg,#123524 0%,#1f6b3c 100%);padding:36px 32px;color:#ffffff;">
+              <div style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;opacity:0.8;font-weight:700;">Search Wilds</div>
+              <h1 style="margin:14px 0 10px;font-size:34px;line-height:1.05;font-family:Georgia,'Times New Roman',serif;">Welcome to the wild side</h1>
+              <p style="margin:0;font-size:16px;line-height:1.7;max-width:460px;">
+                Thanks for subscribing. You’re now on the list for wildlife facts, new animal highlights, and video updates.
+              </p>
+            </div>
+
+            <div style="padding:32px;">
+              <p style="margin:0 0 14px;font-size:14px;line-height:1.7;color:#6b7a71;">
+                Subscription email: <strong style="color:#163022;">%s</strong>
+              </p>
+              <p style="margin:0 0 18px;font-size:16px;line-height:1.8;color:#32463a;">
+                We’ll send you occasional updates about fascinating species, habitats around the world, and new content added to Search Wilds.
+              </p>
+
+              <div style="background:#eff6ef;border-radius:18px;padding:20px 22px;margin:0 0 24px;">
+                <div style="font-size:14px;font-weight:700;color:#174f2d;margin-bottom:8px;">What you can explore now</div>
+                <ul style="padding-left:18px;margin:0;color:#405246;line-height:1.8;font-size:15px;">
+                  <li>Animal profiles and conservation facts</li>
+                  <li>Wildlife location discovery by region</li>
+                  <li>Short animal videos and visual highlights</li>
+                </ul>
+              </div>
+
+              <div style="margin:0 0 24px;">
+                <a href="%s" style="display:inline-block;background:#174f2d;color:#ffffff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;margin:0 10px 10px 0;">
+                  Explore Animals
+                </a>
+                <a href="%s" style="display:inline-block;background:#edf5ef;color:#174f2d;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;margin:0 10px 10px 0;border:1px solid #d7e6da;">
+                  Browse Categories
+                </a>
+                <a href="%s" style="display:inline-block;background:#edf5ef;color:#174f2d;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;margin:0 10px 10px 0;border:1px solid #d7e6da;">
+                  Watch Videos
+                </a>
+              </div>
+
+              <p style="margin:28px 0 0;font-size:14px;line-height:1.7;color:#6b7a71;">
+                Thanks for being part of the Search Wilds community.
+              </p>
+              <p style="margin:16px 0 0;font-size:13px;line-height:1.7;color:#7b877f;">
+                If you no longer want these updates, you can
+                <a href="%s" style="color:#174f2d;">unsubscribe here</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+    """ % (email, animals_url, categories_url, videos_url, unsubscribe_url)
+
+    message = EmailMultiAlternatives(
+        subject=subject,
+        body=text_content,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[email],
+    )
+    message.attach_alternative(html_content, "text/html")
+    message.send(fail_silently=False)
 
 
 def sync_subscription_to_brevo(email):
@@ -269,6 +341,31 @@ def subscribe(request):
             messages.info(request, "That email is already subscribed.")
 
     return redirect(next_url)
+
+
+def unsubscribe(request):
+    token = request.GET.get("token", "")
+
+    if not token:
+        messages.error(request, "Missing unsubscribe token.")
+        return redirect("animals:home")
+
+    signer = TimestampSigner()
+
+    try:
+        email = signer.unsign(token, max_age=60 * 60 * 24 * 30)
+    except (BadSignature, SignatureExpired):
+        messages.error(request, "This unsubscribe link is invalid or has expired.")
+        return redirect("animals:home")
+
+    updated = NewsletterSubscriber.objects.filter(email=email, is_active=True).update(is_active=False)
+
+    if updated:
+        messages.success(request, "You have been unsubscribed from Search Wilds updates.")
+    else:
+        messages.info(request, "That subscription is already inactive or no longer exists.")
+
+    return redirect("animals:home")
 
 def home(request):
     categories = AnimalCategory.objects.all()

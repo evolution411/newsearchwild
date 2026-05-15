@@ -214,6 +214,7 @@ SUBSCRIPTION_WELCOME_EMAIL_ENABLED = os.environ.get("SUBSCRIPTION_WELCOME_EMAIL_
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
 BREVO_LIST_ID = os.environ.get("BREVO_LIST_ID", "")
 BREVO_SYNC_ENABLED = os.environ.get("BREVO_SYNC_ENABLED", "True") == "True"
+SITE_URL = os.environ.get("SITE_URL", "https://newsearchwild.onrender.com").rstrip("/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
