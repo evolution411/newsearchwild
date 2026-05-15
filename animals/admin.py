@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Animal, AnimalCategory, AnimalLocation, AnimalVideo
+from .models import Animal, AnimalCategory, AnimalLocation, AnimalVideo, NewsletterSubscriber
 from .wiki_api import fetch_wikipedia_summary
 
 
@@ -96,3 +96,10 @@ class AnimalVideoAdmin(admin.ModelAdmin):
 class AnimalLocationAdmin(admin.ModelAdmin):
     list_display = ('animal', 'place_name', 'country', 'latitude', 'longitude')
     search_fields = ('animal__name', 'place_name', 'country')
+
+
+@admin.register(NewsletterSubscriber)
+class NewsletterSubscriberAdmin(admin.ModelAdmin):
+    list_display = ("email", "is_active", "created_at")
+    list_filter = ("is_active", "created_at")
+    search_fields = ("email",)

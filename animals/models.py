@@ -12,6 +12,18 @@ class AnimalCategory(models.Model):
         return self.name
 
 
+class NewsletterSubscriber(models.Model):
+    email = models.EmailField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return self.email
+
+
 
 DIET_CHOICES = [
     ('Carnivore', 'Carnivore'),

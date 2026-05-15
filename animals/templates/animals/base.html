@@ -58,6 +58,13 @@
 </header>
 
 <main>
+    {% if messages %}
+    <div class="message-stack">
+        {% for message in messages %}
+            <div class="site-message {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
     {% block content %}
     {% endblock %}
     <footer class="site-footer">
@@ -75,8 +82,9 @@
             <h3>Subscribe for Updates</h3>
             <p>Get new animal facts, videos, and wildlife updates.</p>
 
-            <form class="subscribe-form" method="post" action="#">
+            <form class="subscribe-form" method="post" action="{% url 'animals:subscribe' %}">
                 {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
                 <input 
                     type="email" 
                     name="email" 

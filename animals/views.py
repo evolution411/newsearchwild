@@ -1,8 +1,11 @@
 import json
 import random
-from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Animal, AnimalCategory, AnimalLocation,PuzzleScore, AnimalVideo
+from .models import Animal, AnimalCategory, AnimalLocation,PuzzleScore, AnimalVideo, NewsletterSubscriber
 from django.db.models import Q,Count,Avg
 from django.http import JsonResponse
 
@@ -162,6 +165,37 @@ def get_country_coordinates(country_name, fallback_latitude=None, fallback_longi
 
 def get_continent_for_country(country):
     return COUNTRY_CONTINENT.get(country, "Other")
+
+
+def subscribe(request):
+    if request.method != "POST":
+        return redirect("animals:home")
+
+    email = (request.POST.get("email") or "").strip().lower()
+    next_url = request.POST.get("next") or request.META.get("HTTP_REFERER") or "/"
+
+    try:
+        validate_email(email)
+    except ValidationError:
+        messages.error(request, "Please enter a valid email address.")
+        return redirect(next_url)
+
+    subscriber, created = NewsletterSubscriber.objects.get_or_create(
+        email=email,
+        defaults={"is_active": True},
+    )
+
+    if created:
+        messages.success(request, "You have been subscribed for updates.")
+    else:
+        if not subscriber.is_active:
+            subscriber.is_active = True
+            subscriber.save(update_fields=["is_active"])
+            messages.success(request, "Your subscription has been reactivated.")
+        else:
+            messages.info(request, "That email is already subscribed.")
+
+    return redirect(next_url)
 
 def home(request):
     categories = AnimalCategory.objects.all()

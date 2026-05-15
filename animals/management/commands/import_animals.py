@@ -39,8 +39,16 @@ def get_wikipedia_data(wiki_title):
 class Command(BaseCommand):
     help = "Import animals from JSON file"
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            "--file",
+            type=str,
+            default="data/search_wilds_50_animals.json",
+            help="Path to the animal JSON file"
+        )
+
     def handle(self, *args, **kwargs):
-        file_path = Path("data/search_wilds_50_animals.json")
+        file_path = Path(kwargs["file"])
 
         if not file_path.exists():
             self.stdout.write(self.style.ERROR(f"File not found: {file_path}"))
