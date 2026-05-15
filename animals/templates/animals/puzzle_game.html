@@ -32,6 +32,8 @@
                 <button id="resetBtn" type="button">Reset</button>
             </div>
 
+            <p class="mobile-game-tip">On mobile, tap one piece and then tap another piece to swap them.</p>
+
             <div id="winMessage" class="win-message">
                 🎉 You solved the puzzle!
             </div>
@@ -152,6 +154,9 @@
     background-size: 300% 300%;
     cursor: grab;
     transition: transform 0.15s ease, filter 0.15s ease;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .puzzle-piece:active {
@@ -162,6 +167,12 @@
 .puzzle-piece.dragging {
     opacity: 0.5;
     filter: brightness(1.1);
+}
+
+.puzzle-piece.selected {
+    outline: 4px solid #facc15;
+    outline-offset: -4px;
+    filter: brightness(1.08);
 }
 
 .win-message {
@@ -191,6 +202,18 @@
     color: #6b7280;
 }
 
+.mobile-game-tip {
+    display: none;
+    margin: 0 0 16px;
+    padding: 12px 14px;
+    background: #eff6ef;
+    color: #14532d;
+    border: 1px solid #cfe6d5;
+    border-radius: 14px;
+    line-height: 1.5;
+    font-size: 0.92rem;
+}
+
 @media (max-width: 950px) {
     .game-layout {
         grid-template-columns: 1fr;
@@ -203,6 +226,38 @@
 
     .puzzle-board {
         width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .game-page {
+        padding: 28px 4% 40px;
+    }
+
+    .game-header h1 {
+        font-size: 2rem;
+    }
+
+    .original-panel,
+    .puzzle-panel {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    #sourceImage,
+    .missing-image {
+        height: 220px;
+    }
+
+    .mobile-game-tip {
+        display: block;
+    }
+
+    .puzzle-board {
+        width: min(92vw, 420px);
+        height: min(92vw, 420px);
+        border-width: 3px;
+        border-radius: 16px;
     }
 }
 </style>
@@ -219,6 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalPieces = rows * cols;
 
     let draggedPiece = null;
+    let selectedPiece = null;
 
     function shuffleArray(array) {
         const newArray = [...array];
@@ -265,6 +321,7 @@ document.addEventListener("DOMContentLoaded", function () {
             piece.addEventListener("dragover", handleDragOver);
             piece.addEventListener("drop", handleDrop);
             piece.addEventListener("dragend", handleDragEnd);
+            piece.addEventListener("click", handlePieceTap);
 
             board.appendChild(piece);
         });
@@ -296,6 +353,30 @@ document.addEventListener("DOMContentLoaded", function () {
         draggedPiece = null;
     }
 
+    function clearSelectedPiece() {
+        if (selectedPiece) {
+            selectedPiece.classList.remove("selected");
+            selectedPiece = null;
+        }
+    }
+
+    function handlePieceTap() {
+        if (!selectedPiece) {
+            selectedPiece = this;
+            this.classList.add("selected");
+            return;
+        }
+
+        if (selectedPiece === this) {
+            clearSelectedPiece();
+            return;
+        }
+
+        swapPieces(selectedPiece, this);
+        clearSelectedPiece();
+        checkWin();
+    }
+
     function swapPieces(piece1, piece2) {
         const tempBackground = piece1.style.backgroundPosition;
         const tempCorrect = piece1.dataset.correct;
@@ -316,6 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (solved) {
             winMessage.classList.add("show");
+            clearSelectedPiece();
 
             setTimeout(() => {
                 createPuzzle();
@@ -323,7 +405,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    resetBtn.addEventListener("click", createPuzzle);
+    resetBtn.addEventListener("click", function () {
+        clearSelectedPiece();
+        createPuzzle();
+    });
 
     if (image && image.complete) {
         createPuzzle();
