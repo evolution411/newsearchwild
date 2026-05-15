@@ -59,10 +59,16 @@
 
 <main>
     {% if messages %}
-    <div class="message-stack">
-        {% for message in messages %}
-            <div class="site-message {{ message.tags }}">{{ message }}</div>
-        {% endfor %}
+    <div class="subscription-popup-overlay show" id="subscriptionPopup" role="dialog" aria-modal="true" aria-labelledby="subscriptionPopupTitle">
+        <div class="subscription-popup">
+            <button type="button" class="subscription-popup-close" id="subscriptionPopupClose" aria-label="Close popup">×</button>
+            {% for message in messages %}
+                <span class="subscription-popup-badge {{ message.tags }}">Subscription Update</span>
+                <h2 id="subscriptionPopupTitle">Search Wilds</h2>
+                <p class="subscription-popup-text">{{ message }}</p>
+            {% endfor %}
+            <button type="button" class="subscription-popup-button" id="subscriptionPopupButton">OK</button>
+        </div>
     </div>
     {% endif %}
     {% block content %}
@@ -102,5 +108,44 @@
 </footer>
 </main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const popup = document.getElementById("subscriptionPopup");
+
+        if (!popup) {
+            return;
+        }
+
+        const closeButton = document.getElementById("subscriptionPopupClose");
+        const confirmButton = document.getElementById("subscriptionPopupButton");
+
+        function closePopup() {
+            popup.classList.remove("show");
+            document.body.classList.remove("subscription-popup-open");
+        }
+
+        document.body.classList.add("subscription-popup-open");
+
+        if (closeButton) {
+            closeButton.addEventListener("click", closePopup);
+        }
+
+        if (confirmButton) {
+            confirmButton.addEventListener("click", closePopup);
+        }
+
+        popup.addEventListener("click", function (event) {
+            if (event.target === popup) {
+                closePopup();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closePopup();
+            }
+        });
+    });
+</script>
 </body>
 </html>
