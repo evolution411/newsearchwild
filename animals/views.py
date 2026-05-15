@@ -295,6 +295,29 @@ def sync_subscription_to_brevo(email):
         )
 
 
+def sync_unsubscribe_to_brevo(email):
+    if not settings.BREVO_SYNC_ENABLED or not settings.BREVO_API_KEY:
+        return
+
+    response = requests.put(
+        f"https://api.brevo.com/v3/contacts/{email}",
+        headers={
+            "accept": "application/json",
+            "api-key": settings.BREVO_API_KEY,
+            "content-type": "application/json",
+        },
+        json={
+            "emailBlacklisted": True,
+        },
+        timeout=20,
+    )
+
+    if response.status_code not in (200, 204):
+        raise RuntimeError(
+            f"Brevo unsubscribe sync failed with status {response.status_code}: {response.text[:200]}"
+        )
+
+
 def subscribe(request):
     if request.method != "POST":
         return redirect("animals:home")
@@ -361,6 +384,12 @@ def unsubscribe(request):
     updated = NewsletterSubscriber.objects.filter(email=email, is_active=True).update(is_active=False)
 
     if updated:
+        try:
+            sync_unsubscribe_to_brevo(email)
+        except Exception:
+            messages.warning(request, "You were unsubscribed locally, but Brevo sync could not be completed.")
+            return redirect("animals:home")
+
         messages.success(request, "You have been unsubscribed from Search Wilds updates.")
     else:
         messages.info(request, "That subscription is already inactive or no longer exists.")
