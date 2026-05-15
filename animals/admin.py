@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.http import HttpResponse
+import csv
 from .models import Animal, AnimalCategory, AnimalLocation, AnimalVideo, NewsletterSubscriber
 from .wiki_api import fetch_wikipedia_summary
 
@@ -103,3 +105,21 @@ class NewsletterSubscriberAdmin(admin.ModelAdmin):
     list_display = ("email", "is_active", "created_at")
     list_filter = ("is_active", "created_at")
     search_fields = ("email",)
+    actions = ["export_as_csv"]
+
+    @admin.action(description="Export selected subscribers as CSV")
+    def export_as_csv(self, request, queryset):
+        response = HttpResponse(content_type="text/csv")
+        response["Content-Disposition"] = 'attachment; filename="newsletter_subscribers.csv"'
+
+        writer = csv.writer(response)
+        writer.writerow(["email", "is_active", "created_at"])
+
+        for subscriber in queryset.order_by("-created_at"):
+            writer.writerow([
+                subscriber.email,
+                subscriber.is_active,
+                subscriber.created_at.isoformat(),
+            ])
+
+        return response

@@ -1,8 +1,11 @@
 import json
 import random
+import requests
 from django.contrib import messages
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
+from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Animal, AnimalCategory, AnimalLocation,PuzzleScore, AnimalVideo, NewsletterSubscriber
@@ -167,6 +170,59 @@ def get_continent_for_country(country):
     return COUNTRY_CONTINENT.get(country, "Other")
 
 
+def send_subscription_welcome_email(email):
+    if not settings.SUBSCRIPTION_WELCOME_EMAIL_ENABLED:
+        return
+
+    if not settings.EMAIL_HOST and "console.EmailBackend" not in settings.EMAIL_BACKEND:
+        return
+
+    send_mail(
+        subject="Welcome to Search Wilds",
+        message=(
+            "Thanks for subscribing to Search Wilds.\n\n"
+            "You'll now receive updates about wildlife facts, animals, and videos.\n\n"
+            "We’re glad to have you with us."
+        ),
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        recipient_list=[email],
+        fail_silently=False,
+    )
+
+
+def sync_subscription_to_brevo(email):
+    if not settings.BREVO_SYNC_ENABLED or not settings.BREVO_API_KEY:
+        return
+
+    payload = {
+        "email": email,
+        "emailBlacklisted": False,
+        "updateEnabled": True,
+    }
+
+    if settings.BREVO_LIST_ID:
+        try:
+            payload["listIds"] = [int(settings.BREVO_LIST_ID)]
+        except ValueError:
+            raise ValueError("BREVO_LIST_ID must be a number.")
+
+    response = requests.post(
+        "https://api.brevo.com/v3/contacts",
+        headers={
+            "accept": "application/json",
+            "api-key": settings.BREVO_API_KEY,
+            "content-type": "application/json",
+        },
+        json=payload,
+        timeout=20,
+    )
+
+    if response.status_code not in (200, 201, 204):
+        raise RuntimeError(
+            f"Brevo contact sync failed with status {response.status_code}: {response.text[:200]}"
+        )
+
+
 def subscribe(request):
     if request.method != "POST":
         return redirect("animals:home")
@@ -186,11 +242,28 @@ def subscribe(request):
     )
 
     if created:
+        try:
+            sync_subscription_to_brevo(email)
+        except Exception:
+            messages.warning(request, "Subscription saved, but Brevo sync could not be completed.")
+            return redirect(next_url)
+
+        try:
+            send_subscription_welcome_email(email)
+        except Exception:
+            messages.warning(request, "Subscription saved, but the welcome email could not be sent.")
+            return redirect(next_url)
+
         messages.success(request, "You have been subscribed for updates.")
     else:
         if not subscriber.is_active:
             subscriber.is_active = True
             subscriber.save(update_fields=["is_active"])
+            try:
+                sync_subscription_to_brevo(email)
+            except Exception:
+                messages.warning(request, "Your subscription was reactivated, but Brevo sync could not be completed.")
+                return redirect(next_url)
             messages.success(request, "Your subscription has been reactivated.")
         else:
             messages.info(request, "That email is already subscribed.")
