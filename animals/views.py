@@ -533,7 +533,7 @@ def video_list(request):
     if platform in ["youtube", "tiktok"]:
         videos = videos.filter(platform=platform)
 
-    paginator = Paginator(videos, 9)
+    paginator = Paginator(videos, 8)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
