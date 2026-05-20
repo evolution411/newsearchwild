@@ -114,7 +114,7 @@
             <div>
                 <h2>Animal Results</h2>
                 <p>
-                    {{ animals|length }} animal{{ animals|length|pluralize }} found
+                    {{ animal_count }} animal{{ animal_count|pluralize }} found
                 </p>
             </div>
 
@@ -199,6 +199,41 @@
                 </div>
             {% endfor %}
         </div>
+
+        {% if page_obj.paginator.num_pages > 1 %}
+            <nav class="pagination-nav" aria-label="Animal pagination">
+                {% if page_obj.has_previous %}
+                    <a
+                        href="?q={{ query|urlencode }}&category={{ selected_category|urlencode }}&diet={{ selected_diet|urlencode }}&habitat={{ selected_habitat|urlencode }}&place={{ selected_place|urlencode }}&status={{ selected_status|urlencode }}&sort={{ selected_sort|urlencode }}&page={{ page_obj.previous_page_number }}"
+                        class="pagination-link"
+                    >
+                        Previous
+                    </a>
+                {% endif %}
+
+                {% for page_num in page_obj.paginator.page_range %}
+                    {% if page_num == page_obj.number %}
+                        <span class="pagination-link active">{{ page_num }}</span>
+                    {% else %}
+                        <a
+                            href="?q={{ query|urlencode }}&category={{ selected_category|urlencode }}&diet={{ selected_diet|urlencode }}&habitat={{ selected_habitat|urlencode }}&place={{ selected_place|urlencode }}&status={{ selected_status|urlencode }}&sort={{ selected_sort|urlencode }}&page={{ page_num }}"
+                            class="pagination-link"
+                        >
+                            {{ page_num }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                    <a
+                        href="?q={{ query|urlencode }}&category={{ selected_category|urlencode }}&diet={{ selected_diet|urlencode }}&habitat={{ selected_habitat|urlencode }}&place={{ selected_place|urlencode }}&status={{ selected_status|urlencode }}&sort={{ selected_sort|urlencode }}&page={{ page_obj.next_page_number }}"
+                        class="pagination-link"
+                    >
+                        Next
+                    </a>
+                {% endif %}
+            </nav>
+        {% endif %}
     </section>
 
 </section>

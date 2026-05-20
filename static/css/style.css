@@ -2645,3 +2645,36 @@ button.animal-action-link {
         width: 100%;
     }
 }
+
+.pagination-nav {
+    margin-top: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pagination-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    padding: 11px 16px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #14532d;
+    text-decoration: none;
+    font-weight: 800;
+    border: 1px solid #d1fae5;
+}
+
+.pagination-link:hover {
+    background: #dcfce7;
+}
+
+.pagination-link.active {
+    background: #16a34a;
+    color: #ffffff;
+    border-color: #16a34a;
+}

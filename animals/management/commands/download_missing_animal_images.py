@@ -1,5 +1,6 @@
 import mimetypes
 import time
+from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlparse, quote
 
@@ -8,6 +9,7 @@ from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 from django.db.models import Q
 from django.utils.text import slugify
+from PIL import Image
 
 from animals.models import Animal
 
@@ -17,6 +19,8 @@ HEADERS = {
     "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
     "Referer": "https://en.wikipedia.org/",
 }
+MAX_UPLOAD_BYTES = 9 * 1024 * 1024
+MAX_IMAGE_DIMENSION = 2200
 
 
 def get_wikipedia_summary_data(title):
@@ -150,6 +154,28 @@ def download_image_with_retry(image_url, headers, max_retries=3):
 
     return None
 
+
+def optimize_image_content(image_bytes):
+    """
+    Resize/compress large images so they fit provider upload limits.
+    """
+    if len(image_bytes) <= MAX_UPLOAD_BYTES:
+        return image_bytes, ".jpg"
+
+    with Image.open(BytesIO(image_bytes)) as image:
+        image = image.convert("RGB")
+        image.thumbnail((MAX_IMAGE_DIMENSION, MAX_IMAGE_DIMENSION), Image.Resampling.LANCZOS)
+
+        for quality in (85, 75, 65, 55, 45):
+            buffer = BytesIO()
+            image.save(buffer, format="JPEG", optimize=True, quality=quality)
+            optimized_bytes = buffer.getvalue()
+
+            if len(optimized_bytes) <= MAX_UPLOAD_BYTES:
+                return optimized_bytes, ".jpg"
+
+    raise ValueError("Image could not be reduced below upload size limit.")
+
 class Command(BaseCommand):
     help = "Download missing animal images into Animal.image"
 
@@ -263,11 +289,26 @@ class Command(BaseCommand):
                     continue
 
                 ext = get_file_extension(image_url, response=response)
+                image_bytes = response.content
+
+                try:
+                    image_bytes, optimized_ext = optimize_image_content(image_bytes)
+                    if optimized_ext:
+                        ext = optimized_ext
+                except Exception as e:
+                    self.stdout.write(
+                        self.style.ERROR(
+                            f"  Failed: could not optimize image for {animal.name}. {e}"
+                        )
+                    )
+                    failed += 1
+                    continue
+
                 filename = f"{slugify(animal.name)}{ext}"
 
                 animal.image.save(
                     filename,
-                    ContentFile(response.content),
+                    ContentFile(image_bytes),
                     save=True
                 )
 
@@ -284,6 +325,13 @@ class Command(BaseCommand):
                 self.stdout.write(
                     self.style.ERROR(
                         f"  Error downloading {animal.name}: {e}"
+                    )
+                )
+                failed += 1
+            except Exception as e:
+                self.stdout.write(
+                    self.style.ERROR(
+                        f"  Error saving {animal.name}: {e}"
                     )
                 )
                 failed += 1

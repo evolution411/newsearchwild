@@ -482,6 +482,10 @@ def animal_list(request):
     elif sort == 'oldest':
         animals = animals.order_by('created_at')
 
+    paginator = Paginator(animals, 15)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     conservation_statuses = [
         'Least Concern',
         'Near Threatened',
@@ -494,7 +498,9 @@ def animal_list(request):
     ]
 
     return render(request, 'animals/animal_list.html', {
-        'animals': animals,
+        'animals': page_obj,
+        'page_obj': page_obj,
+        'animal_count': paginator.count,
         'categories': categories,
         'conservation_statuses': conservation_statuses,
         'query': query,
