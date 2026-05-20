@@ -105,13 +105,9 @@
         </div>
 
         <div class="about-card">
-            {% if animal.description %}
-                <p>{{ animal.description }}</p>
-            {% elif animal.wiki_summary %}
-                <p>{{ animal.wiki_summary }}</p>
-            {% else %}
-                <p>No description available yet.</p>
-            {% endif %}
+            {% for paragraph in description_paragraphs %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
         </div>
     </section>
 

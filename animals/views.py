@@ -1,5 +1,6 @@
 import json
 import random
+import re
 import requests
 from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
@@ -170,6 +171,62 @@ def get_country_coordinates(country_name, fallback_latitude=None, fallback_longi
 
 def get_continent_for_country(country):
     return COUNTRY_CONTINENT.get(country, "Other")
+
+
+def build_animal_description_paragraphs(animal):
+    base_text = (animal.description or animal.wiki_summary or "").strip()
+    paragraphs = []
+
+    if base_text:
+        cleaned_text = re.sub(r"\s+", " ", base_text)
+        sentences = re.split(r"(?<=[.!?])\s+", cleaned_text)
+        sentences = [sentence.strip() for sentence in sentences if sentence.strip()]
+
+        if len(sentences) >= 4:
+            midpoint = max(2, len(sentences) // 2)
+            paragraphs.append(" ".join(sentences[:midpoint]).strip())
+            paragraphs.append(" ".join(sentences[midpoint:]).strip())
+        else:
+            paragraphs.append(cleaned_text)
+
+    fact_parts = []
+
+    if animal.category:
+        fact_parts.append(f"It belongs to the {animal.category} group")
+    if animal.habitat:
+        fact_parts.append(f"and is commonly associated with {animal.habitat.lower()} habitats")
+    if animal.diet:
+        fact_parts.append(f"with a {animal.diet.lower()} diet")
+
+    summary_bits = []
+    if animal.lifespan:
+        summary_bits.append(f"a lifespan of {animal.lifespan}")
+    if animal.size:
+        summary_bits.append(f"a size of {animal.size}")
+    if animal.conservation_status and animal.conservation_status != "Unknown":
+        summary_bits.append(f"a conservation status of {animal.conservation_status}")
+
+    fact_sentence = ""
+    if fact_parts:
+        fact_sentence = " ".join(fact_parts).strip()
+        if summary_bits:
+            fact_sentence += ", with " + ", ".join(summary_bits)
+        fact_sentence += "."
+    elif summary_bits:
+        fact_sentence = (
+            f"This animal is currently recorded with {', '.join(summary_bits)}."
+        )
+
+    if fact_sentence:
+        if len(paragraphs) == 1:
+            paragraphs.append(fact_sentence)
+        elif not paragraphs:
+            paragraphs.append(fact_sentence)
+
+    if not paragraphs:
+        paragraphs.append("Animal information is not available yet.")
+
+    return paragraphs
 
 
 def send_subscription_welcome_email(email):
@@ -554,6 +611,7 @@ def animal_detail(request, animal_id):
     videos = animal.videos.filter(is_active=True)
 
     locations = animal.locations.all()
+    description_paragraphs = build_animal_description_paragraphs(animal)
 
 
     location_data = [
@@ -579,6 +637,7 @@ def animal_detail(request, animal_id):
         'animal': animal,
         'locations':locations,
         'videos': videos,
+        'description_paragraphs': description_paragraphs,
         "location_data": location_data,
     })
 
