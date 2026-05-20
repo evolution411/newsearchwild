@@ -83,6 +83,12 @@
                         </a>
                     {% endif %}
 
+                    {% if animal.image or animal.wiki_image_url %}
+                        <a href="{% url 'animals:puzzle_game' animal.id %}" class="animal-action-link puzzle-link">
+                            Puzzle Game
+                        </a>
+                    {% endif %}
+
                     {% if locations %}
                         <button type="button" class="animal-action-link map-link" id="openMapBtn">
                             📍 Find on map

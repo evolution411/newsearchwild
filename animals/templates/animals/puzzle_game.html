@@ -29,7 +29,10 @@
         <div class="puzzle-panel">
             <div class="puzzle-topbar">
                 <h2>Puzzle Board</h2>
-                <button id="resetBtn" type="button">Reset</button>
+                <div class="puzzle-topbar-actions">
+                    <button id="resetBtn" type="button">Reset</button>
+                    <a href="{% url 'animals:puzzle_game' animal.id %}" class="refresh-game-link">Refresh</a>
+                </div>
             </div>
 
             <p class="mobile-game-tip">On mobile, tap one piece and then tap another piece to swap them.</p>
@@ -118,10 +121,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     margin-bottom: 18px;
 }
 
-#resetBtn {
+.puzzle-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#resetBtn,
+.refresh-game-link {
     border: none;
     background: #16a34a;
     color: white;
@@ -129,9 +141,14 @@
     padding: 10px 18px;
     font-weight: 800;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#resetBtn:hover {
+#resetBtn:hover,
+.refresh-game-link:hover {
     background: #15803d;
 }
 
@@ -236,6 +253,11 @@
 
     .game-header h1 {
         font-size: 2rem;
+    }
+
+    .puzzle-topbar {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .original-panel,

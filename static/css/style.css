@@ -2615,6 +2615,18 @@ body.map-modal-open {
     box-shadow: 0 10px 24px rgba(79, 70, 229, 0.18);
 }
 
+.puzzle-link {
+    background: #fff7ed;
+    color: #9a3412;
+    border: 1px solid #fdba74;
+}
+
+.puzzle-link:hover {
+    background: #ffedd5;
+    color: #7c2d12;
+    box-shadow: 0 10px 24px rgba(234, 88, 12, 0.18);
+}
+
 /* Find on map button */
 .map-link {
     background: #16a34a;
