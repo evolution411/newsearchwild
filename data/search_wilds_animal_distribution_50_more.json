@@ -1,0 +1,402 @@
+[
+  {
+    "name": "Ring-tailed Lemur",
+    "countries": ["Madagascar"],
+    "map_points": [
+      {"label": "Berenty Reserve", "country": "Madagascar", "lat": -24.9930, "lng": 46.2910},
+      {"label": "Andringitra National Park", "country": "Madagascar", "lat": -22.2000, "lng": 46.9000}
+    ]
+  },
+  {
+    "name": "Aye-aye",
+    "countries": ["Madagascar"],
+    "map_points": [
+      {"label": "Masoala Peninsula", "country": "Madagascar", "lat": -15.6500, "lng": 50.1000},
+      {"label": "Nosy Mangabe", "country": "Madagascar", "lat": -15.5000, "lng": 49.7667}
+    ]
+  },
+  {
+    "name": "Meerkat",
+    "countries": ["Botswana", "South Africa"],
+    "map_points": [
+      {"label": "Kalahari", "country": "Botswana", "lat": -23.0000, "lng": 24.0000},
+      {"label": "Northern Cape", "country": "South Africa", "lat": -29.0000, "lng": 22.0000}
+    ]
+  },
+  {
+    "name": "Caracal",
+    "countries": ["Namibia", "India"],
+    "map_points": [
+      {"label": "Namib edge", "country": "Namibia", "lat": -23.0000, "lng": 17.0000},
+      {"label": "Rajasthan scrublands", "country": "India", "lat": 27.0000, "lng": 73.0000}
+    ]
+  },
+  {
+    "name": "Serval",
+    "countries": ["Botswana", "Tanzania"],
+    "map_points": [
+      {"label": "Okavango Delta", "country": "Botswana", "lat": -19.0000, "lng": 23.0000},
+      {"label": "Serengeti", "country": "Tanzania", "lat": -2.3333, "lng": 34.8333}
+    ]
+  },
+  {
+    "name": "Pangolin",
+    "countries": ["Indonesia", "Nigeria"],
+    "map_points": [
+      {"label": "Borneo rainforest", "country": "Indonesia", "lat": 0.9619, "lng": 114.5548},
+      {"label": "Cross River region", "country": "Nigeria", "lat": 6.1670, "lng": 8.6600}
+    ]
+  },
+  {
+    "name": "Musk Ox",
+    "countries": ["Canada", "Greenland"],
+    "map_points": [
+      {"label": "Ellesmere Island", "country": "Canada", "lat": 79.0000, "lng": -85.0000},
+      {"label": "Greenland tundra", "country": "Greenland", "lat": 71.7069, "lng": -42.6043}
+    ]
+  },
+  {
+    "name": "Pronghorn",
+    "countries": ["United States", "Canada"],
+    "map_points": [
+      {"label": "Wyoming plains", "country": "United States", "lat": 43.0759, "lng": -107.2903},
+      {"label": "Saskatchewan prairie", "country": "Canada", "lat": 50.5000, "lng": -106.0000}
+    ]
+  },
+  {
+    "name": "Bighorn Sheep",
+    "countries": ["United States", "Canada"],
+    "map_points": [
+      {"label": "Rocky Mountains", "country": "United States", "lat": 39.1130, "lng": -105.3589},
+      {"label": "Alberta foothills", "country": "Canada", "lat": 52.0000, "lng": -116.0000}
+    ]
+  },
+  {
+    "name": "American Bison",
+    "countries": ["United States", "Canada"],
+    "map_points": [
+      {"label": "Yellowstone", "country": "United States", "lat": 44.4280, "lng": -110.5885},
+      {"label": "Wood Buffalo", "country": "Canada", "lat": 59.3900, "lng": -112.8400}
+    ]
+  },
+  {
+    "name": "Tapir",
+    "countries": ["Brazil", "Indonesia"],
+    "map_points": [
+      {"label": "Pantanal", "country": "Brazil", "lat": -16.5000, "lng": -56.0000},
+      {"label": "Sumatra forest", "country": "Indonesia", "lat": -0.5897, "lng": 101.3431}
+    ]
+  },
+  {
+    "name": "Capybara",
+    "countries": ["Venezuela", "Brazil"],
+    "map_points": [
+      {"label": "Llanos", "country": "Venezuela", "lat": 8.0000, "lng": -67.0000},
+      {"label": "Pantanal wetlands", "country": "Brazil", "lat": -16.5000, "lng": -56.0000}
+    ]
+  },
+  {
+    "name": "Howler Monkey",
+    "countries": ["Costa Rica", "Ecuador"],
+    "map_points": [
+      {"label": "Osa Peninsula", "country": "Costa Rica", "lat": 8.5450, "lng": -83.4220},
+      {"label": "Yasuni", "country": "Ecuador", "lat": -0.6723, "lng": -76.3985}
+    ]
+  },
+  {
+    "name": "Spider Monkey",
+    "countries": ["Mexico", "Colombia"],
+    "map_points": [
+      {"label": "Lacandon Forest", "country": "Mexico", "lat": 16.5000, "lng": -91.0000},
+      {"label": "Amazon region", "country": "Colombia", "lat": -1.5000, "lng": -70.5000}
+    ]
+  },
+  {
+    "name": "Coati",
+    "countries": ["Argentina", "Mexico"],
+    "map_points": [
+      {"label": "Iguazu", "country": "Argentina", "lat": -25.6953, "lng": -54.4367},
+      {"label": "Yucatan Peninsula", "country": "Mexico", "lat": 20.7099, "lng": -89.0943}
+    ]
+  },
+  {
+    "name": "Kinkajou",
+    "countries": ["Costa Rica", "Peru"],
+    "map_points": [
+      {"label": "Monteverde", "country": "Costa Rica", "lat": 10.3000, "lng": -84.8167},
+      {"label": "Tambopata", "country": "Peru", "lat": -12.8311, "lng": -69.2817}
+    ]
+  },
+  {
+    "name": "Vicuña",
+    "countries": ["Peru", "Chile"],
+    "map_points": [
+      {"label": "Peruvian Altiplano", "country": "Peru", "lat": -15.5000, "lng": -70.0000},
+      {"label": "Atacama highlands", "country": "Chile", "lat": -23.0000, "lng": -68.0000}
+    ]
+  },
+  {
+    "name": "Marmot",
+    "countries": ["United States", "France"],
+    "map_points": [
+      {"label": "Rocky Mountain meadows", "country": "United States", "lat": 40.3428, "lng": -105.6836},
+      {"label": "French Alps", "country": "France", "lat": 45.8326, "lng": 6.8652}
+    ]
+  },
+  {
+    "name": "Lynx",
+    "countries": ["Canada", "Sweden"],
+    "map_points": [
+      {"label": "Boreal forest", "country": "Canada", "lat": 55.0000, "lng": -100.0000},
+      {"label": "Lapland", "country": "Sweden", "lat": 67.5000, "lng": 20.0000}
+    ]
+  },
+  {
+    "name": "Armadillo",
+    "countries": ["United States", "Brazil"],
+    "map_points": [
+      {"label": "Texas scrub", "country": "United States", "lat": 31.0000, "lng": -99.0000},
+      {"label": "Cerrado", "country": "Brazil", "lat": -15.0000, "lng": -47.0000}
+    ]
+  },
+  {
+    "name": "Numbat",
+    "countries": ["Australia"],
+    "map_points": [
+      {"label": "Dryandra Woodland", "country": "Australia", "lat": -32.8000, "lng": 116.9000},
+      {"label": "Perup sanctuary", "country": "Australia", "lat": -34.0000, "lng": 116.5000}
+    ]
+  },
+  {
+    "name": "Quokka",
+    "countries": ["Australia"],
+    "map_points": [
+      {"label": "Rottnest Island", "country": "Australia", "lat": -32.0067, "lng": 115.5153},
+      {"label": "Bald Island", "country": "Australia", "lat": -34.9130, "lng": 118.4990}
+    ]
+  },
+  {
+    "name": "Cassowary",
+    "countries": ["Australia", "Papua New Guinea"],
+    "map_points": [
+      {"label": "Daintree Rainforest", "country": "Australia", "lat": -16.2500, "lng": 145.4167},
+      {"label": "Papua lowlands", "country": "Papua New Guinea", "lat": -5.0000, "lng": 141.0000}
+    ]
+  },
+  {
+    "name": "Kakapo",
+    "countries": ["New Zealand"],
+    "map_points": [
+      {"label": "Whenua Hou", "country": "New Zealand", "lat": -46.9000, "lng": 167.9333},
+      {"label": "Anchor Island", "country": "New Zealand", "lat": -45.7833, "lng": 166.9833}
+    ]
+  },
+  {
+    "name": "Kea",
+    "countries": ["New Zealand"],
+    "map_points": [
+      {"label": "Southern Alps", "country": "New Zealand", "lat": -43.5000, "lng": 170.5000},
+      {"label": "Fiordland", "country": "New Zealand", "lat": -45.4167, "lng": 167.7167}
+    ]
+  },
+  {
+    "name": "Shoebill",
+    "countries": ["Uganda", "Zambia"],
+    "map_points": [
+      {"label": "Mabamba Swamp", "country": "Uganda", "lat": 0.0550, "lng": 32.4040},
+      {"label": "Bangweulu Wetlands", "country": "Zambia", "lat": -11.5000, "lng": 29.5000}
+    ]
+  },
+  {
+    "name": "Hornbill",
+    "countries": ["India", "Indonesia"],
+    "map_points": [
+      {"label": "Western Ghats", "country": "India", "lat": 10.0000, "lng": 76.0000},
+      {"label": "Borneo rainforest", "country": "Indonesia", "lat": 1.0000, "lng": 114.0000}
+    ]
+  },
+  {
+    "name": "Bee-eater",
+    "countries": ["South Africa", "Spain"],
+    "map_points": [
+      {"label": "Kruger region", "country": "South Africa", "lat": -23.9884, "lng": 31.5547},
+      {"label": "Doñana", "country": "Spain", "lat": 37.0000, "lng": -6.5000}
+    ]
+  },
+  {
+    "name": "Quetzal",
+    "countries": ["Costa Rica", "Guatemala"],
+    "map_points": [
+      {"label": "Monteverde Cloud Forest", "country": "Costa Rica", "lat": 10.3000, "lng": -84.8167},
+      {"label": "Biotopo del Quetzal", "country": "Guatemala", "lat": 15.2333, "lng": -90.2667}
+    ]
+  },
+  {
+    "name": "Kiwi",
+    "countries": ["New Zealand"],
+    "map_points": [
+      {"label": "Northland forests", "country": "New Zealand", "lat": -35.7275, "lng": 174.3237},
+      {"label": "Stewart Island", "country": "New Zealand", "lat": -46.9000, "lng": 168.1000}
+    ]
+  },
+  {
+    "name": "Ocean Sunfish",
+    "countries": ["United States", "Portugal"],
+    "map_points": [
+      {"label": "Monterey Bay", "country": "United States", "lat": 36.6189, "lng": -121.9018},
+      {"label": "Southern Portugal waters", "country": "Portugal", "lat": 36.9613, "lng": -8.7910}
+    ]
+  },
+  {
+    "name": "Sailfish",
+    "countries": ["Costa Rica", "Mexico"],
+    "map_points": [
+      {"label": "Pacific Costa Rica", "country": "Costa Rica", "lat": 9.7489, "lng": -83.7534},
+      {"label": "Baja California", "country": "Mexico", "lat": 24.1444, "lng": -110.3005}
+    ]
+  },
+  {
+    "name": "Arapaima",
+    "countries": ["Brazil", "Peru"],
+    "map_points": [
+      {"label": "Amazon floodplain", "country": "Brazil", "lat": -3.0000, "lng": -60.0000},
+      {"label": "Loreto waterways", "country": "Peru", "lat": -4.0000, "lng": -73.0000}
+    ]
+  },
+  {
+    "name": "Lionfish",
+    "countries": ["Indonesia", "United States"],
+    "map_points": [
+      {"label": "Coral Triangle", "country": "Indonesia", "lat": -2.0000, "lng": 120.0000},
+      {"label": "Florida Keys", "country": "United States", "lat": 24.5551, "lng": -81.7800}
+    ]
+  },
+  {
+    "name": "Leafy Seadragon",
+    "countries": ["Australia"],
+    "map_points": [
+      {"label": "South Australia coast", "country": "Australia", "lat": -35.0000, "lng": 138.5000},
+      {"label": "Kangaroo Island", "country": "Australia", "lat": -35.7752, "lng": 137.2142}
+    ]
+  },
+  {
+    "name": "Mudskipper",
+    "countries": ["India", "Thailand"],
+    "map_points": [
+      {"label": "Sundarbans delta", "country": "India", "lat": 21.9497, "lng": 89.1833},
+      {"label": "Mangrove flats", "country": "Thailand", "lat": 13.0000, "lng": 100.0000}
+    ]
+  },
+  {
+    "name": "Caecilian",
+    "countries": ["Brazil", "India"],
+    "map_points": [
+      {"label": "Amazon Basin", "country": "Brazil", "lat": -3.0000, "lng": -60.0000},
+      {"label": "Western Ghats rainforest", "country": "India", "lat": 10.0000, "lng": 76.0000}
+    ]
+  },
+  {
+    "name": "Glass Frog",
+    "countries": ["Costa Rica", "Ecuador"],
+    "map_points": [
+      {"label": "Monteverde streams", "country": "Costa Rica", "lat": 10.3000, "lng": -84.8167},
+      {"label": "Andean cloud forest", "country": "Ecuador", "lat": -0.5000, "lng": -78.0000}
+    ]
+  },
+  {
+    "name": "Newt",
+    "countries": ["United Kingdom", "Japan"],
+    "map_points": [
+      {"label": "English wetlands", "country": "United Kingdom", "lat": 52.5000, "lng": -1.5000},
+      {"label": "Honshu ponds", "country": "Japan", "lat": 36.0000, "lng": 138.0000}
+    ]
+  },
+  {
+    "name": "Olm",
+    "countries": ["Slovenia", "Croatia"],
+    "map_points": [
+      {"label": "Postojna caves", "country": "Slovenia", "lat": 45.7833, "lng": 14.2000},
+      {"label": "Dinaric karst", "country": "Croatia", "lat": 44.5000, "lng": 15.0000}
+    ]
+  },
+  {
+    "name": "Taipan",
+    "countries": ["Australia"],
+    "map_points": [
+      {"label": "Channel Country", "country": "Australia", "lat": -24.0000, "lng": 140.0000},
+      {"label": "Queensland interior", "country": "Australia", "lat": -22.0000, "lng": 145.0000}
+    ]
+  },
+  {
+    "name": "Frilled Lizard",
+    "countries": ["Australia", "Papua New Guinea"],
+    "map_points": [
+      {"label": "Northern Territory savanna", "country": "Australia", "lat": -19.4914, "lng": 132.5509},
+      {"label": "Papua woodland", "country": "Papua New Guinea", "lat": -6.0000, "lng": 145.0000}
+    ]
+  },
+  {
+    "name": "Tuatara",
+    "countries": ["New Zealand"],
+    "map_points": [
+      {"label": "Stephens Island", "country": "New Zealand", "lat": -40.6667, "lng": 173.9833},
+      {"label": "Zealandia reserve", "country": "New Zealand", "lat": -41.2917, "lng": 174.7444}
+    ]
+  },
+  {
+    "name": "Gaboon Viper",
+    "countries": ["Gabon", "Nigeria"],
+    "map_points": [
+      {"label": "Lope forest", "country": "Gabon", "lat": -0.1833, "lng": 11.6167},
+      {"label": "Cross River forest", "country": "Nigeria", "lat": 6.2000, "lng": 8.6500}
+    ]
+  },
+  {
+    "name": "Gopher Tortoise",
+    "countries": ["United States"],
+    "map_points": [
+      {"label": "Florida sandhills", "country": "United States", "lat": 28.0000, "lng": -81.0000},
+      {"label": "Georgia coastal plain", "country": "United States", "lat": 31.0000, "lng": -82.0000}
+    ]
+  },
+  {
+    "name": "Mantis Shrimp",
+    "countries": ["Australia", "Indonesia"],
+    "map_points": [
+      {"label": "Great Barrier Reef", "country": "Australia", "lat": -18.2871, "lng": 147.6992},
+      {"label": "Indonesian reefs", "country": "Indonesia", "lat": -2.0000, "lng": 120.0000}
+    ]
+  },
+  {
+    "name": "Giant African Millipede",
+    "countries": ["Tanzania", "Mozambique"],
+    "map_points": [
+      {"label": "Coastal Tanzania", "country": "Tanzania", "lat": -6.0000, "lng": 39.0000},
+      {"label": "Mozambique woodland", "country": "Mozambique", "lat": -18.0000, "lng": 35.0000}
+    ]
+  },
+  {
+    "name": "Atlas Moth",
+    "countries": ["Indonesia", "India"],
+    "map_points": [
+      {"label": "Borneo rainforest", "country": "Indonesia", "lat": 1.0000, "lng": 114.0000},
+      {"label": "Western Ghats", "country": "India", "lat": 10.0000, "lng": 76.0000}
+    ]
+  },
+  {
+    "name": "Goliath Beetle",
+    "countries": ["Congo", "Uganda"],
+    "map_points": [
+      {"label": "Congo Basin rainforest", "country": "Congo", "lat": -1.0000, "lng": 15.0000},
+      {"label": "Bwindi region", "country": "Uganda", "lat": -1.0500, "lng": 29.7000}
+    ]
+  },
+  {
+    "name": "Blue-ringed Octopus",
+    "countries": ["Australia", "Japan"],
+    "map_points": [
+      {"label": "Queensland coast", "country": "Australia", "lat": -19.0000, "lng": 147.0000},
+      {"label": "Ryukyu Islands", "country": "Japan", "lat": 26.5000, "lng": 127.9000}
+    ]
+  }
+]

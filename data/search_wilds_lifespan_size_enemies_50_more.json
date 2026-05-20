@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Ring-tailed Lemur",
+    "lifespan": "16–19 years in the wild; over 25 years in captivity",
+    "size": "Body length 39–46 cm; tail 56–63 cm; weight 2.2–3.5 kg",
+    "natural_enemies": ["Fossa", "Birds of prey", "Domestic dogs", "Humans"]
+  },
+  {
+    "name": "Aye-aye",
+    "lifespan": "20–23 years in the wild; longer in captivity",
+    "size": "Body length 36–44 cm; tail 56–61 cm; weight 2–3 kg",
+    "natural_enemies": ["Fossa", "Owls", "Humans"]
+  },
+  {
+    "name": "Meerkat",
+    "lifespan": "6–8 years in the wild; up to 13 years in captivity",
+    "size": "Body length 25–35 cm; tail 17–25 cm; weight 0.6–1 kg",
+    "natural_enemies": ["Eagles", "Jackals", "Snakes", "Humans"]
+  },
+  {
+    "name": "Caracal",
+    "lifespan": "10–12 years in the wild; up to 19 years in captivity",
+    "size": "Body length 60–105 cm; tail 20–35 cm; weight 8–20 kg",
+    "natural_enemies": ["Lions", "Leopards", "Hyenas", "Humans"]
+  },
+  {
+    "name": "Serval",
+    "lifespan": "10–12 years in the wild; up to 20 years in captivity",
+    "size": "Body length 67–100 cm; tail 24–45 cm; weight 7–18 kg",
+    "natural_enemies": ["Leopards", "Hyenas", "Dogs", "Humans"]
+  },
+  {
+    "name": "Pangolin",
+    "lifespan": "10–20 years, exact wild lifespan poorly known",
+    "size": "Body length 30–100 cm depending on species; weight 2–35 kg",
+    "natural_enemies": ["Large cats", "Hyenas", "Humans"]
+  },
+  {
+    "name": "Musk Ox",
+    "lifespan": "12–20 years in the wild",
+    "size": "Shoulder height 1.1–1.5 m; weight 180–410 kg",
+    "natural_enemies": ["Wolves", "Polar bears may take calves", "Humans"]
+  },
+  {
+    "name": "Pronghorn",
+    "lifespan": "10–15 years in the wild",
+    "size": "Shoulder height 80–100 cm; weight 35–70 kg",
+    "natural_enemies": ["Coyotes", "Wolves", "Cougars", "Humans"]
+  },
+  {
+    "name": "Bighorn Sheep",
+    "lifespan": "9–14 years in the wild",
+    "size": "Shoulder height 80–100 cm; weight 50–140 kg",
+    "natural_enemies": ["Mountain lions", "Coyotes", "Golden eagles may take lambs", "Humans"]
+  },
+  {
+    "name": "American Bison",
+    "lifespan": "10–20 years in the wild",
+    "size": "Shoulder height 1.5–2 m; weight 300–1,000 kg",
+    "natural_enemies": ["Wolves", "Grizzly bears", "Humans"]
+  },
+  {
+    "name": "Tapir",
+    "lifespan": "20–30 years in the wild and captivity",
+    "size": "Body length 1.8–2.5 m; weight 150–320 kg",
+    "natural_enemies": ["Jaguars", "Crocodiles", "Tigers for Asian species", "Humans"]
+  },
+  {
+    "name": "Capybara",
+    "lifespan": "8–10 years in the wild",
+    "size": "Body length 1–1.3 m; weight 35–66 kg",
+    "natural_enemies": ["Jaguars", "Pumas", "Anacondas", "Caimans", "Humans"]
+  },
+  {
+    "name": "Howler Monkey",
+    "lifespan": "15–20 years in the wild",
+    "size": "Body length 40–70 cm; tail 50–75 cm; weight 4–10 kg",
+    "natural_enemies": ["Harpy eagles", "Jaguars", "Large snakes", "Humans"]
+  },
+  {
+    "name": "Spider Monkey",
+    "lifespan": "20–25 years in the wild; longer in captivity",
+    "size": "Body length 35–66 cm; tail 50–90 cm; weight 6–11 kg",
+    "natural_enemies": ["Eagles", "Jaguars", "Ocelots", "Humans"]
+  },
+  {
+    "name": "Coati",
+    "lifespan": "7–8 years in the wild; up to 15 years in captivity",
+    "size": "Body length 40–70 cm; tail 32–69 cm; weight 3–8 kg",
+    "natural_enemies": ["Jaguars", "Ocelots", "Large birds of prey", "Humans"]
+  },
+  {
+    "name": "Kinkajou",
+    "lifespan": "20–25 years in the wild; over 30 years in captivity",
+    "size": "Body length 40–60 cm; tail 40–60 cm; weight 1.5–4.5 kg",
+    "natural_enemies": ["Ocelots", "Jaguars", "Birds of prey", "Humans"]
+  },
+  {
+    "name": "Vicuña",
+    "lifespan": "15–20 years in the wild",
+    "size": "Shoulder height 75–85 cm; weight 35–65 kg",
+    "natural_enemies": ["Pumas", "Foxes may take young", "Humans"]
+  },
+  {
+    "name": "Marmot",
+    "lifespan": "8–15 years depending on species",
+    "size": "Body length 30–70 cm; weight 2–8 kg",
+    "natural_enemies": ["Foxes", "Eagles", "Wolves", "Humans"]
+  },
+  {
+    "name": "Lynx",
+    "lifespan": "10–17 years in the wild",
+    "size": "Body length 70–130 cm; weight 8–30 kg",
+    "natural_enemies": ["Wolves", "Cougars in North America", "Humans"]
+  },
+  {
+    "name": "Armadillo",
+    "lifespan": "7–15 years in the wild",
+    "size": "Body length 15–100 cm depending on species; weight 85 g to over 50 kg",
+    "natural_enemies": ["Coyotes", "Jaguars", "Pumas", "Humans"]
+  },
+  {
+    "name": "Numbat",
+    "lifespan": "4–8 years in the wild",
+    "size": "Body length 17–27 cm; tail 13–17 cm; weight 280–700 g",
+    "natural_enemies": ["Foxes", "Cats", "Birds of prey", "Humans"]
+  },
+  {
+    "name": "Quokka",
+    "lifespan": "5–10 years in the wild",
+    "size": "Body length 40–54 cm; tail 25–30 cm; weight 2.5–5 kg",
+    "natural_enemies": ["Foxes", "Cats", "Dogs", "Birds of prey"]
+  },
+  {
+    "name": "Cassowary",
+    "lifespan": "18–20 years in the wild; longer in captivity",
+    "size": "Height 1.2–1.8 m; weight 25–70 kg",
+    "natural_enemies": ["Crocodiles may take young", "Dogs", "Humans"]
+  },
+  {
+    "name": "Kakapo",
+    "lifespan": "40–60 years or more",
+    "size": "Body length about 58–64 cm; weight 1–4 kg",
+    "natural_enemies": ["Cats", "Stoats", "Rats", "Humans"]
+  },
+  {
+    "name": "Kea",
+    "lifespan": "10–15 years in the wild; over 20 in captivity",
+    "size": "Body length 46 cm; wingspan around 90 cm; weight 0.8–1 kg",
+    "natural_enemies": ["Stoats", "Cats", "Possums may raid nests", "Humans"]
+  },
+  {
+    "name": "Shoebill",
+    "lifespan": "35 years or more",
+    "size": "Height 1.1–1.5 m; wingspan 2.3–2.6 m",
+    "natural_enemies": ["Crocodiles may threaten chicks", "Humans"]
+  },
+  {
+    "name": "Hornbill",
+    "lifespan": "20–35 years depending on species",
+    "size": "Body length 40 cm to over 1.2 m depending on species",
+    "natural_enemies": ["Eagles", "Large snakes", "Humans"]
+  },
+  {
+    "name": "Bee-eater",
+    "lifespan": "5–10 years in the wild",
+    "size": "Body length 15–35 cm depending on species",
+    "natural_enemies": ["Falcons", "Hawks", "Snakes", "Humans"]
+  },
+  {
+    "name": "Quetzal",
+    "lifespan": "10–20 years",
+    "size": "Body length 36–40 cm; much longer including tail in males",
+    "natural_enemies": ["Hawks", "Owls", "Mammalian nest predators", "Humans"]
+  },
+  {
+    "name": "Kiwi",
+    "lifespan": "25–50 years depending on species",
+    "size": "Body length 35–65 cm; weight 1.2–3.3 kg",
+    "natural_enemies": ["Stoats", "Dogs", "Cats", "Ferrets", "Humans"]
+  },
+  {
+    "name": "Ocean Sunfish",
+    "lifespan": "Up to 10 years or more, exact lifespan uncertain",
+    "size": "Length 1.8–3.3 m; weight 247–2,300 kg",
+    "natural_enemies": ["Orcas", "Sea lions", "Sharks", "Humans"]
+  },
+  {
+    "name": "Sailfish",
+    "lifespan": "4–13 years in the wild",
+    "size": "Body length up to 3.4 m; weight up to 100 kg",
+    "natural_enemies": ["Large sharks", "Orcas", "Humans"]
+  },
+  {
+    "name": "Arapaima",
+    "lifespan": "15–20 years",
+    "size": "Body length 2–3 m; weight up to 200 kg or more",
+    "natural_enemies": ["Caimans may take juveniles", "Humans"]
+  },
+  {
+    "name": "Lionfish",
+    "lifespan": "10–15 years",
+    "size": "Body length 20–45 cm",
+    "natural_enemies": ["Groupers", "Moray eels", "Humans"]
+  },
+  {
+    "name": "Leafy Seadragon",
+    "lifespan": "5–10 years",
+    "size": "Body length 20–24 cm",
+    "natural_enemies": ["Large fish", "Seabirds", "Humans"]
+  },
+  {
+    "name": "Mudskipper",
+    "lifespan": "3–5 years",
+    "size": "Body length 5–30 cm depending on species",
+    "natural_enemies": ["Birds", "Crabs", "Larger fish", "Humans"]
+  },
+  {
+    "name": "Caecilian",
+    "lifespan": "5–20 years depending on species",
+    "size": "Body length 10 cm to over 1.5 m depending on species",
+    "natural_enemies": ["Snakes", "Birds", "Mammals", "Humans"]
+  },
+  {
+    "name": "Glass Frog",
+    "lifespan": "10–14 years",
+    "size": "Body length 2–8 cm",
+    "natural_enemies": ["Snakes", "Spiders", "Birds", "Insects"]
+  },
+  {
+    "name": "Newt",
+    "lifespan": "6–15 years depending on species",
+    "size": "Body length 7–20 cm",
+    "natural_enemies": ["Fish", "Birds", "Snakes", "Humans"]
+  },
+  {
+    "name": "Olm",
+    "lifespan": "Over 50 years and possibly much longer",
+    "size": "Body length 20–30 cm",
+    "natural_enemies": ["Few natural predators in caves", "Humans"]
+  },
+  {
+    "name": "Taipan",
+    "lifespan": "10–15 years in the wild",
+    "size": "Body length 1.8–2.5 m",
+    "natural_enemies": ["Large birds of prey", "Mongooses in some regions", "Humans"]
+  },
+  {
+    "name": "Frilled Lizard",
+    "lifespan": "10–15 years",
+    "size": "Body length 70–90 cm including tail",
+    "natural_enemies": ["Large snakes", "Birds of prey", "Dingoes", "Humans"]
+  },
+  {
+    "name": "Tuatara",
+    "lifespan": "60–100 years or more",
+    "size": "Body length 50–80 cm; weight 0.5–1.5 kg",
+    "natural_enemies": ["Rats", "Cats", "Seabirds may take young", "Humans"]
+  },
+  {
+    "name": "Gaboon Viper",
+    "lifespan": "10–20 years",
+    "size": "Body length 1.2–2 m; weight up to 8 kg",
+    "natural_enemies": ["Humans", "Large birds", "Mongooses"]
+  },
+  {
+    "name": "Gopher Tortoise",
+    "lifespan": "40–80 years",
+    "size": "Carapace length 23–38 cm; weight 4–6 kg",
+    "natural_enemies": ["Coyotes", "Foxes", "Raccoons raid nests", "Humans"]
+  },
+  {
+    "name": "Mantis Shrimp",
+    "lifespan": "3–20 years depending on species",
+    "size": "Body length 2–38 cm depending on species",
+    "natural_enemies": ["Large fish", "Octopuses", "Humans"]
+  },
+  {
+    "name": "Giant African Millipede",
+    "lifespan": "5–10 years",
+    "size": "Body length 20–30 cm",
+    "natural_enemies": ["Birds", "Reptiles", "Small mammals"]
+  },
+  {
+    "name": "Atlas Moth",
+    "lifespan": "Adult lifespan about 1–2 weeks",
+    "size": "Wingspan 24–30 cm",
+    "natural_enemies": ["Birds", "Bats", "Lizards", "Humans"]
+  },
+  {
+    "name": "Goliath Beetle",
+    "lifespan": "Several months as adults; much longer including larval stage",
+    "size": "Body length 5–11 cm; weight up to 100 g in larvae",
+    "natural_enemies": ["Birds", "Primates", "Reptiles", "Humans"]
+  },
+  {
+    "name": "Blue-ringed Octopus",
+    "lifespan": "About 2 years",
+    "size": "Body length 12–20 cm including arms",
+    "natural_enemies": ["Large fish", "Eels", "Humans"]
+  }
+]

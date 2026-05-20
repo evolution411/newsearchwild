@@ -8,8 +8,16 @@ from animals.models import Animal
 class Command(BaseCommand):
     help = "Import animal lifespan, size, and natural enemies"
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            "--file",
+            type=str,
+            default="data/search_wilds_lifespan_size_enemies_50.json",
+            help="Path to the extra animal info JSON file"
+        )
+
     def handle(self, *args, **kwargs):
-        file_path = Path("data/search_wilds_lifespan_size_enemies_50.json")
+        file_path = Path(kwargs["file"])
 
         if not file_path.exists():
             self.stdout.write(self.style.ERROR(f"File not found: {file_path}"))
