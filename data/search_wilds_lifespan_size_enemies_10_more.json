@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Red Panda",
+    "lifespan": "8–10 years in the wild; up to 15 years in captivity",
+    "size": "Body length 50–64 cm; tail 28–59 cm; weight 3–6.2 kg",
+    "natural_enemies": ["Snow leopards", "Martens", "Birds of prey", "Humans"]
+  },
+  {
+    "name": "Wolverine",
+    "lifespan": "7–12 years in the wild; longer in captivity",
+    "size": "Body length 65–107 cm; weight 9–25 kg",
+    "natural_enemies": ["Wolves", "Bears may compete with them", "Humans"]
+  },
+  {
+    "name": "Okapi",
+    "lifespan": "15–20 years in the wild; up to 30 years in captivity",
+    "size": "Shoulder height 1.5–1.7 m; weight 200–350 kg",
+    "natural_enemies": ["Leopards", "Humans"]
+  },
+  {
+    "name": "Shoebill",
+    "lifespan": "35–50 years, especially in captivity",
+    "size": "Height 110–140 cm; wingspan 2.3–2.6 m; weight 4–7 kg",
+    "natural_enemies": ["Large crocodiles may take chicks", "Monitor lizards", "Humans"]
+  },
+  {
+    "name": "Axolotl",
+    "lifespan": "10–15 years in captivity; often shorter in the wild",
+    "size": "Typically 15–25 cm long",
+    "natural_enemies": ["Herons", "Large fish", "Introduced tilapia and carp", "Humans"]
+  },
+  {
+    "name": "Narwhal",
+    "lifespan": "40–60 years in the wild",
+    "size": "Length 4–5.5 m; weight 800–1,600 kg",
+    "natural_enemies": ["Orcas", "Polar bears", "Greenland sharks", "Humans"]
+  },
+  {
+    "name": "Cassowary",
+    "lifespan": "18–20 years in the wild; longer in captivity",
+    "size": "Height 1.2–1.8 m; weight 25–60 kg",
+    "natural_enemies": ["Large pythons may take young", "Dingoes in some areas", "Humans"]
+  },
+  {
+    "name": "Saiga Antelope",
+    "lifespan": "6–10 years in the wild",
+    "size": "Shoulder height 60–80 cm; weight 26–69 kg",
+    "natural_enemies": ["Wolves", "Foxes may take young", "Eagles may take calves", "Humans"]
+  },
+  {
+    "name": "Gila Monster",
+    "lifespan": "15–20 years in the wild; over 30 years in captivity",
+    "size": "Length 30–56 cm; weight 350 g to over 1 kg",
+    "natural_enemies": ["Coyotes", "Birds of prey", "Humans"]
+  },
+  {
+    "name": "Maned Wolf",
+    "lifespan": "12–15 years in the wild; up to 17 years in captivity",
+    "size": "Shoulder height 74–90 cm; weight 20–30 kg",
+    "natural_enemies": ["Large dogs", "Pumas occasionally", "Humans"]
+  }
+]

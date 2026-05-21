@@ -1,0 +1,398 @@
+{% extends "animals/base.html" %}
+
+{% block content %}
+<section class="zoo-hero">
+    <div class="zoo-hero-content">
+        <span class="zoo-kicker">PLAN A REAL-WORLD WILDLIFE VISIT</span>
+        <h1>Find Zoos Near You</h1>
+        <p>
+            Enter a U.S. city name or ZIP code to explore nearby zoos, aquariums, safari parks,
+            and wildlife sanctuaries from our starter directory.
+        </p>
+    </div>
+</section>
+
+<section class="zoo-search-section">
+    <form method="get" class="zoo-search-form">
+        <div class="zoo-search-field">
+            <label for="zoo-location">City or ZIP Code</label>
+            <input
+                id="zoo-location"
+                type="text"
+                name="location"
+                value="{{ query }}"
+                placeholder="San Diego or 92101"
+            >
+        </div>
+
+        <div class="zoo-search-field">
+            <label for="zoo-type">Type</label>
+            <select id="zoo-type" name="type">
+                <option value="">All Places</option>
+                {% for value, label in zoo_type_choices %}
+                    <option value="{{ value }}" {% if selected_type == value %}selected{% endif %}>
+                        {{ label }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="zoo-search-actions">
+            <button type="submit">Find Nearby Zoos</button>
+            <a href="{% url 'animals:zoo_search' %}">Reset</a>
+        </div>
+    </form>
+
+    <div class="zoo-results-header">
+        {% if query and location_found %}
+            <div>
+                <h2>Nearest Results</h2>
+                <p>Showing the closest matches to {{ search_label }}.</p>
+            </div>
+        {% elif query %}
+            <div>
+                <h2>Matching Zoos</h2>
+                <p>We could not pinpoint that location exactly, so these are the closest text matches for "{{ query }}".</p>
+            </div>
+        {% elif used_ip_location %}
+            <div>
+                <h2>Nearest Zoos for You</h2>
+                <p>Showing 6 nearby places based on your approximate IP location{% if search_label %} near {{ search_label }}{% endif %}. You can still search any city or ZIP code in the U.S. above.</p>
+            </div>
+        {% else %}
+            <div>
+                <h2>Featured Zoos</h2>
+                <p>Start with a city or ZIP code, or browse a few places from our current directory if location detection is unavailable.</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="zoo-results-grid">
+        {% for zoo in zoos %}
+            <article class="zoo-card">
+                <div class="zoo-card-image">
+                    {% if zoo.image_url %}
+                        <img src="{{ zoo.image_url }}" alt="{{ zoo.name }}">
+                    {% else %}
+                        <div class="zoo-card-image-fallback zoo-card-image-{{ zoo.zoo_type }}">
+                            <span>{{ zoo.get_zoo_type_display }}</span>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <div class="zoo-card-top">
+                    <span class="zoo-type-badge">{{ zoo.get_zoo_type_display }}</span>
+                    {% if zoo.distance_label %}
+                        <span class="zoo-distance">{{ zoo.distance_label }}</span>
+                    {% endif %}
+                </div>
+
+                <h3>{{ zoo.name }}</h3>
+
+                <p class="zoo-address">
+                    {% if zoo.address %}
+                        {{ zoo.address }}<br>
+                    {% endif %}
+                    {{ zoo.city }}, {{ zoo.state }} {{ zoo.zipcode }}
+                </p>
+
+                <div class="zoo-card-links">
+                    {% if zoo.website %}
+                        <a href="{{ zoo.website }}" target="_blank" rel="noopener noreferrer">Website</a>
+                    {% endif %}
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query={{ zoo.name|urlencode }}%20{{ zoo.address|urlencode }}%20{{ zoo.city|urlencode }}%20{{ zoo.state|urlencode }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Directions
+                    </a>
+                </div>
+            </article>
+        {% empty %}
+            <div class="zoo-empty-state">
+                <h3>No zoos found</h3>
+                <p>Try another city, another ZIP code, or clear the filter to browse the directory.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+.zoo-hero {
+    padding: 72px 6% 54px;
+    background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(22, 163, 74, 0.18), transparent 30%),
+        linear-gradient(135deg, #0c2f21, #0f5d3d);
+    color: #ffffff;
+}
+
+.zoo-hero-content {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.zoo-kicker {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.zoo-hero h1 {
+    margin: 0 0 14px;
+    font-size: 3rem;
+}
+
+.zoo-hero p {
+    margin: 0;
+    color: #d8f5e5;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.zoo-search-section {
+    padding: 46px 6% 72px;
+}
+
+.zoo-search-form {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr) auto;
+    gap: 18px;
+    align-items: end;
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 24px;
+    box-shadow: 0 18px 42px rgba(15, 53, 37, 0.08);
+}
+
+.zoo-search-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #14532d;
+    font-weight: 800;
+}
+
+.zoo-search-field input,
+.zoo-search-field select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid #cfe6d5;
+    background: #f9fcfa;
+    font: inherit;
+}
+
+.zoo-search-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.zoo-search-actions button,
+.zoo-search-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.zoo-search-actions button {
+    border: none;
+    background: #16a34a;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.zoo-search-actions a {
+    background: #edf7ef;
+    color: #166534;
+}
+
+.zoo-results-header {
+    margin: 34px 0 20px;
+}
+
+.zoo-results-header h2 {
+    margin: 0 0 6px;
+    color: #143d2c;
+    font-size: 2rem;
+}
+
+.zoo-results-header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.zoo-results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.zoo-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 16px 38px rgba(15, 53, 37, 0.08);
+}
+
+.zoo-card-image {
+    height: 210px;
+    background: #edf7ef;
+}
+
+.zoo-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.zoo-card-image-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.zoo-card-image-zoo {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.34)),
+        linear-gradient(135deg, #3f6212, #166534);
+}
+
+.zoo-card-image-aquarium {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.34)),
+        linear-gradient(135deg, #0369a1, #1d4ed8);
+}
+
+.zoo-card-image-safari_park {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.34)),
+        linear-gradient(135deg, #b45309, #92400e);
+}
+
+.zoo-card-image-sanctuary {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.34)),
+        linear-gradient(135deg, #047857, #0f766e);
+}
+
+.zoo-card-top {
+    padding: 22px 22px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.zoo-type-badge,
+.zoo-distance {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.zoo-type-badge {
+    background: #e7f7eb;
+    color: #166534;
+}
+
+.zoo-distance {
+    background: #fff7ed;
+    color: #9a3412;
+}
+
+.zoo-card h3 {
+    padding: 0 22px;
+    margin: 0 0 10px;
+    color: #123c2a;
+    font-size: 1.3rem;
+}
+
+.zoo-address {
+    padding: 0 22px;
+    margin: 0 0 18px;
+    color: #52615a;
+    line-height: 1.7;
+}
+
+.zoo-card-links {
+    padding: 0 22px 22px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.zoo-card-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 16px;
+    border-radius: 999px;
+    background: #eff6ef;
+    color: #166534;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.zoo-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 48px 24px;
+    box-shadow: 0 16px 38px rgba(15, 53, 37, 0.08);
+}
+
+@media (max-width: 1100px) {
+    .zoo-results-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .zoo-search-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .zoo-search-actions {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 760px) {
+    .zoo-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .zoo-results-grid,
+    .zoo-search-form {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %}

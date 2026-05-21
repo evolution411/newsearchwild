@@ -1,0 +1,222 @@
+[
+  {
+    "id": 151,
+    "slug": "red-panda",
+    "name": "Red Panda",
+    "scientific_name": "Ailurus fulgens",
+    "category": "Mammal",
+    "diet": "Omnivore",
+    "habitats": ["Forest", "Mountain"],
+    "continents": ["Asia"],
+    "countries": ["Nepal", "India", "China", "Bhutan"],
+    "conservation_status": "Endangered",
+    "description": "A small tree-dwelling mammal with reddish fur, a ringed tail, and a strong link to cool mountain forests.",
+    "fun_fact": "Red pandas use their long fluffy tails like blankets to stay warm in chilly mountain habitats.",
+    "wiki_title": "Red panda",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Red_panda",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Red_panda",
+    "image_url": "",
+    "map_points": [
+      {"label": "Eastern Nepal", "lat": 27.7000, "lng": 87.3000},
+      {"label": "Sichuan, China", "lat": 30.7000, "lng": 103.9000}
+    ]
+  },
+  {
+    "id": 152,
+    "slug": "wolverine",
+    "name": "Wolverine",
+    "scientific_name": "Gulo gulo",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": ["Mountain", "Arctic", "Forest"],
+    "continents": ["North America", "Europe", "Asia"],
+    "countries": ["Canada", "United States", "Norway", "Sweden", "Russia"],
+    "conservation_status": "Least Concern",
+    "description": "A powerful mustelid adapted to remote snowy regions where it scavenges, hunts, and travels across huge territories.",
+    "fun_fact": "Wolverines can crack frozen carcasses and drag prey much larger than themselves across snow.",
+    "wiki_title": "Wolverine",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wolverine",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Wolverine",
+    "image_url": "",
+    "map_points": [
+      {"label": "Yukon, Canada", "lat": 64.0000, "lng": -135.0000},
+      {"label": "Scandinavian Mountains", "lat": 66.5000, "lng": 14.0000}
+    ]
+  },
+  {
+    "id": 153,
+    "slug": "okapi",
+    "name": "Okapi",
+    "scientific_name": "Okapia johnstoni",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": ["Forest"],
+    "continents": ["Africa"],
+    "countries": ["Democratic Republic of the Congo"],
+    "conservation_status": "Endangered",
+    "description": "A secretive forest mammal related to the giraffe, known for its dark coat and zebra-like striped legs.",
+    "fun_fact": "Okapis have long prehensile tongues that help them strip leaves and groom hard-to-reach places.",
+    "wiki_title": "Okapi",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Okapi",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Okapi",
+    "image_url": "",
+    "map_points": [
+      {"label": "Ituri Forest", "lat": 1.5000, "lng": 28.5000},
+      {"label": "Epulu, DRC", "lat": 1.4000, "lng": 28.5833}
+    ]
+  },
+  {
+    "id": 154,
+    "slug": "shoebill",
+    "name": "Shoebill",
+    "scientific_name": "Balaeniceps rex",
+    "category": "Bird",
+    "diet": "Carnivore",
+    "habitats": ["Wetland"],
+    "continents": ["Africa"],
+    "countries": ["Uganda", "South Sudan", "Zambia", "Tanzania"],
+    "conservation_status": "Vulnerable",
+    "description": "A huge marsh bird famous for its enormous shoe-shaped bill and its patient, statuesque hunting style.",
+    "fun_fact": "Shoebills can stand nearly motionless for long periods before striking fish or lungfish with surprising speed.",
+    "wiki_title": "Shoebill",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Shoebill",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Shoebill",
+    "image_url": "",
+    "map_points": [
+      {"label": "Mabamba Swamp, Uganda", "lat": 0.0700, "lng": 32.3800},
+      {"label": "Bangweulu Wetlands, Zambia", "lat": -11.7000, "lng": 29.9000}
+    ]
+  },
+  {
+    "id": 155,
+    "slug": "axolotl",
+    "name": "Axolotl",
+    "scientific_name": "Ambystoma mexicanum",
+    "category": "Amphibian",
+    "diet": "Carnivore",
+    "habitats": ["Wetland"],
+    "continents": ["North America"],
+    "countries": ["Mexico"],
+    "conservation_status": "Critically Endangered",
+    "description": "A permanently aquatic salamander famous for retaining its feathery gills and remarkable regenerative abilities.",
+    "fun_fact": "Axolotls can regrow lost limbs and parts of important organs with extraordinary efficiency.",
+    "wiki_title": "Axolotl",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Axolotl",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Axolotl",
+    "image_url": "",
+    "map_points": [
+      {"label": "Xochimilco, Mexico City", "lat": 19.2850, "lng": -99.1040},
+      {"label": "Canals of southern Mexico City", "lat": 19.2710, "lng": -99.1160}
+    ]
+  },
+  {
+    "id": 156,
+    "slug": "narwhal",
+    "name": "Narwhal",
+    "scientific_name": "Monodon monoceros",
+    "category": "Mammal",
+    "diet": "Carnivore",
+    "habitats": ["Arctic", "Ocean"],
+    "continents": ["North America"],
+    "countries": ["Canada", "Greenland"],
+    "conservation_status": "Near Threatened",
+    "description": "An Arctic whale known for the long spiral tusk carried by many males and for life among sea ice.",
+    "fun_fact": "The narwhal's tusk is actually an elongated tooth packed with sensory nerves.",
+    "wiki_title": "Narwhal",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Narwhal",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Narwhal",
+    "image_url": "",
+    "map_points": [
+      {"label": "Baffin Bay", "lat": 73.0000, "lng": -68.0000},
+      {"label": "West Greenland coast", "lat": 70.0000, "lng": -52.0000}
+    ]
+  },
+  {
+    "id": 157,
+    "slug": "cassowary",
+    "name": "Cassowary",
+    "scientific_name": "Casuarius",
+    "category": "Bird",
+    "diet": "Omnivore",
+    "habitats": ["Forest"],
+    "continents": ["Oceania"],
+    "countries": ["Australia", "Papua New Guinea"],
+    "conservation_status": "Least Concern",
+    "description": "A large flightless rainforest bird with a helmet-like casque and powerful legs adapted for dense tropical habitats.",
+    "fun_fact": "Cassowaries help spread rainforest seeds by swallowing fruit whole and dispersing the seeds later.",
+    "wiki_title": "Cassowary",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cassowary",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Cassowary",
+    "image_url": "",
+    "map_points": [
+      {"label": "Queensland Wet Tropics", "lat": -16.9000, "lng": 145.7000},
+      {"label": "Papua lowland forest", "lat": -5.0000, "lng": 141.0000}
+    ]
+  },
+  {
+    "id": 158,
+    "slug": "saiga-antelope",
+    "name": "Saiga Antelope",
+    "scientific_name": "Saiga tatarica",
+    "category": "Mammal",
+    "diet": "Herbivore",
+    "habitats": ["Grassland", "Desert"],
+    "continents": ["Asia", "Europe"],
+    "countries": ["Kazakhstan", "Russia", "Mongolia"],
+    "conservation_status": "Critically Endangered",
+    "description": "A migratory antelope of open steppe landscapes, recognized by its large flexible nose and mass seasonal movements.",
+    "fun_fact": "The saiga's unusual nose helps filter dust in summer and warm icy air in winter.",
+    "wiki_title": "Saiga antelope",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Saiga_antelope",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Saiga_antelope",
+    "image_url": "",
+    "map_points": [
+      {"label": "Kazakh Steppe", "lat": 48.0000, "lng": 66.0000},
+      {"label": "Kalmykia, Russia", "lat": 46.3000, "lng": 44.3000}
+    ]
+  },
+  {
+    "id": 159,
+    "slug": "gila-monster",
+    "name": "Gila Monster",
+    "scientific_name": "Heloderma suspectum",
+    "category": "Reptile",
+    "diet": "Carnivore",
+    "habitats": ["Desert"],
+    "continents": ["North America"],
+    "countries": ["United States", "Mexico"],
+    "conservation_status": "Near Threatened",
+    "description": "A heavy-bodied venomous lizard of desert scrublands with black-and-orange beadlike scales.",
+    "fun_fact": "Gila monsters spend much of the year hidden underground and can store large amounts of fat in their tails.",
+    "wiki_title": "Gila monster",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gila_monster",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Gila_monster",
+    "image_url": "",
+    "map_points": [
+      {"label": "Sonoran Desert, Arizona", "lat": 32.2000, "lng": -111.0000},
+      {"label": "Northwestern Sonora, Mexico", "lat": 31.2000, "lng": -112.5000}
+    ]
+  },
+  {
+    "id": 160,
+    "slug": "maned-wolf",
+    "name": "Maned Wolf",
+    "scientific_name": "Chrysocyon brachyurus",
+    "category": "Mammal",
+    "diet": "Omnivore",
+    "habitats": ["Grassland"],
+    "continents": ["South America"],
+    "countries": ["Brazil", "Bolivia", "Paraguay", "Argentina"],
+    "conservation_status": "Near Threatened",
+    "description": "A tall fox-like canid of South American grasslands known for its black mane and long stilt-like legs.",
+    "fun_fact": "Maned wolves often eat fruit, especially the lobeira fruit, making them important seed dispersers.",
+    "wiki_title": "Maned wolf",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Maned_wolf",
+    "wiki_summary_api": "https://en.wikipedia.org/api/rest_v1/page/summary/Maned_wolf",
+    "image_url": "",
+    "map_points": [
+      {"label": "Cerrado, Brazil", "lat": -15.0000, "lng": -47.0000},
+      {"label": "Santa Cruz, Bolivia", "lat": -17.8000, "lng": -63.2000}
+    ]
+  }
+]

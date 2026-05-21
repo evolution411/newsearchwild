@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Red Panda",
+    "countries": ["Nepal", "China"],
+    "map_points": [
+      {"label": "Eastern Himalayas", "country": "Nepal", "lat": 27.7000, "lng": 87.3000},
+      {"label": "Sichuan Mountains", "country": "China", "lat": 30.7000, "lng": 103.9000}
+    ]
+  },
+  {
+    "name": "Wolverine",
+    "countries": ["Canada", "Norway"],
+    "map_points": [
+      {"label": "Yukon backcountry", "country": "Canada", "lat": 64.0000, "lng": -135.0000},
+      {"label": "Scandinavian highlands", "country": "Norway", "lat": 66.5000, "lng": 14.0000}
+    ]
+  },
+  {
+    "name": "Okapi",
+    "countries": ["Democratic Republic of the Congo"],
+    "map_points": [
+      {"label": "Ituri Forest", "country": "Democratic Republic of the Congo", "lat": 1.5000, "lng": 28.5000},
+      {"label": "Epulu", "country": "Democratic Republic of the Congo", "lat": 1.4000, "lng": 28.5833}
+    ]
+  },
+  {
+    "name": "Shoebill",
+    "countries": ["Uganda", "Zambia"],
+    "map_points": [
+      {"label": "Mabamba Swamp", "country": "Uganda", "lat": 0.0700, "lng": 32.3800},
+      {"label": "Bangweulu Wetlands", "country": "Zambia", "lat": -11.7000, "lng": 29.9000}
+    ]
+  },
+  {
+    "name": "Axolotl",
+    "countries": ["Mexico"],
+    "map_points": [
+      {"label": "Xochimilco canals", "country": "Mexico", "lat": 19.2850, "lng": -99.1040},
+      {"label": "Southern Mexico City wetlands", "country": "Mexico", "lat": 19.2710, "lng": -99.1160}
+    ]
+  },
+  {
+    "name": "Narwhal",
+    "countries": ["Canada", "Greenland"],
+    "map_points": [
+      {"label": "Baffin Bay", "country": "Canada", "lat": 73.0000, "lng": -68.0000},
+      {"label": "West Greenland ice edge", "country": "Greenland", "lat": 70.0000, "lng": -52.0000}
+    ]
+  },
+  {
+    "name": "Cassowary",
+    "countries": ["Australia", "Papua New Guinea"],
+    "map_points": [
+      {"label": "Wet Tropics", "country": "Australia", "lat": -16.9000, "lng": 145.7000},
+      {"label": "Papua rainforest", "country": "Papua New Guinea", "lat": -5.0000, "lng": 141.0000}
+    ]
+  },
+  {
+    "name": "Saiga Antelope",
+    "countries": ["Kazakhstan", "Russia"],
+    "map_points": [
+      {"label": "Central Kazakh Steppe", "country": "Kazakhstan", "lat": 48.0000, "lng": 66.0000},
+      {"label": "Kalmykia Steppe", "country": "Russia", "lat": 46.3000, "lng": 44.3000}
+    ]
+  },
+  {
+    "name": "Gila Monster",
+    "countries": ["United States", "Mexico"],
+    "map_points": [
+      {"label": "Sonoran Desert", "country": "United States", "lat": 32.2000, "lng": -111.0000},
+      {"label": "Sonora scrubland", "country": "Mexico", "lat": 31.2000, "lng": -112.5000}
+    ]
+  },
+  {
+    "name": "Maned Wolf",
+    "countries": ["Brazil", "Bolivia"],
+    "map_points": [
+      {"label": "Brazilian Cerrado", "country": "Brazil", "lat": -15.0000, "lng": -47.0000},
+      {"label": "Santa Cruz grasslands", "country": "Bolivia", "lat": -17.8000, "lng": -63.2000}
+    ]
+  }
+]

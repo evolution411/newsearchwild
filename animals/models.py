@@ -24,6 +24,37 @@ class NewsletterSubscriber(models.Model):
         return self.email
 
 
+class Zoo(models.Model):
+    ZOO_TYPE_CHOICES = [
+        ("zoo", "Zoo"),
+        ("aquarium", "Aquarium"),
+        ("safari_park", "Safari Park"),
+        ("sanctuary", "Sanctuary"),
+    ]
+
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=255, blank=True)
+    city = models.CharField(max_length=120)
+    state = models.CharField(max_length=120)
+    zipcode = models.CharField(max_length=20, blank=True)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    website = models.URLField(max_length=500, blank=True)
+    image_url = models.URLField(max_length=500, blank=True)
+    zoo_type = models.CharField(
+        max_length=30,
+        choices=ZOO_TYPE_CHOICES,
+        default="zoo"
+    )
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+
 
 DIET_CHOICES = [
     ('Carnivore', 'Carnivore'),

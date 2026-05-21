@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.http import HttpResponse
 import csv
-from .models import Animal, AnimalCategory, AnimalLocation, AnimalVideo, NewsletterSubscriber
+from .models import Animal, AnimalCategory, AnimalLocation, AnimalVideo, NewsletterSubscriber, Zoo
 from .wiki_api import fetch_wikipedia_summary
 
 
@@ -123,3 +123,10 @@ class NewsletterSubscriberAdmin(admin.ModelAdmin):
             ])
 
         return response
+
+
+@admin.register(Zoo)
+class ZooAdmin(admin.ModelAdmin):
+    list_display = ("name", "city", "state", "zipcode", "zoo_type", "is_active")
+    list_filter = ("zoo_type", "state", "is_active")
+    search_fields = ("name", "city", "state", "zipcode", "address")

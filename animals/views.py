@@ -1,4 +1,6 @@
 import json
+import ipaddress
+import math
 import random
 import re
 import requests
@@ -11,7 +13,7 @@ from django.core.paginator import Paginator
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Animal, AnimalCategory, AnimalLocation,PuzzleScore, AnimalVideo, NewsletterSubscriber
+from .models import Animal, AnimalCategory, AnimalLocation,PuzzleScore, AnimalVideo, NewsletterSubscriber, Zoo
 from django.db.models import Q,Count,Avg
 from django.http import JsonResponse
 
@@ -171,6 +173,116 @@ def get_country_coordinates(country_name, fallback_latitude=None, fallback_longi
 
 def get_continent_for_country(country):
     return COUNTRY_CONTINENT.get(country, "Other")
+
+
+def haversine_miles(lat1, lng1, lat2, lng2):
+    radius_miles = 3958.8
+    lat1_rad = math.radians(lat1)
+    lat2_rad = math.radians(lat2)
+    delta_lat = math.radians(lat2 - lat1)
+    delta_lng = math.radians(lng2 - lng1)
+
+    a = (
+        math.sin(delta_lat / 2) ** 2
+        + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(delta_lng / 2) ** 2
+    )
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    return radius_miles * c
+
+
+def resolve_zoo_search_origin(location_query):
+    query = (location_query or "").strip()
+
+    if not query:
+        return None, ""
+
+    active_zoos = Zoo.objects.filter(is_active=True)
+
+    if re.fullmatch(r"\d{5}", query):
+        matches = list(active_zoos.filter(zipcode=query))
+        if matches:
+            latitude = sum(zoo.latitude for zoo in matches) / len(matches)
+            longitude = sum(zoo.longitude for zoo in matches) / len(matches)
+            return (latitude, longitude), query
+        return None, query
+
+    city_matches = list(
+        active_zoos.filter(
+            Q(city__iexact=query)
+            | Q(city__icontains=query)
+        )
+    )
+
+    if city_matches:
+        latitude = sum(zoo.latitude for zoo in city_matches) / len(city_matches)
+        longitude = sum(zoo.longitude for zoo in city_matches) / len(city_matches)
+        label = f"{city_matches[0].city}, {city_matches[0].state}" if len(city_matches) == 1 else query
+        return (latitude, longitude), label
+
+    return None, query
+
+
+def get_client_ip(request):
+    forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR", "")
+    candidate_ips = [ip.strip() for ip in forwarded_for.split(",") if ip.strip()]
+
+    for candidate in candidate_ips:
+        try:
+            parsed_ip = ipaddress.ip_address(candidate)
+        except ValueError:
+            continue
+
+        if not parsed_ip.is_private and not parsed_ip.is_loopback:
+            return candidate
+
+    for header_name in ("HTTP_X_REAL_IP", "HTTP_CF_CONNECTING_IP", "REMOTE_ADDR"):
+        candidate = (request.META.get(header_name) or "").strip()
+
+        if not candidate:
+            continue
+
+        try:
+            parsed_ip = ipaddress.ip_address(candidate)
+        except ValueError:
+            continue
+
+        if parsed_ip.is_private or parsed_ip.is_loopback:
+            continue
+
+        return candidate
+
+    return ""
+
+
+def geolocate_ip_address(ip_address_value):
+    if not ip_address_value:
+        return None
+
+    try:
+        response = requests.get(
+            f"https://ipapi.co/{ip_address_value}/json/",
+            headers={"User-Agent": "SearchWilds/1.0 (zoo finder)"},
+            timeout=8,
+        )
+        response.raise_for_status()
+        data = response.json()
+    except (requests.RequestException, ValueError):
+        return None
+
+    latitude = data.get("latitude")
+    longitude = data.get("longitude")
+
+    if latitude is None or longitude is None:
+        return None
+
+    location_label_parts = [data.get("city"), data.get("region_code") or data.get("region")]
+    location_label = ", ".join(part for part in location_label_parts if part)
+
+    return {
+        "latitude": latitude,
+        "longitude": longitude,
+        "label": location_label,
+    }
 
 
 def build_animal_description_paragraphs(animal):
@@ -604,6 +716,80 @@ def video_list(request):
         "videos": page_obj,
         "page_obj": page_obj,
         "platform": platform,
+    })
+
+
+def zoo_search(request):
+    query = (request.GET.get("location") or "").strip()
+    zoo_type = (request.GET.get("type") or "").strip()
+
+    zoos = Zoo.objects.filter(is_active=True)
+    location_found = False
+    search_label = ""
+    used_ip_location = False
+
+    if zoo_type in {"zoo", "aquarium", "safari_park", "sanctuary"}:
+        zoos = zoos.filter(zoo_type=zoo_type)
+
+    featured_zoos = list(zoos[:6])
+
+    if query:
+        origin, search_label = resolve_zoo_search_origin(query)
+
+        if origin:
+            location_found = True
+            enriched_zoos = []
+            for zoo in zoos:
+                distance = haversine_miles(origin[0], origin[1], zoo.latitude, zoo.longitude)
+                zoo.distance_miles = round(distance, 1)
+                zoo.distance_label = f"{zoo.distance_miles} miles away"
+                enriched_zoos.append(zoo)
+
+            enriched_zoos.sort(key=lambda zoo: zoo.distance_miles)
+            zoos_to_show = enriched_zoos[:8]
+        else:
+            zoos_to_show = list(
+                zoos.filter(
+                    Q(city__icontains=query)
+                    | Q(state__icontains=query)
+                    | Q(zipcode__icontains=query)
+                    | Q(name__icontains=query)
+                )[:8]
+            )
+    else:
+        client_ip = get_client_ip(request)
+        ip_location = geolocate_ip_address(client_ip)
+
+        if ip_location:
+            location_found = True
+            used_ip_location = True
+            search_label = ip_location["label"] or "your area"
+
+            enriched_zoos = []
+            for zoo in zoos:
+                distance = haversine_miles(
+                    ip_location["latitude"],
+                    ip_location["longitude"],
+                    zoo.latitude,
+                    zoo.longitude,
+                )
+                zoo.distance_miles = round(distance, 1)
+                zoo.distance_label = f"{zoo.distance_miles} miles away"
+                enriched_zoos.append(zoo)
+
+            enriched_zoos.sort(key=lambda zoo: zoo.distance_miles)
+            zoos_to_show = enriched_zoos[:6]
+        else:
+            zoos_to_show = featured_zoos
+
+    return render(request, "animals/zoo_search.html", {
+        "zoos": zoos_to_show,
+        "query": query,
+        "selected_type": zoo_type,
+        "location_found": location_found,
+        "used_ip_location": used_ip_location,
+        "search_label": search_label or query,
+        "zoo_type_choices": Zoo.ZOO_TYPE_CHOICES,
     })
 
 def animal_detail(request, animal_id):
